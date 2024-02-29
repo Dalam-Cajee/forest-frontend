@@ -33,7 +33,7 @@ const Notifications = () => {
         Add
       </Button>
       <Table striped bordered hover className="my-2">
-        <thead>
+        <thead className="table-dark">
           <tr>
             <th>ID</th>
             <th>Title</th>

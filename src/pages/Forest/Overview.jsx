@@ -49,7 +49,7 @@ const Overview = () => {
       </p>
       <h4>Important Tree Species of Meghalaya</h4>
       <Table striped bordered>
-        <thead>
+        <thead className="table-dark">
           <tr>
             <th>Botanical Name</th>
             <th>Common / Local Name </th>
