@@ -1,6 +1,6 @@
-import React from "react"
-import { Container, Image, Table } from "react-bootstrap"
-import forestReserve from "../../assets/Forest/forest_reserved.jpg"
+import React from 'react'
+import { Container, Image, Table } from 'react-bootstrap'
+import forestReserve from '../../assets/Forest/forest_reserved.jpg'
 
 const ReservedForest = () => {
   return (
@@ -30,7 +30,7 @@ const ReservedForest = () => {
         Territorial Divisions. There are 6 (Six) Territorial Divisions viz.,
       </p>
       <Table striped bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
             <th>Division</th>
             <th>Jurisdiction</th>
@@ -102,7 +102,7 @@ const ReservedForest = () => {
           Minor Mineral Concession Rules, 2016 etc.
         </li>
         <li>
-          Implementation of the Orders of the Hon’ble Supreme Court of India and
+          Implementation of the Orders of the Hon'ble Supreme Court of India and
           National Green Tribunal in matters related with the conservation of
           forests and environment.
         </li>
@@ -161,12 +161,12 @@ const ReservedForest = () => {
         </li>
       </ul>
       <h4>Reserved & Protected Forest</h4>
-      <div className="text-center">
+      <div className='text-center'>
         <Image src={forestReserve} thumbnail />
       </div>
       <h4>List of Reserved Forest in Meghalaya</h4>
       <Table bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
             <th>Jurisdiction</th>
             <th>District</th>
@@ -335,7 +335,7 @@ const ReservedForest = () => {
             <td>5.18</td>
             <td>No. 44 dt. 7.11.1883 & 1699 R of 26.7.1932</td>
           </tr>
-          <tr className="fw-bold ">
+          <tr className='fw-bold '>
             <td colSpan={3}>Total</td>
             <td>626.55</td>
             <td></td>
@@ -344,7 +344,7 @@ const ReservedForest = () => {
       </Table>
       <h4>Protected Forests in Meghalaya</h4>
       <Table bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
             <th>Jurisdiction</th>
             <th>District</th>
@@ -378,7 +378,7 @@ const ReservedForest = () => {
             <td>UmkhutiP.F</td>
             <td>0.14</td>
           </tr>
-          <tr className="fw-bold">
+          <tr className='fw-bold'>
             <td colSpan={3}>Total</td>
             <td>12.39</td>
           </tr>
@@ -389,7 +389,7 @@ const ReservedForest = () => {
         Compensatory Afforestation and exchanged lands
       </h4>
       <Table bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
             <th>Name of User Agency </th>
             <th>Name of project</th>
@@ -444,8 +444,8 @@ const ReservedForest = () => {
             <td>154.888 </td>
             <td>Moulhoi, East Jaintia Hills</td>
           </tr>
-          <tr className="fw-bold">
-            <td colspan="2">Total</td>
+          <tr className='fw-bold'>
+            <td colspan='2'>Total</td>
             <td>308</td>
             <td></td>
           </tr>
@@ -453,7 +453,7 @@ const ReservedForest = () => {
       </Table>
       <h4>Parks & Gardens under The Control of Forest Department</h4>
       <Table bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
             <th>District </th>
             <th>Name &amp; Location</th>
@@ -463,10 +463,10 @@ const ReservedForest = () => {
         </thead>
         <tbody>
           <tr>
-            <td rowspan="9">East Khasi hills </td>
+            <td rowspan='9'>East Khasi hills </td>
             <td>Children Park, Fire Brigade,Shillong</td>
             <td>0.14</td>
-            <td rowspan="5">
+            <td rowspan='5'>
               DFO (T) East Khasi Hills &amp; Ri-Bhoi District, Shillong
             </td>
           </tr>
@@ -489,7 +489,7 @@ const ReservedForest = () => {
           <tr>
             <td>Lady Hydari Park, Shillong</td>
             <td>3.53</td>
-            <td rowspan="2">DFO, Khasi Hills Wildlife Division, Shillong </td>
+            <td rowspan='2'>DFO, Khasi Hills Wildlife Division, Shillong </td>
           </tr>
           <tr>
             <td>Lum Nehru Park, Umiam lake</td>
@@ -498,14 +498,14 @@ const ReservedForest = () => {
           <tr>
             <td>Ward's Lake, Shillong </td>
             <td>6.28</td>
-            <td rowspan="2">DFO, Social Forestry Division, EKH, Shillong</td>
+            <td rowspan='2'>DFO, Social Forestry Division, EKH, Shillong</td>
           </tr>
           <tr>
             <td>Thangkharang Park </td>
             <td>5.5</td>
           </tr>
           <tr>
-            <td rowspan="2">Ri-Bhoi</td>
+            <td rowspan='2'>Ri-Bhoi</td>
             <td>Proposed State Zoo, Ri-bhoi </td>
             <td>72.5 </td>
             <td>DFO, Khasi Hills Wildlife Division, Shillong</td>
@@ -516,7 +516,7 @@ const ReservedForest = () => {
             <td>DFO, Silviculture Division Shillong</td>
           </tr>
           <tr>
-            <td rowspan="3">West Garo hills </td>
+            <td rowspan='3'>West Garo hills </td>
             <td>Nehru Park cum Mini Zoo, Tura </td>
             <td>13.4</td>
             <td>DFO, Garo Hills Wildlife Division, Tura </td>
@@ -532,10 +532,10 @@ const ReservedForest = () => {
             <td>West Garo Hills Social Forestry Division, Tura </td>
           </tr>
           <tr>
-            <td rowspan="2">East Garo Hills </td>
+            <td rowspan='2'>East Garo Hills </td>
             <td>Williamnagar Children's park</td>
             <td>4.80 </td>
-            <td rowspan="2">
+            <td rowspan='2'>
               East Garo Hills Social Forestry Division, Williamnagar
             </td>
           </tr>
@@ -543,8 +543,8 @@ const ReservedForest = () => {
             <td>Botanical Garden</td>
             <td>13 </td>
           </tr>
-          <tr className="fw-bold">
-            <td colspan="2">Total</td>
+          <tr className='fw-bold'>
+            <td colspan='2'>Total</td>
             <td>295.39</td>
             <td></td>
           </tr>
@@ -554,7 +554,7 @@ const ReservedForest = () => {
         Forest area under direct control of Forests & Environment Department
       </h4>
       <Table bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
             <td>Particular </td>
             <td>Area (Sq.km.)</td>
@@ -587,7 +587,7 @@ const ReservedForest = () => {
             <td>Parks and Gardens </td>
             <td>2.95</td>
           </tr>
-          <tr className="fw-bold">
+          <tr className='fw-bold'>
             <td>Total</td>
             <td>1145.19</td>
           </tr>

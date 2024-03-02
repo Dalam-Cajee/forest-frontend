@@ -1,14 +1,14 @@
-import React from "react"
+import React from 'react'
 import {
+  Col,
   Container,
   Figure,
   FigureCaption,
-  FigureImage,
   Image,
-  Stack,
-} from "react-bootstrap"
-import rescue1 from "../../assets/Wildlife/wildlife_rescue01.jpg"
-import rescue2 from "../../assets/Wildlife/wildlife_rescue02.jpg"
+  Row,
+} from 'react-bootstrap'
+import rescue1 from '../../assets/Wildlife/wildlife_rescue01.jpg'
+import rescue2 from '../../assets/Wildlife/wildlife_rescue02.jpg'
 
 const AnimalRescueCentres = () => {
   return (
@@ -30,15 +30,25 @@ const AnimalRescueCentres = () => {
         Customs Department to detect illegal trade of wild animals/products.
       </p>
       <Figure>
-        <Stack direction="horizontal" gap={3}>
-          <div>
-            <Image src={rescue1} thumbnail />
-          </div>
-          <div>
-            <Image src={rescue2} thumbnail />
-          </div>
-        </Stack>
-        <FigureCaption>
+        <Container>
+          <Row>
+            <Col>
+              <Image
+                src={rescue2}
+                thumbnail
+                className='img-fluid h-100 w-auto'
+              />
+            </Col>
+            <Col>
+              <Image
+                src={rescue1}
+                thumbnail
+                className='img-fluid h-100 w-auto'
+              />
+            </Col>
+          </Row>
+        </Container>
+        <FigureCaption className='text-center'>
           Release of rescued Wild animal and Participation of Students / Public
           in Wild animal rescue
         </FigureCaption>
