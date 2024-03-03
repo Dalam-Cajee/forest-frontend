@@ -656,43 +656,87 @@ const Silviculture = () => {
             tetraphylla, Dillenia indica, Oroxylum indicum, Phyllanthus emblica,
             Carcinia padunculata, Carcinia kydia, Myrica spp.
           </p>
+          <h5>Training in Advance Nursery Practices</h5>
+          <Container>
+            <Row className='mb-4'>
+              <Col className='text-center'>
+                <Image
+                  src={silviculture9a}
+                  thumbnail
+                  className='img-fluid h-100 '
+                />
+              </Col>
+              <Col className='text-center'>
+                <Image
+                  src={silviculture9b}
+                  thumbnail
+                  className='img-fluid h-100 '
+                />
+              </Col>
+              <Col className='text-center'>
+                <Image
+                  src={silviculture9c}
+                  thumbnail
+                  className='img-fluid h-100 '
+                />
+              </Col>
+              <Col className='text-center'>
+                <Image
+                  src={silviculture9d}
+                  thumbnail
+                  className='img-fluid h-100 '
+                />
+              </Col>
+              <FigureCaption className='text-center'>
+                Hands on training at Tissue Culture lab for Research associates,
+                Students and Frontline staff
+              </FigureCaption>
+            </Row>
+          </Container>
+          <Container>
+            <Row>
+              <Col className='text-center'>
+                <Image
+                  src={silviculture8a}
+                  thumbnail
+                  className='img-fluid h-100 '
+                />
+                <FigureCaption>
+                  Nursery at Sangmein, Upper Shillong
+                </FigureCaption>
+              </Col>
+              <Col className='text-center'>
+                <Image
+                  src={silviculture8b}
+                  thumbnail
+                  className='img-fluid h-100 '
+                />
+                <FigureCaption>Nursery at Umsaw, Ri-Bhoi</FigureCaption>
+              </Col>
+              <Col className='text-center'>
+                <Image
+                  src={silviculture8c}
+                  thumbnail
+                  className='img-fluid h-100 '
+                />
+                <FigureCaption>
+                  Nursery at Umkhuti Ri-Bhoi district
+                </FigureCaption>
+              </Col>
+              <Col className='text-center'>
+                <Image
+                  src={silviculture8d}
+                  thumbnail
+                  className='img-fluid h-100 '
+                />
+                <FigureCaption>
+                  Mist Chamber at Umkhuti Ri-Bhoi district
+                </FigureCaption>
+              </Col>
+            </Row>
+          </Container>
         </li>
       </ol>
-      <Container className=' my-3'>
-        <Stack direction='horizontal' gap={4}>
-          <div>
-            <Image src={silviculture8a} thumbnail />
-            <FigureCaption>Nursery at Sangmein, Upper Shillong</FigureCaption>
-          </div>
-          <div>
-            <Image src={silviculture8b} thumbnail />
-            <FigureCaption>Nursery at Umsaw, Ri-Bhoi</FigureCaption>
-          </div>
-          <div>
-            <Image src={silviculture8c} thumbnail />
-            <FigureCaption>Nursery at Umkhuti Ri-Bhoi district</FigureCaption>
-          </div>
-          <div>
-            <Image src={silviculture8d} thumbnail />
-            <FigureCaption>
-              Mist Chamber at Umkhuti Ri-Bhoi district
-            </FigureCaption>
-          </div>
-        </Stack>
-      </Container>
-      <h5>Training in advanced nursery practices</h5>
-      <Container className='text-center my-3'>
-        <Figure>
-          <FigureImage src={silviculture9a} className='mx-2' />
-          <FigureImage src={silviculture9b} className='mx-2' />
-          <FigureImage src={silviculture9c} className='mx-2' />
-          <FigureImage src={silviculture9d} className='mx-2' />
-          <FigureCaption className='text-center'>
-            Hands on training at Tissue Culture lab for Research associates,
-            Students and Frontline staff
-          </FigureCaption>
-        </Figure>
-      </Container>
     </Container>
   )
 }

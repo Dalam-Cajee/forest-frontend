@@ -41,6 +41,21 @@ import FRS from './pages/ResearchTraining/FRS'
 import Training from './pages/ResearchTraining/Training'
 import REDD from './pages/ResearchTraining/REDD'
 import ClimateChange from './pages/ResearchTraining/ClimateChange'
+import PublicInterface from './pages/PublicInterface/PublicInterface'
+import MTPA from './pages/PublicInterface/MTPA'
+import TreeFelling from './pages/PublicInterface/TreeFelling'
+import NOC from './pages/PublicInterface/NOC'
+import Quarry from './pages/PublicInterface/Quarry'
+import Seedlings from './pages/PublicInterface/Seedlings'
+import StoneCrushers from './pages/PublicInterface/StoneCrushers'
+import SawMills from './pages/PublicInterface/SawMills'
+import TimberDept from './pages/PublicInterface/TimberDept'
+import ConflictCompensation from './pages/PublicInterface/ConflictCompensation'
+import BoardsAuthorities from './pages/BoardsAuthorities/BoardsAuthorities'
+import MSMPB from './pages/BoardsAuthorities/MSMPB'
+import FDCM from './pages/BoardsAuthorities/FDCM'
+import EcoSociety from './pages/BoardsAuthorities/EcoSociety'
+import EcoTourism from './pages/EcoTourism'
 
 function App() {
   return (
@@ -95,7 +110,29 @@ function App() {
           <Route path='redd' element={<REDD />} />
           <Route path='climate' element={<ClimateChange />} />
         </Route>
-
+        {/* Public Interface */}
+        <Route path='public-interface' element={<PublicInterface />}>
+          <Route path='mtpa' element={<MTPA />} />
+          <Route path='tree-felling' element={<TreeFelling />} />
+          <Route path='noc' element={<NOC />} />
+          <Route path='quarry' element={<Quarry />} />
+          <Route path='seedlings' element={<Seedlings />} />
+          <Route path='stone-crushers' element={<StoneCrushers />} />
+          <Route path='saw-mills' element={<SawMills />} />
+          <Route path='timber-dept' element={<TimberDept />} />
+          <Route
+            path='conflict-compensation'
+            element={<ConflictCompensation />}
+          />
+        </Route>
+        {/* Boards Authorities */}
+        <Route path='boards-authorities' element={<BoardsAuthorities />}>
+          <Route path='msmpb' element={<MSMPB />} />
+          <Route path='fdcm' element={<FDCM />} />
+          <Route path='society' element={<EcoSociety />} />
+        </Route>
+        {/* Eco Tourism */}
+        <Route path='eco-tourism' element={<EcoTourism />} />
         {/* Notifications */}
         <Route path='notifications' element={<Notifications />} />
         {/* <Route path="notifications/update" element={<Notifications />} /> */}
