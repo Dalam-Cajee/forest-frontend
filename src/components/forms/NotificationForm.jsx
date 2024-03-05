@@ -2,6 +2,9 @@ import React from "react"
 import { Formik, Form } from "formik"
 import * as yup from "yup"
 import { Container } from "react-bootstrap"
+import FormInput from "../core/FormInput"
+import { useFetchNotificationTypes } from "../../hooks/queries/NotificationQueries"
+import FormSelect from "../core/FormSelect"
 
 const NotificationForm = () => {
   // States
@@ -9,9 +12,15 @@ const NotificationForm = () => {
   // Refs
 
   // Functions
-
+  const onSuccess = (response) => {
+    return response
+  }
+  const onError = (error) => {
+    return error
+  }
   // Hooks
-
+  // Notification Queries
+  const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
   // Constants
 
   // Formik
@@ -36,7 +45,22 @@ const NotificationForm = () => {
       {(formik) => {
         return (
           <Container>
-            <Form></Form>
+            <Form>
+              {/* Title */}
+              <FormInput
+                name="title"
+                label="Title"
+                formik={formik}
+                isRequired={true}
+              />
+            </Form>
+            {/* Notification Type */}
+            <FormSelect
+              name="notificationTypes"
+              label="Notification Type"
+              formik={formik}
+              isRequired={true}
+            ></FormSelect>
           </Container>
         )
       }}

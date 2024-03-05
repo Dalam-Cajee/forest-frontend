@@ -15,3 +15,18 @@ export const useFetchNotifications = (onSuccess, onError) => {
     onError,
   })
 }
+
+// Get Notification Types
+const fetchNotificationTypes = () => {
+  return request({
+    url: "/notification_type/get",
+    method: "get",
+  })
+}
+
+export const useFetchNotificationTypes = (onSuccess, onError) => {
+  return useQuery("get-notification-types", () => fetchNotificationTypes(), {
+    onSuccess,
+    onError,
+  })
+}

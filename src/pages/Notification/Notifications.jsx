@@ -2,6 +2,7 @@ import React from "react"
 import { useFetchNotifications } from "../../hooks/queries/NotificationQueries"
 import { Table, Button, Container } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
+import { BsPlus } from "react-icons/bs"
 
 const Notifications = () => {
   // States
@@ -32,8 +33,10 @@ const Notifications = () => {
       <h3 className="text-center my-4 bg-light">NOTIFICATIONS</h3>
       <Button
         className="float-end my-2"
+        size="sm"
         onClick={() => handleCreateNotification()}
       >
+        <BsPlus className="fs-4" />
         Add
       </Button>
 
@@ -49,22 +52,30 @@ const Notifications = () => {
           </tr>
         </thead>
         <tbody>
-          {notifications?.data?.data?.data?.map((notification) => {
-            return (
-              <tr key={notification.id}>
-                <td>{notification.title}</td>
-                <td>{notification.notificationTypeName}</td>
-                <td>{notification.isActive}</td>
-                <td>{notification.isArchive}</td>
-                <td>{notification.createdDate}</td>
-                <td>
-                  <Button variant="danger" size="sm">
-                    Delete
-                  </Button>
-                </td>
-              </tr>
-            )
-          })}
+          {notifications?.data?.data?.data ? (
+            notifications?.data?.data?.data?.map((notification) => {
+              return (
+                <tr key={notification.id}>
+                  <td>{notification.title}</td>
+                  <td>{notification.notificationTypeName}</td>
+                  <td>{notification.isActive}</td>
+                  <td>{notification.isArchive}</td>
+                  <td>{notification.createdDate}</td>
+                  <td>
+                    <Button variant="danger" size="sm">
+                      Delete
+                    </Button>
+                  </td>
+                </tr>
+              )
+            })
+          ) : (
+            <tr>
+              <td colSpan="6" className="text-center">
+                --- No Data Available ---
+              </td>
+            </tr>
+          )}
         </tbody>
       </Table>
     </Container>

@@ -58,6 +58,7 @@ import EcoSociety from "./pages/BoardsAuthorities/EcoSociety"
 import EcoTourism from "./pages/EcoTourism"
 import ErrorPage from "./pages/ErrorPage"
 import NotificationForm from "./components/forms/NotificationForm"
+import NotificationsAdmin from "./pages/Notification/NotificationsAdmin"
 
 function App() {
   return (
@@ -137,7 +138,7 @@ function App() {
         <Route path="eco-tourism" element={<EcoTourism />} />
         {/* Notifications */}
         <Route path="notifications" element={<Notifications />} />
-        <Route path="notifications/update" element={<NotificationForm />} />
+        <Route path="notifications/update" element={<NotificationsAdmin />} />
         {/* Error Page */}
         <Route path="*" element={<ErrorPage />} />
       </Routes>

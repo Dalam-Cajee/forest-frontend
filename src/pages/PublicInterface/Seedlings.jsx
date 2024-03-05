@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   Col,
   Container,
@@ -6,10 +6,10 @@ import {
   Image,
   Row,
   Table,
-} from 'react-bootstrap'
-import seedling1 from '../../assets/PublicInterface/pi_seedlings01.jpg'
-import seedling2 from '../../assets/PublicInterface/pi_seedlings02.jpg'
-import seedling3 from '../../assets/PublicInterface/pi_seedlings03.jpg'
+} from "react-bootstrap"
+import seedling1 from "../../assets/PublicInterface/pi_seedlings01.jpg"
+import seedling2 from "../../assets/PublicInterface/pi_seedlings02.jpg"
+import seedling3 from "../../assets/PublicInterface/pi_seedlings03.jpg"
 
 const Seedlings = () => {
   return (
@@ -24,13 +24,13 @@ const Seedlings = () => {
         below:-
       </p>
       <Table striped bordered>
-        <thead className='table-dark text-center'>
+        <thead className="table-dark text-center">
           <tr>
             <th>Sl.No. </th>
             <th>Name of Division</th>
             <th>Location of Nursery</th>
           </tr>
-          <tr className='text-center'>
+          <tr className="text-center">
             <th>1</th>
             <th>2</th>
             <th>3</th>
@@ -50,7 +50,7 @@ const Seedlings = () => {
             <td>Jaintia Hills Territorial Division. Jowai</td>
             <td>
               Forest Colony Jowai, Thadlaskein, Saitsama, Saphai, Saipung,
-              Saiha, Wahkoh, Apha, Kynjlat &amp; Jaliakhola{' '}
+              Saiha, Wahkoh, Apha, Kynjlat &amp; Jaliakhola{" "}
             </td>
           </tr>
           <tr>
@@ -128,151 +128,153 @@ const Seedlings = () => {
         The List of species available and their rates is as follows:
       </p>
       <h5>List of Species available at Umdiker Hi-Tech Nursery</h5>
-      <Table striped bordered responsive>
-        <thead className='table-dark'>
-          <tr>
-            <th rowSpan={2}>Sl.No.</th>
-            <th rowSpan={2}>Botanical Name</th>
-            <th rowSpan={2}>Common/Local Name</th>
-            <th rowSpan={2}>Quantity(nos)</th>
-            <th colSpan={2}>Rate(Rs.)</th>
-            <th rowSpan={2}>Remarks</th>
-          </tr>
-          <tr>
-            <th>Public</th>
-            <th>Organisatons/Departments</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1.</td>
-            <td>Grewellia robusta</td>
-            <td>Silver oak</td>
-            <td>3,00</td>
-            <td>2/-</td>
-            <td>10/-</td>
-            <td rowSpan={14} className='align-middle'>
-              All available in stock
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Thuja Compacta</td>
-            <td>Thuja</td>
-            <td>30</td>
-            <td>2/-</td>
-            <td>10/-</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Lagestromia speciosa</td>
-            <td>-</td>
-            <td>1,000</td>
-            <td>2/-</td>
-            <td>10/-</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Delonix regia</td>
-            <td>Gulmohar</td>
-            <td>4,00</td>
-            <td>2/-</td>
-            <td>10/-</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>P.pendula</td>
-            <td>Ashok</td>
-            <td>5,00</td>
-            <td>2/-</td>
-            <td>10/-</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Bamboo species</td>
-            <td>Siej</td>
-            <td>1,500</td>
-            <td>2/-</td>
-            <td>8/-</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Assam lemon</td>
-            <td>-</td>
-            <td>3,00</td>
-            <td>2/-</td>
-            <td>10/-</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Casia fistula</td>
-            <td>Sonaru</td>
-            <td>7,00</td>
-            <td>2/-</td>
-            <td>10/-</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Polyalthia longifolia</td>
-            <td>Ashok</td>
-            <td>5,00</td>
-            <td>2/-</td>
-            <td>10/-</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>Aegle Marmelos</td>
-            <td>Bael/Sohbel</td>
-            <td>2,000</td>
-            <td>2/-</td>
-            <td>10/-</td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>Michelia champaca</td>
-            <td>Diengrai</td>
-            <td>1,200</td>
-            <td>2/-</td>
-            <td>8/-</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>Chukrassia tabularis</td>
-            <td>Sali</td>
-            <td>5,000</td>
-            <td>2/-</td>
-            <td>8/-</td>
-          </tr>
-          <tr>
-            <td>13.</td>
-            <td>Cryptomeria Japonica</td>
-            <td>Kseh Bilat</td>
-            <td>3,000</td>
-            <td>2/-</td>
-            <td>8/-</td>
-          </tr>
-          <tr>
-            <td>14.</td>
-            <td>Callistemon lanceolata </td>
-            <td>Bottle Brush</td>
-            <td>8,00</td>
-            <td>2/-</td>
-            <td>10/-</td>
-          </tr>
-        </tbody>
-      </Table>
+      <Container>
+        <Table striped bordered responsive>
+          <thead className="table-dark">
+            <tr>
+              <th rowSpan={2}>Sl.No.</th>
+              <th rowSpan={2}>Botanical Name</th>
+              <th rowSpan={2}>Common/Local Name</th>
+              <th rowSpan={2}>Quantity(nos)</th>
+              <th colSpan={2}>Rate(Rs.)</th>
+              <th rowSpan={2}>Remarks</th>
+            </tr>
+            <tr>
+              <th>Public</th>
+              <th>Organisatons/Departments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td>Grewellia robusta</td>
+              <td>Silver oak</td>
+              <td>3,00</td>
+              <td>2/-</td>
+              <td>10/-</td>
+              <td rowSpan={14} className="align-middle">
+                All available in stock
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Thuja Compacta</td>
+              <td>Thuja</td>
+              <td>30</td>
+              <td>2/-</td>
+              <td>10/-</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Lagestromia speciosa</td>
+              <td>-</td>
+              <td>1,000</td>
+              <td>2/-</td>
+              <td>10/-</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Delonix regia</td>
+              <td>Gulmohar</td>
+              <td>4,00</td>
+              <td>2/-</td>
+              <td>10/-</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>P.pendula</td>
+              <td>Ashok</td>
+              <td>5,00</td>
+              <td>2/-</td>
+              <td>10/-</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Bamboo species</td>
+              <td>Siej</td>
+              <td>1,500</td>
+              <td>2/-</td>
+              <td>8/-</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Assam lemon</td>
+              <td>-</td>
+              <td>3,00</td>
+              <td>2/-</td>
+              <td>10/-</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Casia fistula</td>
+              <td>Sonaru</td>
+              <td>7,00</td>
+              <td>2/-</td>
+              <td>10/-</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Polyalthia longifolia</td>
+              <td>Ashok</td>
+              <td>5,00</td>
+              <td>2/-</td>
+              <td>10/-</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Aegle Marmelos</td>
+              <td>Bael/Sohbel</td>
+              <td>2,000</td>
+              <td>2/-</td>
+              <td>10/-</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>Michelia champaca</td>
+              <td>Diengrai</td>
+              <td>1,200</td>
+              <td>2/-</td>
+              <td>8/-</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>Chukrassia tabularis</td>
+              <td>Sali</td>
+              <td>5,000</td>
+              <td>2/-</td>
+              <td>8/-</td>
+            </tr>
+            <tr>
+              <td>13.</td>
+              <td>Cryptomeria Japonica</td>
+              <td>Kseh Bilat</td>
+              <td>3,000</td>
+              <td>2/-</td>
+              <td>8/-</td>
+            </tr>
+            <tr>
+              <td>14.</td>
+              <td>Callistemon lanceolata </td>
+              <td>Bottle Brush</td>
+              <td>8,00</td>
+              <td>2/-</td>
+              <td>10/-</td>
+            </tr>
+          </tbody>
+        </Table>
+      </Container>
       <Container>
         <Row>
-          <Col className='text-center'>
-            <Image src={seedling1} thumbnail className='img-fluid h-100 ' />
+          <Col className="text-center">
+            <Image src={seedling1} thumbnail className="img-fluid h-100 " />
             <FigureCaption>Mist Chambers in Hi-Tech Nursery</FigureCaption>
           </Col>
-          <Col className='text-center'>
-            <Image src={seedling2} thumbnail className='img-fluid h-100 ' />
+          <Col className="text-center">
+            <Image src={seedling2} thumbnail className="img-fluid h-100 " />
             <FigureCaption>Nursery at Sohra</FigureCaption>
           </Col>
-          <Col className='text-center'>
-            <Image src={seedling3} thumbnail className='img-fluid h-100 ' />
+          <Col className="text-center">
+            <Image src={seedling3} thumbnail className="img-fluid h-100 " />
             <FigureCaption>Umdiker Net House</FigureCaption>
           </Col>
         </Row>
