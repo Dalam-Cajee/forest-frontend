@@ -1,4 +1,4 @@
-import { useQuery } from "react-query"
+import { useMutation, useQuery } from "react-query"
 import { request } from "../../components/utils/request"
 
 // Get All Notifications
@@ -26,6 +26,21 @@ const fetchNotificationTypes = () => {
 
 export const useFetchNotificationTypes = (onSuccess, onError) => {
   return useQuery("get-notification-types", () => fetchNotificationTypes(), {
+    onSuccess,
+    onError,
+  })
+}
+
+const addNotification = (data) => {
+  return request({
+    url: "/notification/add",
+    method: "post",
+    data,
+  })
+}
+
+export const useAddNotification = (onSuccess, onError) => {
+  return useMutation(addNotification, {
     onSuccess,
     onError,
   })

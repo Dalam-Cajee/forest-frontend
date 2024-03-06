@@ -1,6 +1,6 @@
-import { Field } from 'formik'
-import React from 'react'
-import { Form, FormControl, FormGroup, FormLabel } from 'react-bootstrap'
+import { Field } from "formik"
+import React from "react"
+import { Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
 
 const FieldSelect = ({
   name,
@@ -13,7 +13,9 @@ const FieldSelect = ({
 }) => {
   return (
     <FormGroup>
-      <FormLabel htmlFor={name}>{label}</FormLabel>
+      <FormLabel htmlFor={name} className="fw-bold">
+        {label}
+      </FormLabel>
       <Field name={name}>
         {({ field, form, meta }) => (
           <Form.Select
@@ -23,15 +25,15 @@ const FieldSelect = ({
             {...rest}
             {...field}
           >
-            <option value='' disabled>
+            <option value="" disabled>
               --Select an option--
             </option>
             {children}
           </Form.Select>
         )}
       </Field>
-      <FormControl.Feedback type='invalid'>
-        <small className='text-danger'>{formik.errors[name]}</small>
+      <FormControl.Feedback type="invalid">
+        <small className="text-danger">{formik.errors[name]}</small>
       </FormControl.Feedback>
     </FormGroup>
   )

@@ -2,16 +2,17 @@ import { Field } from "formik"
 import React from "react"
 import { FormControl, FormGroup, FormLabel } from "react-bootstrap"
 
-const FieldInput = ({ name, label, formik, isRequired, ...rest }) => {
+const FieldFile = ({ name, label, formik, isRequired, ...rest }) => {
   return (
     <FormGroup>
       <FormLabel htmlFor={name} className="fw-bold">
         {label}
       </FormLabel>
       <Field name={name}>
-        {({ field, form, meta }) => (
+        {({ field, form, label }) => (
           <FormControl
             id={name}
+            type="file"
             required={isRequired}
             isInvalid={formik.errors[name] && formik.touched[name]}
             {...rest}
@@ -26,4 +27,4 @@ const FieldInput = ({ name, label, formik, isRequired, ...rest }) => {
   )
 }
 
-export default FieldInput
+export default FieldFile

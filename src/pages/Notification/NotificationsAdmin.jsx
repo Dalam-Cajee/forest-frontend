@@ -5,7 +5,7 @@ import NotificationForm from "../../components/forms/NotificationForm"
 const NotificationsAdmin = () => {
   return (
     <Container>
-      <h2>Notifications Admin Panel</h2>
+      <h3 className="text-center">Add New Notification</h3>
       <NotificationForm />
     </Container>
   )
