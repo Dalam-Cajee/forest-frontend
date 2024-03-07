@@ -31,6 +31,7 @@ export const useFetchNotificationTypes = (onSuccess, onError) => {
   })
 }
 
+// Add Notification
 const addNotification = (data) => {
   return request({
     url: "/notification/add",
@@ -40,8 +41,5 @@ const addNotification = (data) => {
 }
 
 export const useAddNotification = (onSuccess, onError) => {
-  return useMutation(addNotification, {
-    onSuccess,
-    onError,
-  })
+  return useMutation(addNotification)
 }

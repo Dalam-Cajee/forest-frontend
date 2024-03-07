@@ -8,18 +8,15 @@ const FieldFile = ({ name, label, formik, isRequired, ...rest }) => {
       <FormLabel htmlFor={name} className="fw-bold">
         {label}
       </FormLabel>
-      <Field name={name}>
-        {({ field, form, label }) => (
-          <FormControl
-            id={name}
-            type="file"
-            required={isRequired}
-            isInvalid={formik.errors[name] && formik.touched[name]}
-            {...rest}
-            {...field}
-          />
-        )}
-      </Field>
+      <FormControl
+        id={name}
+        type="file"
+        required={isRequired}
+        isInvalid={formik.errors[name] && formik.touched[name]}
+        {...rest}
+        onChange={(e) => formik.setFieldValue(name, e.target.files[0])}
+      />
+
       <FormControl.Feedback type="invalid">
         <small className="text-danger">{formik.errors[name]}</small>
       </FormControl.Feedback>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useState } from "react"
 import { Formik, Form } from "formik"
 import * as yup from "yup"
 import { Button, Container, Stack } from "react-bootstrap"
@@ -15,7 +15,7 @@ const NotificationForm = () => {
   // States
 
   // Refs
-
+  const formRef = useRef()
   // Functions
   const onSuccess = (response) => {
     return response
@@ -27,39 +27,32 @@ const NotificationForm = () => {
   const navigate = useNavigate()
   // Notification Queries
   const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
-  const { mutate: addNotification } = useAddNotification(onSuccess, onError)
+  const { mutate: createNotification } = useAddNotification()
   // Constants
 
   // Formik
   // Initial Values
   const initialValues = {
-    title: "",
-    notificationTypes: "",
-    notificationFile: "",
+    notificationDetails: {
+      title: "",
+      notificationTypeId: "",
+    },
+    file: null,
   }
 
   // Schema
   const validationSchema = yup.object({
-    title: yup.string().required("Required!"),
-    notificationTypes: yup.string().required("Required!"),
-    notificationFile: yup
-      .mixed()
-      // .test("fileType", "Only PDF files are allowed", (value) => {
-      //   if (!value) return true
-      //   return value.type === "application/pdf"
-      // })
-      // .test("fileSize", "File size is too large[Max: 5MB]", (value) => {
-      //   if (!value) return true
-      //   return value.size <= 5 * 1024 * 1024
-      // })
-
-      .required("Required!"),
+    notificationDetails: yup.object({
+      title: yup.string().required("Required!"),
+      notificationTypeId: yup.string().required("Required!"),
+    }),
+    file: yup.string().required("Required!"),
   })
 
   // Handlers
   const onSubmit = (values) => {
-    console.log("Notifications:", values)
-    addNotification(values)
+    console.log("Notifications: ", values)
+    createNotification(values)
   }
 
   return (
@@ -68,6 +61,7 @@ const NotificationForm = () => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
+      innerRef={formRef}
     >
       {(formik) => {
         return (
@@ -84,7 +78,7 @@ const NotificationForm = () => {
                 {/* Title */}
                 <div>
                   <FieldInput
-                    name="title"
+                    name="notificationDetails.title"
                     label="Title"
                     formik={formik}
                     isRequired={true}
@@ -93,7 +87,7 @@ const NotificationForm = () => {
                 {/* Notification Type */}
                 <div>
                   <FieldSelect
-                    name="notificationTypes"
+                    name="notificationDetails.notificationTypeId"
                     label="Notification Type"
                     formik={formik}
                     isRequired={true}
@@ -103,12 +97,15 @@ const NotificationForm = () => {
                         {type.name}
                       </option>
                     ))}
+                    {/* <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option> */}
                   </FieldSelect>
                 </div>
                 {/* File Upload */}
                 <div>
                   <FieldFile
-                    name="notificationFile"
+                    name="file"
                     label="Upload Document(PDF)"
                     formik={formik}
                     isRequired={true}
