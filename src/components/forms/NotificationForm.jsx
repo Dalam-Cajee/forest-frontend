@@ -45,7 +45,7 @@ const NotificationForm = () => {
     // "image/jpeg",
   ]
 
-  const FILE_SIZE = 1 * 1024 * 1024 // 1 MB
+  const FILE_SIZE = 500 * 1024 * 1024 // 500MB
 
   // Formik
   // Initial Values

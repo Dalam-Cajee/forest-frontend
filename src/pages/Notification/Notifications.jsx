@@ -30,14 +30,14 @@ const Notifications = () => {
   }
   return (
     <Container>
-      <h3 className="text-center my-4 bg-light">NOTIFICATIONS</h3>
+      <h3 className="text-center my-4 bg-light">Notification Admin Panel</h3>
       <Button
         className="float-end my-2"
         size="sm"
         onClick={() => handleCreateNotification()}
       >
         <BsPlus className="fs-4" />
-        Add
+        Create Notification
       </Button>
 
       <Table striped bordered hover className="my-2">
@@ -45,8 +45,8 @@ const Notifications = () => {
           <tr>
             <th>Title</th>
             <th>Notification Type</th>
-            <th>isActive</th>
-            <th>isArchive</th>
+            <th>Active</th>
+            <th>Archive</th>
             <th>Created Date</th>
             <th>Action</th>
           </tr>
@@ -54,12 +54,14 @@ const Notifications = () => {
         <tbody>
           {notifications?.data?.data?.data ? (
             notifications?.data?.data?.data?.map((notification) => {
+              const active = JSON.stringify(notification.isActive)
+              const archive = JSON.stringify(notification.isArchive)
               return (
                 <tr key={notification.id}>
                   <td>{notification.title}</td>
                   <td>{notification.notificationTypeName}</td>
-                  <td>{notification.isActive}</td>
-                  <td>{notification.isArchive}</td>
+                  <td>{active}</td>
+                  <td>{archive}</td>
                   <td>{notification.createdDate}</td>
                   <td>
                     <Button variant="danger" size="sm">

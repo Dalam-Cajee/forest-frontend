@@ -57,14 +57,19 @@ import FDCM from "./pages/BoardsAuthorities/FDCM"
 import EcoSociety from "./pages/BoardsAuthorities/EcoSociety"
 import EcoTourism from "./pages/EcoTourism"
 import ErrorPage from "./pages/ErrorPage"
-import NotificationForm from "./components/forms/NotificationForm"
 import NotificationsAdmin from "./pages/Notification/NotificationsAdmin"
+import PublicDashboard from "./pages/Dashboard/PublicDashboard"
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* Dashboard */}
+        <Route path="dashboard" element={<PublicDashboard />} />
+        {/* Notifications */}
+        <Route path="notifications" element={<Notifications />} />
+        <Route path="notifications/update" element={<NotificationsAdmin />} />
         {/* AboutUs */}
         <Route path="about-us" element={<AboutUs />}>
           <Route path="forest-dept" element={<ForestDepartment />} />
@@ -136,9 +141,6 @@ function App() {
         </Route>
         {/* Eco Tourism */}
         <Route path="eco-tourism" element={<EcoTourism />} />
-        {/* Notifications */}
-        <Route path="notifications" element={<Notifications />} />
-        <Route path="notifications/update" element={<NotificationsAdmin />} />
         {/* Error Page */}
         <Route path="*" element={<ErrorPage />} />
       </Routes>
