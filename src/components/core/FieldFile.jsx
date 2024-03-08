@@ -1,4 +1,4 @@
-import { Field } from "formik"
+import { ErrorMessage } from "formik"
 import React from "react"
 import { FormControl, FormGroup, FormLabel } from "react-bootstrap"
 
@@ -15,11 +15,12 @@ const FieldFile = ({ name, label, formik, isRequired, ...rest }) => {
         isInvalid={formik.errors[name] && formik.touched[name]}
         {...rest}
         onChange={(e) => formik.setFieldValue(name, e.target.files[0])}
+        onBlur={formik.handleBlur}
       />
-
-      <FormControl.Feedback type="invalid">
-        <small className="text-danger">{formik.errors[name]}</small>
-      </FormControl.Feedback>
+      <ErrorMessage
+        name={name}
+        render={(msg) => <small className="text-danger">{msg}</small>}
+      />
     </FormGroup>
   )
 }

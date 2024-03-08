@@ -1,4 +1,4 @@
-import { Field } from "formik"
+import { ErrorMessage, Field } from "formik"
 import React from "react"
 import { Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
 
@@ -32,9 +32,10 @@ const FieldSelect = ({
           </Form.Select>
         )}
       </Field>
-      <FormControl.Feedback type="invalid">
-        <small className="text-danger">{formik.errors[name]}</small>
-      </FormControl.Feedback>
+      <ErrorMessage
+        name={name}
+        render={(msg) => <small className="text-danger">{msg}</small>}
+      />
     </FormGroup>
   )
 }
