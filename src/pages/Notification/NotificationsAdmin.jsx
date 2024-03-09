@@ -1,12 +1,144 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
-import NotificationForm from '../../components/forms/NotificationForm'
+import { Container, Table, Button, Tabs, Tab } from 'react-bootstrap'
+import {
+  useFetchNotificationTypes,
+  useFetchNotifications,
+} from '../../hooks/queries/NotificationQueries'
+import { useNavigate } from 'react-router-dom'
+import { BsPlus } from 'react-icons/bs'
 
 const NotificationsAdmin = () => {
+  // States
+  const [show, setShow] = useState(false)
+
+  // Refs
+
+  // Functions
+  const onSuccess = (response) => {
+    return response
+  }
+  const onError = (error) => {
+    return error
+  }
+
+  // Hooks
+  const navigate = useNavigate()
+  // Notification Queries
+  const notifications = useFetchNotifications(onSuccess, onError)
+  const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
+
+  // Constants
+
+  // Handlers
+  const handleCreateNotification = () => {
+    navigate('create')
+  }
+  const handleAddNotificationType = () => {
+    navigate('add')
+  }
   return (
     <Container>
-      <h3 className='text-center'>Add New Notification</h3>
-      <NotificationForm />
+      <h3 className='text-center mt-4 mb-5 bg-light'>
+        Notification Admin Panel
+      </h3>
+      {/* Tabs */}
+      <Tabs defaultActiveKey='notifications' justify>
+        {/* Create Notification */}
+        <Tab eventKey='notifications' title='Notifications'>
+          <Button
+            className='float-end my-3'
+            size='sm'
+            onClick={() => handleCreateNotification()}
+          >
+            <BsPlus className='fs-4' />
+            Create Notification
+          </Button>
+
+          <Table striped bordered hover className='my-2'>
+            <thead className='table-dark'>
+              <tr>
+                <th>Title</th>
+                <th>Notification Type</th>
+                <th>Active</th>
+                <th>Archive</th>
+                <th>Created Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {notifications?.data?.data?.data ? (
+                notifications?.data?.data?.data?.map((notification) => {
+                  const active = JSON.stringify(notification.isActive)
+                  const archive = JSON.stringify(notification.isArchive)
+                  return (
+                    <tr key={notification.id}>
+                      <td>{notification.title}</td>
+                      <td>{notification.notificationTypeName}</td>
+                      <td>{active}</td>
+                      <td>{archive}</td>
+                      <td>{notification.createdDate}</td>
+                      <td>
+                        <Button variant='danger' size='sm'>
+                          Delete
+                        </Button>
+                      </td>
+                    </tr>
+                  )
+                })
+              ) : (
+                <tr>
+                  <td colSpan='6' className='text-center'>
+                    --- No Data Available ---
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </Table>
+        </Tab>
+        {/* Add Notification Type */}
+        <Tab eventKey='notificationTypes' title='Notification Types'>
+          <Button
+            className='float-end my-3'
+            size='sm'
+            onClick={() => handleAddNotificationType()}
+          >
+            <BsPlus className='fs-4' />
+            Add Notification Type
+          </Button>
+          <Table striped bordered hover className='my-2'>
+            <thead className='table-dark'>
+              <tr>
+                <th>ID</th>
+                <th>Notification Type</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {notificationTypes?.data?.data?.data ? (
+                notificationTypes?.data?.data?.data?.map((type) => {
+                  return (
+                    <tr key={type.id}>
+                      <td>{type.id}</td>
+                      <td>{type.name}</td>
+                      <td>
+                        <Button variant='danger' size='sm'>
+                          Delete
+                        </Button>
+                      </td>
+                    </tr>
+                  )
+                })
+              ) : (
+                <tr>
+                  <td colSpan='3' className='text-center'>
+                    --- No Data Available ---
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </Table>
+        </Tab>
+      </Tabs>
     </Container>
   )
 }

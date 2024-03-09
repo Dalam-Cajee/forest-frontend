@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react"
-import { Formik, Form } from "formik"
-import * as yup from "yup"
+import React from 'react'
+import { Formik, Form } from 'formik'
+import * as yup from 'yup'
 import {
   Button,
   Card,
@@ -8,21 +8,21 @@ import {
   CloseButton,
   Container,
   Stack,
-} from "react-bootstrap"
-import FieldInput from "../core/FieldInput"
+} from 'react-bootstrap'
+import FieldInput from '../core/FieldInput'
 import {
   useAddNotification,
   useFetchNotificationTypes,
-} from "../../hooks/queries/NotificationQueries"
-import FieldSelect from "../core/FieldSelect"
-import FieldFile from "../core/FieldFile"
-import { useNavigate } from "react-router-dom"
+} from '../../hooks/queries/NotificationQueries'
+import FieldSelect from '../core/FieldSelect'
+import FieldFile from '../core/FieldFile'
+import { useNavigate } from 'react-router-dom'
 
-const NotificationForm = () => {
+const CreateNotificationForm = () => {
   // States
 
   // Refs
-  const formRef = useRef()
+
   // Functions
   const onSuccess = (response) => {
     return response
@@ -30,6 +30,7 @@ const NotificationForm = () => {
   const onError = (error) => {
     return error
   }
+
   // Hooks
   const navigate = useNavigate()
   // Notification Queries
@@ -38,8 +39,8 @@ const NotificationForm = () => {
 
   // Constants
   const FILE_TYPES = [
-    "application/pdf",
-    "application/x-pdf",
+    'application/pdf',
+    'application/x-pdf',
     // "image/png",
     // "image/jpg",
     // "image/jpeg",
@@ -51,8 +52,8 @@ const NotificationForm = () => {
   // Initial Values
   const initialValues = {
     notificationDetails: {
-      title: "",
-      notificationTypeId: "",
+      title: '',
+      notificationTypeId: '',
     },
     file: null,
   }
@@ -60,18 +61,18 @@ const NotificationForm = () => {
   // Schema
   const validationSchema = yup.object({
     notificationDetails: yup.object({
-      title: yup.string().required("Title is required"),
+      title: yup.string().required('Title is required'),
       notificationTypeId: yup
         .string()
-        .required("Notification Type is required"),
+        .required('Notification Type is required'),
     }),
     file: yup
       .mixed()
-      .required("File is required")
-      .test("fileFormat", "File format not supported", (value) => {
+      .required('File is required')
+      .test('fileFormat', 'File format not supported', (value) => {
         return value && FILE_TYPES.includes(value.type)
       })
-      .test("fileSize", "File size too large", (value) => {
+      .test('fileSize', 'File size too large', (value) => {
         return value && value.size <= FILE_SIZE
       }),
   })
@@ -81,9 +82,9 @@ const NotificationForm = () => {
     // Form Data object
     const formData = new FormData()
     // Update the object
-    formData.append("file", values.file)
+    formData.append('file', values.file)
     formData.append(
-      "notificationDetails",
+      'notificationDetails',
       JSON.stringify(values.notificationDetails)
     )
     createNotification.mutate(formData)
@@ -95,26 +96,25 @@ const NotificationForm = () => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
-      innerRef={formRef}
     >
       {(formik) => {
         return (
           <Container>
             <Card>
-              <CardBody className="shadow rounded p-3">
+              <CardBody className='shadow rounded p-3'>
                 <Form>
                   <Stack gap={2}>
                     <div>
                       <CloseButton
-                        className="float-end"
+                        className='float-end'
                         onClick={() => navigate(-1)}
                       />
                     </div>
                     {/* Title */}
                     <div>
                       <FieldInput
-                        name="notificationDetails.title"
-                        label="Title"
+                        name='notificationDetails.title'
+                        label='Title'
                         formik={formik}
                         isRequired={true}
                       />
@@ -122,8 +122,8 @@ const NotificationForm = () => {
                     {/* Notification Type */}
                     <div>
                       <FieldSelect
-                        name="notificationDetails.notificationTypeId"
-                        label="Notification Type"
+                        name='notificationDetails.notificationTypeId'
+                        label='Notification Type'
                         formik={formik}
                         isRequired={true}
                       >
@@ -132,23 +132,20 @@ const NotificationForm = () => {
                             {type.name}
                           </option>
                         ))}
-                        {/* <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option> */}
                       </FieldSelect>
                     </div>
                     {/* File Upload */}
                     <div>
                       <FieldFile
-                        name="file"
-                        label="Upload Document(PDF)"
+                        name='file'
+                        label='Upload Document(PDF)'
                         formik={formik}
                         isRequired={true}
                       />
                     </div>
                     {/* Add Button */}
-                    <div className="mt-2">
-                      <Button type="submit">Create</Button>
+                    <div className='mt-2'>
+                      <Button type='submit'>Create</Button>
                     </div>
                   </Stack>
                 </Form>
@@ -161,4 +158,4 @@ const NotificationForm = () => {
   )
 }
 
-export default NotificationForm
+export default CreateNotificationForm
