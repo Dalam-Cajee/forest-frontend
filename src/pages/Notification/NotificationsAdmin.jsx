@@ -1,11 +1,23 @@
-import React from 'react'
-import { Container, Table, Button, Tabs, Tab } from 'react-bootstrap'
+import React, { useState } from 'react'
+import {
+  Container,
+  Table,
+  Button,
+  Tabs,
+  Tab,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalTitle,
+} from 'react-bootstrap'
 import {
   useFetchNotificationTypes,
   useFetchNotifications,
 } from '../../hooks/queries/NotificationQueries'
 import { useNavigate } from 'react-router-dom'
 import { BsPlus } from 'react-icons/bs'
+import AddNotificationTypeForm from '../../components/forms/AddNotificationTypeForm'
 
 const NotificationsAdmin = () => {
   // States
@@ -33,9 +45,12 @@ const NotificationsAdmin = () => {
   const handleCreateNotification = () => {
     navigate('create')
   }
-  const handleAddNotificationType = () => {
-    navigate('add')
-  }
+  // Show modal
+  const handleShow = () => setShow(true)
+
+  // Close Modal
+  const handleClose = () => setShow(false)
+
   return (
     <Container>
       <h3 className='text-center mt-4 mb-5 bg-light'>
@@ -100,11 +115,28 @@ const NotificationsAdmin = () => {
           <Button
             className='float-end my-3'
             size='sm'
-            onClick={() => handleAddNotificationType()}
+            onClick={() => handleShow()}
           >
             <BsPlus className='fs-4' />
             Add Notification Type
           </Button>
+          {/* Modal for Adding Notification Types */}
+          <Modal
+            show={show}
+            onHide={handleClose}
+            backdrop='static'
+            keyboard={false}
+            centered
+          >
+            <ModalHeader closeButton>
+              <ModalTitle className='d-flex justify-content-center w-100'>
+                Add New Notification Type
+              </ModalTitle>
+            </ModalHeader>
+            <ModalBody>
+              <AddNotificationTypeForm setShow={setShow} />
+            </ModalBody>
+          </Modal>
           <Table striped bordered hover className='my-2'>
             <thead className='table-dark'>
               <tr>

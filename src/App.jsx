@@ -60,7 +60,6 @@ import ErrorPage from './pages/ErrorPage'
 import PublicDashboard from './pages/Dashboard/PublicDashboard'
 import NotificationsAdmin from './pages/Notification/NotificationsAdmin'
 import AddNotification from './pages/Notification/AddNotification'
-import AddNotificationType from './pages/Notification/AddNotificationType'
 
 function App() {
   return (
@@ -75,10 +74,6 @@ function App() {
         <Route
           path='notifications/admin/create'
           element={<AddNotification />}
-        />
-        <Route
-          path='notifications/admin/add'
-          element={<AddNotificationType />}
         />
         {/* AboutUs */}
         <Route path='about-us' element={<AboutUs />}>

@@ -1,19 +1,11 @@
 import React from 'react'
 import { Formik, Form } from 'formik'
 import * as yup from 'yup'
-import {
-  Button,
-  Card,
-  CardBody,
-  CardTitle,
-  CloseButton,
-  Container,
-  Stack,
-} from 'react-bootstrap'
+import { Button, Card, CardBody, Stack } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import FieldInput from '../core/FieldInput'
 
-const AddNotificationTypeForm = () => {
+const AddNotificationTypeForm = ({ setShow }) => {
   // States
 
   // Refs
@@ -45,6 +37,7 @@ const AddNotificationTypeForm = () => {
   // Handlers
   const onSubmit = (values) => {
     console.log(values)
+    setShow(false)
   }
 
   return (
@@ -56,38 +49,29 @@ const AddNotificationTypeForm = () => {
     >
       {(formik) => {
         return (
-          <Container>
-            <Card className='border-0 my-4'>
-              <CardBody>
-                <CardTitle>
-                  <CloseButton
-                    className='float-end'
-                    onClick={() => navigate(-1)}
-                  />
-                  <h4 className='text-center fw-bold'>
-                    Add New Notification Type
-                  </h4>
-                </CardTitle>
-                <Form>
-                  <Stack gap={2}>
-                    {/* Title */}
-                    <div>
-                      <FieldInput
-                        name='name'
-                        label='Notification Type'
-                        formik={formik}
-                        isRequired={true}
-                      />
-                    </div>
-                    {/* Add Button */}
-                    <div className='mt-2'>
-                      <Button type='submit'>Add</Button>
-                    </div>
-                  </Stack>
-                </Form>
-              </CardBody>
-            </Card>
-          </Container>
+          <Card className='border-0'>
+            <CardBody>
+              <Form>
+                <Stack gap={2}>
+                  {/* Title */}
+                  <div>
+                    <FieldInput
+                      name='name'
+                      label='Notification Type'
+                      formik={formik}
+                      isRequired={true}
+                    />
+                  </div>
+                  {/* Add Button */}
+                  <div className='mt-2'>
+                    <Button type='submit' className='float-end'>
+                      Add
+                    </Button>
+                  </div>
+                </Stack>
+              </Form>
+            </CardBody>
+          </Card>
         )
       }}
     </Formik>
