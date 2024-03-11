@@ -10,15 +10,15 @@ import {
   Stack,
 } from "react-bootstrap"
 import FieldInput from "../core/FieldInput"
-import {
-  useAddNotification,
-  useFetchNotificationTypes,
-} from "../../hooks/queries/NotificationQueries"
 import FieldSelect from "../core/FieldSelect"
 import FieldFile from "../core/FieldFile"
 import { useNavigate } from "react-router-dom"
+import {
+  useAddDocument,
+  useFetchDocumnentTypes,
+} from "../../hooks/queries/PublicationQueries"
 
-const CreateNotificationForm = () => {
+const AddDocumentForm = () => {
   // States
 
   // Refs
@@ -33,9 +33,9 @@ const CreateNotificationForm = () => {
 
   // Hooks
   const navigate = useNavigate()
-  // Notification Queries
-  const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
-  const createNotification = useAddNotification(onSuccess, onError)
+  // Publication Queries
+  const documentTypes = useFetchDocumnentTypes(onSuccess, onError)
+  const addDocument = useAddDocument(onSuccess, onError)
 
   // Constants
   const FILE_TYPES = ["application/pdf", "application/x-pdf"]
@@ -45,20 +45,18 @@ const CreateNotificationForm = () => {
   // Formik
   // Initial Values
   const initialValues = {
-    notificationDetails: {
+    documentDetails: {
       title: "",
-      notificationTypeId: "",
+      documentTypeId: "",
     },
     file: null,
   }
 
   // Schema
   const validationSchema = yup.object({
-    notificationDetails: yup.object({
+    documentDetails: yup.object({
       title: yup.string().required("Title is required"),
-      notificationTypeId: yup
-        .string()
-        .required("Notification Type is required"),
+      documentTypeId: yup.string().required("Document Type is required"),
     }),
     file: yup
       .mixed()
@@ -77,11 +75,8 @@ const CreateNotificationForm = () => {
     const formData = new FormData()
     // Update the object
     formData.append("file", values.file)
-    formData.append(
-      "notificationDetails",
-      JSON.stringify(values.notificationDetails)
-    )
-    createNotification.mutate(formData)
+    formData.append("documentDetails", JSON.stringify(values.documentDetails))
+    addDocument.mutate(formData)
     navigate(-1)
   }
 
@@ -108,21 +103,21 @@ const CreateNotificationForm = () => {
                     {/* Title */}
                     <div>
                       <FieldInput
-                        name="notificationDetails.title"
+                        name="documentDetails.title"
                         label="Title"
                         formik={formik}
                         isRequired={true}
                       />
                     </div>
-                    {/* Notification Type */}
+                    {/* Document Type */}
                     <div>
                       <FieldSelect
-                        name="notificationDetails.notificationTypeId"
-                        label="Notification Type"
+                        name="documentDetails.documentTypeId"
+                        label="Document Type"
                         formik={formik}
                         isRequired={true}
                       >
-                        {notificationTypes?.data?.data?.data.map((type) => (
+                        {documentTypes?.data?.data?.data.map((type) => (
                           <option key={type.id} value={type.id}>
                             {type.name}
                           </option>
@@ -140,7 +135,7 @@ const CreateNotificationForm = () => {
                     </div>
                     {/* Add Button */}
                     <div className="mt-2">
-                      <Button type="submit">Create</Button>
+                      <Button type="submit">Add</Button>
                     </div>
                   </Stack>
                 </Form>
@@ -153,4 +148,4 @@ const CreateNotificationForm = () => {
   )
 }
 
-export default CreateNotificationForm
+export default AddDocumentForm

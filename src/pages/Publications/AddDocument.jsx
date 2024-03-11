@@ -1,14 +1,14 @@
 import React from "react"
 import { Container } from "react-bootstrap"
-import CreateNotificationForm from "../../components/forms/CreateNotificationForm"
+import AddDocumentForm from "../../components/forms/AddDocumentForm"
 
-const AddNotification = () => {
+const AddDocument = () => {
   return (
     <Container>
       <h3 className="text-center my-4 bg-light">Add New Document</h3>
-      <CreateNotificationForm />
+      <AddDocumentForm />
     </Container>
   )
 }
 
-export default AddNotification
+export default AddDocument

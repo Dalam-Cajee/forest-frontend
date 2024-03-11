@@ -10,15 +10,15 @@ import {
   Stack,
 } from "react-bootstrap"
 import FieldInput from "../core/FieldInput"
-import {
-  useAddNotification,
-  useFetchNotificationTypes,
-} from "../../hooks/queries/NotificationQueries"
 import FieldSelect from "../core/FieldSelect"
 import FieldFile from "../core/FieldFile"
 import { useNavigate } from "react-router-dom"
+import {
+  useAddGalleryPhotos,
+  useFetchGalleryCategory,
+} from "../../hooks/queries/GalleryQueries"
 
-const CreateNotificationForm = () => {
+const CreateGalleryPhotoForm = () => {
   // States
 
   // Refs
@@ -33,32 +33,30 @@ const CreateNotificationForm = () => {
 
   // Hooks
   const navigate = useNavigate()
-  // Notification Queries
-  const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
-  const createNotification = useAddNotification(onSuccess, onError)
+  // Gallery Queries
+  const galleryCategory = useFetchGalleryCategory(onSuccess, onError)
+  const addGalleryPhotos = useAddGalleryPhotos(onSuccess, onError)
 
   // Constants
-  const FILE_TYPES = ["application/pdf", "application/x-pdf"]
+  const FILE_TYPES = ["image/png", "image/jpg", "image/jpeg"]
 
-  const FILE_SIZE = 500 * 1024 * 1024 // 500MB
+  const FILE_SIZE = 5 * 1024 * 1024 // 5MB
 
   // Formik
   // Initial Values
   const initialValues = {
-    notificationDetails: {
+    galleryDetails: {
       title: "",
-      notificationTypeId: "",
+      galleryTypeId: "",
     },
     file: null,
   }
 
   // Schema
   const validationSchema = yup.object({
-    notificationDetails: yup.object({
+    galleryDetails: yup.object({
       title: yup.string().required("Title is required"),
-      notificationTypeId: yup
-        .string()
-        .required("Notification Type is required"),
+      galleryTypeId: yup.string().required("Gallery Category is required"),
     }),
     file: yup
       .mixed()
@@ -77,11 +75,9 @@ const CreateNotificationForm = () => {
     const formData = new FormData()
     // Update the object
     formData.append("file", values.file)
-    formData.append(
-      "notificationDetails",
-      JSON.stringify(values.notificationDetails)
-    )
-    createNotification.mutate(formData)
+    formData.append("galleryDetails", JSON.stringify(values.galleryDetails))
+    // addGalleryPhotos.mutate(formData)
+    console.log("file", values.file)
     navigate(-1)
   }
 
@@ -108,21 +104,21 @@ const CreateNotificationForm = () => {
                     {/* Title */}
                     <div>
                       <FieldInput
-                        name="notificationDetails.title"
+                        name="galleryDetails.title"
                         label="Title"
                         formik={formik}
                         isRequired={true}
                       />
                     </div>
-                    {/* Notification Type */}
+                    {/* Gallery Category */}
                     <div>
                       <FieldSelect
-                        name="notificationDetails.notificationTypeId"
-                        label="Notification Type"
+                        name="galleryDetails.galleryTypeId"
+                        label="Gallery Category"
                         formik={formik}
                         isRequired={true}
                       >
-                        {notificationTypes?.data?.data?.data.map((type) => (
+                        {galleryCategory?.data?.data?.data.map((type) => (
                           <option key={type.id} value={type.id}>
                             {type.name}
                           </option>
@@ -133,14 +129,14 @@ const CreateNotificationForm = () => {
                     <div>
                       <FieldFile
                         name="file"
-                        label="Upload Document(PDF)"
+                        label="Upload Image(jpg/jpeg/png)"
                         formik={formik}
                         isRequired={true}
                       />
                     </div>
                     {/* Add Button */}
                     <div className="mt-2">
-                      <Button type="submit">Create</Button>
+                      <Button type="submit">Add</Button>
                     </div>
                   </Stack>
                 </Form>
@@ -153,4 +149,4 @@ const CreateNotificationForm = () => {
   )
 }
 
-export default CreateNotificationForm
+export default CreateGalleryPhotoForm

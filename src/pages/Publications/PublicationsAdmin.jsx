@@ -1,28 +1,29 @@
 import React, { useState } from "react"
 import {
-  Container,
-  Table,
   Button,
-  Tabs,
-  Tab,
+  Container,
   Modal,
-  ModalHeader,
   ModalBody,
+  ModalHeader,
   ModalTitle,
+  Tab,
+  Table,
+  Tabs,
 } from "react-bootstrap"
 import {
-  useFetchNotificationTypes,
-  useFetchNotifications,
-} from "../../hooks/queries/NotificationQueries"
-import { useNavigate } from "react-router-dom"
+  useFetchDocuments,
+  useFetchDocumnentTypes,
+} from "../../hooks/queries/PublicationQueries"
 import { BsPlus } from "react-icons/bs"
-import AddNotificationTypeForm from "../../components/forms/AddNotificationTypeForm"
+import AddDocumentTypeForm from "../../components/forms/AddDocumentTypeForm"
+import { useNavigate } from "react-router-dom"
 
-const NotificationsAdmin = () => {
-  // States
+const PublicationsAdmin = () => {
+  //States
   const [show, setShow] = useState(false)
 
   // Refs
+  const navigate = useNavigate()
 
   // Functions
   const onSuccess = (response) => {
@@ -33,10 +34,9 @@ const NotificationsAdmin = () => {
   }
 
   // Hooks
-  const navigate = useNavigate()
-  // Notification Queries
-  const notifications = useFetchNotifications(onSuccess, onError)
-  const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
+  // Publication Queries
+  const documents = useFetchDocuments(onSuccess, onError)
+  const documentTypes = useFetchDocumnentTypes(onSuccess, onError)
 
   // Constants
 
@@ -49,44 +49,41 @@ const NotificationsAdmin = () => {
   return (
     <Container>
       <h3 className="text-center mt-4 mb-5 bg-light">
-        Notification Admin Panel
+        Publications Admin Panel
       </h3>
       {/* Tabs */}
-      <Tabs defaultActiveKey="notifications" justify>
-        {/* Create Notification */}
-        <Tab eventKey="notifications" title="Notifications">
+      <Tabs defaultActiveKey="documents" justify>
+        {/* Add Documents */}
+        <Tab eventKey="documents" title="Documents">
           <Button
             className="float-end my-3"
             size="sm"
             onClick={() => navigate("create")}
           >
             <BsPlus className="fs-4" />
-            Create Notification
+            Add Document
           </Button>
-          {/* Notifications Table */}
+          {/* Documents Table */}
           <Table striped bordered hover className="my-2">
             <thead className="table-dark">
               <tr>
                 <th>Title</th>
-                <th>Notification Type</th>
+                <th>Document Type</th>
                 <th>Active</th>
-                <th>Archive</th>
                 <th>Created Date</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {notifications?.data?.data?.data ? (
-                notifications?.data?.data?.data?.map((notification) => {
-                  const active = JSON.stringify(notification.isActive)
-                  const archive = JSON.stringify(notification.isArchive)
+              {documents?.data?.data?.data ? (
+                documents?.data?.data?.data?.map((document) => {
+                  const active = JSON.stringify(document.isActive)
                   return (
-                    <tr key={notification.id}>
-                      <td>{notification.title}</td>
-                      <td>{notification.notificationTypeName}</td>
+                    <tr key={document.id}>
+                      <td>{document.title}</td>
+                      <td>{document.documentTypeName}</td>
                       <td>{active}</td>
-                      <td>{archive}</td>
-                      <td>{notification.createdDate}</td>
+                      <td>{document.createdDate}</td>
                       <td>
                         <Button variant="danger" size="sm">
                           Delete
@@ -105,17 +102,17 @@ const NotificationsAdmin = () => {
             </tbody>
           </Table>
         </Tab>
-        {/* Add Notification Type */}
-        <Tab eventKey="notificationTypes" title="Notification Types">
+        {/* Add Document Types */}
+        <Tab eventKey="documentTypes" title="Document Types">
           <Button
             className="float-end my-3"
             size="sm"
             onClick={() => handleShow()}
           >
             <BsPlus className="fs-4" />
-            Add Notification Type
+            Add Document Type
           </Button>
-          {/* Modal for Adding Notification Types */}
+          {/* Modal for Adding Document Types */}
           <Modal
             show={show}
             onHide={handleClose}
@@ -125,14 +122,14 @@ const NotificationsAdmin = () => {
           >
             <ModalHeader closeButton>
               <ModalTitle className="d-flex justify-content-center w-100">
-                Add New Notification Type
+                Add New Document Type
               </ModalTitle>
             </ModalHeader>
             <ModalBody>
-              <AddNotificationTypeForm setShow={setShow} />
+              <AddDocumentTypeForm setShow={setShow} />
             </ModalBody>
           </Modal>
-          {/* Notification Types Table */}
+          {/* Document Types Table */}
           <Table striped bordered hover className="my-2">
             <thead className="table-dark">
               <tr>
@@ -142,8 +139,8 @@ const NotificationsAdmin = () => {
               </tr>
             </thead>
             <tbody>
-              {notificationTypes?.data?.data?.data ? (
-                notificationTypes?.data?.data?.data?.map((type) => {
+              {documentTypes?.data?.data?.data ? (
+                documentTypes?.data?.data?.data?.map((type) => {
                   return (
                     <tr key={type.id}>
                       <td>{type.id}</td>
@@ -171,4 +168,4 @@ const NotificationsAdmin = () => {
   )
 }
 
-export default NotificationsAdmin
+export default PublicationsAdmin

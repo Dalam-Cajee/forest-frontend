@@ -3,9 +3,9 @@ import { Formik, Form } from "formik"
 import * as yup from "yup"
 import { Button, Card, CardBody, Stack } from "react-bootstrap"
 import FieldInput from "../core/FieldInput"
-import { useAddNotificationType } from "../../hooks/queries/NotificationQueries"
+import { useAddDocumentType } from "../../hooks/queries/PublicationQueries"
 
-const AddNotificationTypeForm = ({ setShow }) => {
+const AddDocumentTypeForm = ({ setShow }) => {
   // States
 
   // Refs
@@ -19,7 +19,8 @@ const AddNotificationTypeForm = ({ setShow }) => {
   }
 
   // Hooks
-  const createNotificationType = useAddNotificationType(onSuccess, onError)
+  const createDocumentType = useAddDocumentType(onSuccess, onError)
+
   // Constants
 
   // Formik
@@ -30,12 +31,12 @@ const AddNotificationTypeForm = ({ setShow }) => {
 
   // Schema
   const validationSchema = yup.object({
-    name: yup.string().required("Notification Type is required"),
+    name: yup.string().required("Document Type is required"),
   })
 
   // Handlers
   const onSubmit = (values) => {
-    createNotificationType.mutate(values)
+    createDocumentType.mutate(values)
     setShow(false)
   }
 
@@ -56,7 +57,7 @@ const AddNotificationTypeForm = ({ setShow }) => {
                   <div>
                     <FieldInput
                       name="name"
-                      label="Notification Type"
+                      label="Document Type"
                       formik={formik}
                       isRequired={true}
                     />
@@ -77,4 +78,4 @@ const AddNotificationTypeForm = ({ setShow }) => {
   )
 }
 
-export default AddNotificationTypeForm
+export default AddDocumentTypeForm
