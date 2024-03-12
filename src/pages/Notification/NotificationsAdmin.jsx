@@ -13,6 +13,7 @@ import {
 import {
   useFetchNotificationTypes,
   useFetchNotifications,
+  usePutNotificationArchive,
 } from "../../hooks/queries/NotificationQueries"
 import { useNavigate } from "react-router-dom"
 import { BsPlus } from "react-icons/bs"
@@ -37,10 +38,13 @@ const NotificationsAdmin = () => {
   // Notification Queries
   const notifications = useFetchNotifications(onSuccess, onError)
   const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
+  const putArchive = usePutNotificationArchive(onSuccess, onError)
 
   // Constants
 
   // Handlers
+  // Delete
+  const handleDelete = (id) => putArchive.mutate(id)
   // Show modal
   const handleShow = () => setShow(true)
   // Close Modal
@@ -88,7 +92,11 @@ const NotificationsAdmin = () => {
                       <td>{archive}</td>
                       <td>{notification.createdDate}</td>
                       <td>
-                        <Button variant="danger" size="sm">
+                        <Button
+                          variant="danger"
+                          size="sm"
+                          onClick={() => handleDelete(notification.id)}
+                        >
                           Delete
                         </Button>
                       </td>

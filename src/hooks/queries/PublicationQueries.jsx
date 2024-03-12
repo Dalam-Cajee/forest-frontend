@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "react-query"
 import { request } from "../../components/utils/request"
 
-// Get All Documents
+// GET Documents
 const fetchDocuments = () => {
   return request({
     url: "/document/getAllDocument",
@@ -16,7 +16,7 @@ export const useFetchDocuments = (onSuccess, onError) => {
   })
 }
 
-// Add Documents
+// POST Add Documents
 const addDocument = (data) => {
   return request({
     url: "/document/add",
@@ -32,7 +32,7 @@ export const useAddDocument = (onSuccess, onError) => {
   })
 }
 
-// Get Document Types
+// GET Document Types
 const fetchDocumnentTypes = () => {
   return request({
     url: "/documentType/get",
@@ -47,7 +47,7 @@ export const useFetchDocumnentTypes = (onSuccess, onError) => {
   })
 }
 
-// Add Notification Type
+// POST Add Notification Type
 const addDocumentType = (data) => {
   return request({
     url: "/documentType/add",

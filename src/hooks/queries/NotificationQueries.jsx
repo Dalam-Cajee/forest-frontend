@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "react-query"
 import { request } from "../../components/utils/request"
 
-// Get All Notifications
+// GET Notifications
 const fetchNotifications = () => {
   return request({
     url: "/notification/getAllNotification",
@@ -16,7 +16,7 @@ export const useFetchNotifications = (onSuccess, onError) => {
   })
 }
 
-// Add Notification
+// POST Add Notification
 const addNotification = (data) => {
   return request({
     url: "/notification/add",
@@ -32,7 +32,7 @@ export const useAddNotification = (onSuccess, onError) => {
   })
 }
 
-// Get Notification Types
+// GET Notification Types
 const fetchNotificationTypes = () => {
   return request({
     url: "/notification_type/get",
@@ -47,7 +47,7 @@ export const useFetchNotificationTypes = (onSuccess, onError) => {
   })
 }
 
-// Add Notification Type
+// POST Add Notification Type
 const addNotificationType = (data) => {
   return request({
     url: "/notification_type/add",
@@ -58,6 +58,52 @@ const addNotificationType = (data) => {
 
 export const useAddNotificationType = (onSuccess, onError) => {
   return useMutation(addNotificationType, {
+    onSuccess,
+    onError,
+  })
+}
+
+// GET Archive
+const fetchNotificationArchive = () => {
+  return request({
+    url: "/notification/getAllArchive",
+    method: "get",
+  })
+}
+
+export const useFetchNotificationArchive = (onSuccess, onError) => {
+  return useQuery("get-archive", () => fetchNotificationArchive(), {
+    onSuccess,
+    onError,
+  })
+}
+
+// GET Archived Notification
+const fetchPDF = (id) => {
+  return request({
+    url: `/notification/download/${id}`,
+    method: "get",
+    responseType: "blob",
+  })
+}
+
+export const useFetchPDF = (onSuccess, onError) => {
+  return useQuery(["get-PDF", id], () => fetchPDF(), {
+    onSuccess,
+    onError,
+  })
+}
+
+// PUT Notification Archive
+const putNotificationArchive = (id) => {
+  return request({
+    url: `/notification/archive/${id}`,
+    method: "put",
+  })
+}
+
+export const usePutNotificationArchive = (onSuccess, onError) => {
+  return useMutation(putNotificationArchive, {
     onSuccess,
     onError,
   })

@@ -66,6 +66,7 @@ import AddDocument from "./pages/Publications/AddDocument"
 import Gallery from "./pages/Gallery/Gallery"
 import GalleryAdmin from "./pages/Gallery/GalleryAdmin"
 import AddGalleryPhotos from "./pages/Gallery/AddGalleryPhotos"
+import Archive from "./pages/Notification/Archive"
 
 function App() {
   return (
@@ -83,6 +84,8 @@ function App() {
           path="notifications/admin/create"
           element={<AddNotification />}
         />
+        {/* Archive */}
+        <Route path="archive" element={<Archive />} />
 
         {/* Publications */}
         <Route path="publications" element={<Publications />} />

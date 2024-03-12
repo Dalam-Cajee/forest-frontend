@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "react-query"
 import { request } from "../../components/utils/request"
 
-// Get All Gallery Photos
+// GET Gallery Photos
 const fetchGallery = () => {
   return request({
     url: "/gallery/getAllGallery",
@@ -16,7 +16,7 @@ export const useFetchGallery = (onSuccess, onError) => {
   })
 }
 
-// Add Gallery Photos
+// POST Add Gallery Photos
 const addGalleryPhotos = (data) => {
   return request({
     url: "/gallery/add",
@@ -32,7 +32,7 @@ export const useAddGalleryPhotos = (onSuccess, onError) => {
   })
 }
 
-// Get Gallery Category
+// GET Gallery Category
 const fetchGalleryCategory = () => {
   return request({
     url: "/galleryType/get",
@@ -47,7 +47,7 @@ export const useFetchGalleryCategory = (onSuccess, onError) => {
   })
 }
 
-// Add Gallery Category
+// POST Add Gallery Category
 const addGalleryCategory = (data) => {
   return request({
     url: "/galleryType/add",
