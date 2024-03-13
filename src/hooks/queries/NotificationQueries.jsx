@@ -32,6 +32,21 @@ export const useAddNotification = (onSuccess, onError) => {
   })
 }
 
+// DELETE Notification
+const deleteNotification = (id) => {
+  return request({
+    url: `/notification/delete/${id}`,
+    method: "delete",
+  })
+}
+
+export const useDeleteNotification = (onSuccess, onError) => {
+  return useMutation(deleteNotification, {
+    onSuccess,
+    onError,
+  })
+}
+
 // GET Notification Types
 const fetchNotificationTypes = () => {
   return request({

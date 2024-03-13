@@ -11,12 +11,13 @@ import {
   ModalTitle,
 } from "react-bootstrap"
 import {
+  useDeleteNotification,
   useFetchNotificationTypes,
   useFetchNotifications,
   usePutNotificationArchive,
 } from "../../hooks/queries/NotificationQueries"
 import { useNavigate } from "react-router-dom"
-import { BsPlus } from "react-icons/bs"
+import { BsArchive, BsPlus, BsTrashFill } from "react-icons/bs"
 import AddNotificationTypeForm from "../../components/forms/AddNotificationTypeForm"
 
 const NotificationsAdmin = () => {
@@ -39,15 +40,15 @@ const NotificationsAdmin = () => {
   const notifications = useFetchNotifications(onSuccess, onError)
   const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
   const putArchive = usePutNotificationArchive(onSuccess, onError)
+  const deleteNotification = useDeleteNotification(onSuccess, onError)
 
   // Constants
 
   // Handlers
-  // Delete
-  const handleDelete = (id) => putArchive.mutate(id)
-  // Show modal
+  const handleArchive = (id) => putArchive.mutate(id)
+  const handleDelete = (id) => deleteNotification.mutate(id)
+  // Modal
   const handleShow = () => setShow(true)
-  // Close Modal
   const handleClose = () => setShow(false)
 
   return (
@@ -92,12 +93,21 @@ const NotificationsAdmin = () => {
                       <td>{archive}</td>
                       <td>{notification.createdDate}</td>
                       <td>
+                        {/* Archive Button */}
                         <Button
-                          variant="danger"
+                          variant="outline"
+                          size="sm"
+                          onClick={() => handleArchive(notification.id)}
+                        >
+                          <BsArchive title="Archive" />
+                        </Button>
+                        {/* Delete Button */}
+                        <Button
+                          variant="outline"
                           size="sm"
                           onClick={() => handleDelete(notification.id)}
                         >
-                          Delete
+                          <BsTrashFill title="Delete" />
                         </Button>
                       </td>
                     </tr>
@@ -157,8 +167,8 @@ const NotificationsAdmin = () => {
                       <td>{type.id}</td>
                       <td>{type.name}</td>
                       <td>
-                        <Button variant="danger" size="sm">
-                          Delete
+                        <Button variant="outline" size="sm">
+                          <BsTrashFill title="Delete" />
                         </Button>
                       </td>
                     </tr>

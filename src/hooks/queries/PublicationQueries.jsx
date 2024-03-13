@@ -32,6 +32,21 @@ export const useAddDocument = (onSuccess, onError) => {
   })
 }
 
+// DELETE Document
+const deleteDocument = (id) => {
+  return request({
+    url: `/document/delete/${id}`,
+    method: "delete",
+  })
+}
+
+export const useDeleteDocument = (onSuccess, onError) => {
+  return useMutation(deleteDocument, {
+    onSuccess,
+    onError,
+  })
+}
+
 // GET Document Types
 const fetchDocumnentTypes = () => {
   return request({

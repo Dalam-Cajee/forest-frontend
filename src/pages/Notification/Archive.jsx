@@ -4,25 +4,27 @@ import {
   useFetchNotificationArchive,
   useFetchPDF,
 } from "../../hooks/queries/NotificationQueries"
-import { BsDownload } from "react-icons/bs"
+import { BsFilePdfFill } from "react-icons/bs"
 
 const Archive = () => {
   // Functions
   const onSuccess = (response) => {
     const fileUrl = window.URL.createObjectURL(response.data)
     window.open(fileUrl, "_blank")
-    return response
+    // return response
   }
   const onError = (error) => {
     return error
   }
+
   // Hooks
   // Notification Queries
   const archiveNotification = useFetchNotificationArchive()
-  const fetchPdfQuery = useFetchPDF(onSuccess, onError)
+  const fetchPdf = useFetchPDF(onSuccess, onError)
+
   // Handlers
   const handleDownload = (id) => {
-    fetchPdfQuery.mutate(id)
+    fetchPdf.mutate(id)
   }
 
   return (
@@ -47,12 +49,12 @@ const Archive = () => {
                   <td>{archive.title}</td>
                   <td className="text-center">
                     <Button
-                      variant="outline"
+                      variant="light"
                       title="Download"
                       size="sm"
                       onClick={() => handleDownload(archive.id)}
                     >
-                      <BsDownload />
+                      <BsFilePdfFill />
                     </Button>
                   </td>
                 </tr>

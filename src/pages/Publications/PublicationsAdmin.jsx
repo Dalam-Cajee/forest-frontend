@@ -11,10 +11,11 @@ import {
   Tabs,
 } from "react-bootstrap"
 import {
+  useDeleteDocument,
   useFetchDocuments,
   useFetchDocumnentTypes,
 } from "../../hooks/queries/PublicationQueries"
-import { BsPlus } from "react-icons/bs"
+import { BsPlus, BsTrashFill } from "react-icons/bs"
 import AddDocumentTypeForm from "../../components/forms/AddDocumentTypeForm"
 import { useNavigate } from "react-router-dom"
 
@@ -37,13 +38,14 @@ const PublicationsAdmin = () => {
   // Publication Queries
   const documents = useFetchDocuments(onSuccess, onError)
   const documentTypes = useFetchDocumnentTypes(onSuccess, onError)
+  const deleteDocument = useDeleteDocument(onSuccess, onError)
 
   // Constants
 
   // Handlers
-  // Show modal
+  const handleDelete = (id) => deleteDocument.mutate(id)
+  // Modal
   const handleShow = () => setShow(true)
-  // Close Modal
   const handleClose = () => setShow(false)
 
   return (
@@ -77,7 +79,7 @@ const PublicationsAdmin = () => {
             <tbody>
               {documents?.data?.data?.data ? (
                 documents?.data?.data?.data?.map((document) => {
-                  const active = JSON.stringify(document.isActive)
+                  const active = JSON.stringify(document.active)
                   return (
                     <tr key={document.id}>
                       <td>{document.title}</td>
@@ -85,8 +87,11 @@ const PublicationsAdmin = () => {
                       <td>{active}</td>
                       <td>{document.createdDate}</td>
                       <td>
-                        <Button variant="danger" size="sm">
-                          Delete
+                        <Button variant="outline" size="sm">
+                          <BsTrashFill
+                            title="Delete"
+                            onClick={() => handleDelete(document.id)}
+                          />
                         </Button>
                       </td>
                     </tr>
@@ -146,8 +151,8 @@ const PublicationsAdmin = () => {
                       <td>{type.id}</td>
                       <td>{type.name}</td>
                       <td>
-                        <Button variant="danger" size="sm">
-                          Delete
+                        <Button variant="outline" size="sm">
+                          <BsTrashFill title="Delete" />
                         </Button>
                       </td>
                     </tr>
