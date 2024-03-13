@@ -1,14 +1,16 @@
-import React from 'react'
-import { Button, Container, Table } from 'react-bootstrap'
+import React, { useState } from "react"
+import { Button, Container, Table } from "react-bootstrap"
 import {
   useFetchNotificationArchive,
   useFetchPDF,
-} from '../../hooks/queries/NotificationQueries'
-import { BsDownload } from 'react-icons/bs'
+} from "../../hooks/queries/NotificationQueries"
+import { BsDownload } from "react-icons/bs"
 
 const Archive = () => {
   // Functions
   const onSuccess = (response) => {
+    const fileUrl = window.URL.createObjectURL(response.data)
+    window.open(fileUrl, "_blank")
     return response
   }
   const onError = (error) => {
@@ -16,24 +18,23 @@ const Archive = () => {
   }
   // Hooks
   // Notification Queries
-  const archiveNotification = useFetchNotificationArchive(onSuccess, onError)
-
+  const archiveNotification = useFetchNotificationArchive()
+  const fetchPdfQuery = useFetchPDF(onSuccess, onError)
   // Handlers
   const handleDownload = (id) => {
-    // Query
-    useFetchPDF(id)
+    fetchPdfQuery.mutate(id)
   }
 
   return (
     <Container>
       <h3>Archive Page</h3>
       <Table striped bordered>
-        <thead className='table-dark'>
+        <thead className="table-dark">
           <tr>
             <td>Created Date</td>
             <td>Notification Type</td>
             <td>Title</td>
-            <td>Download</td>
+            <td className="text-center">Download</td>
           </tr>
         </thead>
         <tbody>
@@ -44,11 +45,11 @@ const Archive = () => {
                   <td>{archive.createdDate}</td>
                   <td>{archive.notificationTypeName}</td>
                   <td>{archive.title}</td>
-                  <td className='text-center'>
+                  <td className="text-center">
                     <Button
-                      variant='outline'
-                      title='Download'
-                      size='sm'
+                      variant="outline"
+                      title="Download"
+                      size="sm"
                       onClick={() => handleDownload(archive.id)}
                     >
                       <BsDownload />
@@ -59,7 +60,7 @@ const Archive = () => {
             })
           ) : (
             <tr>
-              <td colSpan='6' className='text-center'>
+              <td colSpan="6" className="text-center">
                 --- No Data Available ---
               </td>
             </tr>

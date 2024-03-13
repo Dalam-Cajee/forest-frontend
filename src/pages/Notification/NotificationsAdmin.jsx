@@ -82,8 +82,8 @@ const NotificationsAdmin = () => {
             <tbody>
               {notifications?.data?.data?.data ? (
                 notifications?.data?.data?.data?.map((notification) => {
-                  const active = JSON.stringify(notification.isActive)
-                  const archive = JSON.stringify(notification.isArchive)
+                  const active = JSON.stringify(notification.active)
+                  const archive = JSON.stringify(notification.archive)
                   return (
                     <tr key={notification.id}>
                       <td>{notification.title}</td>
