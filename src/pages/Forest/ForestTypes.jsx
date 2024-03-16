@@ -1,7 +1,7 @@
-import React from "react"
-import { Container, Image } from "react-bootstrap"
-import type1 from "../../assets/Forest/forest_types01.jpg"
-import type2 from "../../assets/Forest/forest_types02.jpg"
+import React from 'react'
+import { Container, Image } from 'react-bootstrap'
+import type1 from '../../assets/Forest/forest_types01.jpg'
+import type2 from '../../assets/Forest/forest_types02.jpg'
 
 const ForestTypes = () => {
   return (
@@ -13,12 +13,12 @@ const ForestTypes = () => {
         vegetation ranging from Temperate, Sub-Tropical and upto Tropical type
         are due to diverse topography and variation in rainfall.
       </p>
-      <div className="text-center">
-        <div>
-          <Image src={type1} thumbnail />
+      <div className='text-center'>
+        <div className='mb-4'>
+          <Image src={type2} thumbnail />
         </div>
         <div>
-          <Image src={type2} thumbnail />
+          <Image src={type1} thumbnail />
         </div>
       </div>
     </Container>

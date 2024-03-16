@@ -1,14 +1,14 @@
-import React from "react"
-import { Container, Figure, FigureCaption, FigureImage } from "react-bootstrap"
-import forest1 from "../../assets/Forest/forest_cover01.gif"
-import forest2 from "../../assets/Forest/forest_cover02.gif"
-import forest3 from "../../assets/Forest/forest_cover03.gif"
+import React from 'react'
+import { Container, Figure, FigureCaption, FigureImage } from 'react-bootstrap'
+import forest1 from '../../assets/Forest/forest_cover01.gif'
+import forest2 from '../../assets/Forest/forest_cover02.gif'
+import forest3 from '../../assets/Forest/forest_cover03.gif'
 
 const ForestCover = () => {
   return (
     <Container>
       <h2>Forest Cover</h2>
-      <div className="text-center">
+      <div className='text-center'>
         <Figure>
           <div>
             <FigureImage src={forest1} thumbnail />
@@ -38,12 +38,12 @@ const ForestCover = () => {
         forest areas belong to communities, clan and private people and District
         Councils.Three Autonomous District Councils have been set up under the
         provisions of the Sixth Schedule to the Constitution of India Viz.
-        <ol numbered>
-          <li>Khasi Hills Autonomous District Councils</li>
-          <li>Jaintia Hills Autonomous District Councils</li>
-          <li>Garo Hills Autonomous District Councils</li>
-        </ol>
       </p>
+      <ol>
+        <li>Khasi Hills Autonomous District Councils</li>
+        <li>Jaintia Hills Autonomous District Councils</li>
+        <li>Garo Hills Autonomous District Councils</li>
+      </ol>
       <p>
         Under Para 3 of Sixth Schedule, the District Councils have power to make
         laws with respect to, among others, the management of
@@ -64,7 +64,7 @@ const ForestCover = () => {
         without penalty shall be allowed to shift to industrial estates and
         others would be allowed to wind up as per law.
       </p>
-      <div className="text-center">
+      <div className='text-center'>
         <Figure>
           <FigureImage src={forest3} thumbnail />
           <FigureCaption>

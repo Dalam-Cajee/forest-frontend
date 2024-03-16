@@ -1,5 +1,5 @@
-import React from "react"
-import { Container } from "react-bootstrap"
+import React from 'react'
+import { Container } from 'react-bootstrap'
 
 const WorkingPlans = () => {
   return (
@@ -9,18 +9,16 @@ const WorkingPlans = () => {
       <p>
         The RF/PF are managed as per the prescription of approved working plan.
         The salient features of management are:-
-        <ul>
-          <li>No felling prescribed in working plans for RF/PF</li>
-          <li>Protection works for protecting from fire and biotic pressure</li>
-          <li>
-            Conservation of rare n endangered plants, endemic plants medicinal
-            plants
-          </li>
-          <li>Conservation and protection of catchment areas</li>
-          <li>Protection wild life in natural forests</li>
-          <li>Plantation works in blanks and gaps</li>
-          <li>Removal of only wind fallen trees and dead trees</li>
-        </ul>
+        <li>No felling prescribed in working plans for RF/PF</li>
+        <li>Protection works for protecting from fire and biotic pressure</li>
+        <li>
+          Conservation of rare n endangered plants, endemic plants medicinal
+          plants
+        </li>
+        <li>Conservation and protection of catchment areas</li>
+        <li>Protection wild life in natural forests</li>
+        <li>Plantation works in blanks and gaps</li>
+        <li>Removal of only wind fallen trees and dead trees</li>
       </p>
       <p>
         The Working Plans were prepared for the Reserve Forest and Protected

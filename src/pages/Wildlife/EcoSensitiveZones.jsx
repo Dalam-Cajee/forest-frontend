@@ -10,20 +10,18 @@ const EcoSensitiveZones = () => {
       <p>
         Till date the Eco Sensitive Zone has been approved by the MoEF&CC,
         Government of India for the:
-        <ol>
-          <li>
-            <a href={wildlifePDF1} target='_blank'>
-              Nongkhyllem Wildlife Sanctuary Vide Govt. of India Gazette
-              Notification S.O.1816(E) Dtd,07-05-2017
-            </a>
-          </li>
-          <li>
-            <a href={wildlifePDF2} target='_blank'>
-              Narpuh Wildlife Sanctuary Vide Govt. of India Gazette Notification
-              S.O.2942(E) Dtd,06-09-2017
-            </a>
-          </li>
-        </ol>
+        <li>
+          <a href={wildlifePDF1} target='_blank'>
+            Nongkhyllem Wildlife Sanctuary Vide Govt. of India Gazette
+            Notification S.O.1816(E) Dtd,07-05-2017
+          </a>
+        </li>
+        <li>
+          <a href={wildlifePDF2} target='_blank'>
+            Narpuh Wildlife Sanctuary Vide Govt. of India Gazette Notification
+            S.O.2942(E) Dtd,06-09-2017
+          </a>
+        </li>
       </p>
       <p>
         For the other Wildlife sanctuary and National Park the proposal is under

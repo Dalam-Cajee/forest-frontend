@@ -445,7 +445,7 @@ const ReservedForest = () => {
             <td>Moulhoi, East Jaintia Hills</td>
           </tr>
           <tr className='fw-bold'>
-            <td colspan='2'>Total</td>
+            <td colSpan={2}>Total</td>
             <td>308</td>
             <td></td>
           </tr>
@@ -463,10 +463,10 @@ const ReservedForest = () => {
         </thead>
         <tbody>
           <tr>
-            <td rowspan='9'>East Khasi hills </td>
+            <td rowSpan={9}>East Khasi hills </td>
             <td>Children Park, Fire Brigade,Shillong</td>
             <td>0.14</td>
-            <td rowspan='5'>
+            <td rowSpan={5}>
               DFO (T) East Khasi Hills &amp; Ri-Bhoi District, Shillong
             </td>
           </tr>
@@ -489,7 +489,7 @@ const ReservedForest = () => {
           <tr>
             <td>Lady Hydari Park, Shillong</td>
             <td>3.53</td>
-            <td rowspan='2'>DFO, Khasi Hills Wildlife Division, Shillong </td>
+            <td rowSpan={2}>DFO, Khasi Hills Wildlife Division, Shillong </td>
           </tr>
           <tr>
             <td>Lum Nehru Park, Umiam lake</td>
@@ -498,14 +498,14 @@ const ReservedForest = () => {
           <tr>
             <td>Ward's Lake, Shillong </td>
             <td>6.28</td>
-            <td rowspan='2'>DFO, Social Forestry Division, EKH, Shillong</td>
+            <td rowSpan={2}>DFO, Social Forestry Division, EKH, Shillong</td>
           </tr>
           <tr>
             <td>Thangkharang Park </td>
             <td>5.5</td>
           </tr>
           <tr>
-            <td rowspan='2'>Ri-Bhoi</td>
+            <td rowSpan={2}>Ri-Bhoi</td>
             <td>Proposed State Zoo, Ri-bhoi </td>
             <td>72.5 </td>
             <td>DFO, Khasi Hills Wildlife Division, Shillong</td>
@@ -516,7 +516,7 @@ const ReservedForest = () => {
             <td>DFO, Silviculture Division Shillong</td>
           </tr>
           <tr>
-            <td rowspan='3'>West Garo hills </td>
+            <td rowSpan={3}>West Garo hills </td>
             <td>Nehru Park cum Mini Zoo, Tura </td>
             <td>13.4</td>
             <td>DFO, Garo Hills Wildlife Division, Tura </td>
@@ -532,10 +532,10 @@ const ReservedForest = () => {
             <td>West Garo Hills Social Forestry Division, Tura </td>
           </tr>
           <tr>
-            <td rowspan='2'>East Garo Hills </td>
+            <td rowSpan={2}>East Garo Hills </td>
             <td>Williamnagar Children's park</td>
             <td>4.80 </td>
-            <td rowspan='2'>
+            <td rowSpan={2}>
               East Garo Hills Social Forestry Division, Williamnagar
             </td>
           </tr>
@@ -544,7 +544,7 @@ const ReservedForest = () => {
             <td>13 </td>
           </tr>
           <tr className='fw-bold'>
-            <td colspan='2'>Total</td>
+            <td colSpan={2}>Total</td>
             <td>295.39</td>
             <td></td>
           </tr>

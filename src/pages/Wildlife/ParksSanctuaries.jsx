@@ -1,17 +1,17 @@
-import React from "react"
-import { Container, Image, Stack, Table } from "react-bootstrap"
-import parks from "../../assets/Wildlife/wildlife_parks.jpg"
-import parks1 from "../../assets/Wildlife/wildlife_parks01.jpg"
-import parks2 from "../../assets/Wildlife/wildlife_parks02.jpg"
-import parks3 from "../../assets/Wildlife/wildlife_parks03.jpg"
-import parks4 from "../../assets/Wildlife/wildlife_parks04.jpg"
-import parks5 from "../../assets/Wildlife/wildlife_parks05.jpg"
+import React from 'react'
+import { Container, Image, Stack, Table } from 'react-bootstrap'
+import parks from '../../assets/Wildlife/wildlife_parks.jpg'
+import parks1 from '../../assets/Wildlife/wildlife_parks01.jpg'
+import parks2 from '../../assets/Wildlife/wildlife_parks02.jpg'
+import parks3 from '../../assets/Wildlife/wildlife_parks03.jpg'
+import parks4 from '../../assets/Wildlife/wildlife_parks04.jpg'
+import parks5 from '../../assets/Wildlife/wildlife_parks05.jpg'
 
 const ParksSanctuaries = () => {
   return (
     <Container>
       <h2>National Parks and Sanctuaries</h2>
-      <div className="text-center">
+      <div className='text-center'>
         <Image src={parks} thumbnail />
       </div>
       <h5>National Parks</h5>
@@ -35,7 +35,7 @@ const ParksSanctuaries = () => {
         programmes are imperative for achievement of management objectives.
       </p>
       <Table bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
             <th>Sl.No.</th>
             <th>Name and location of Area</th>
@@ -53,14 +53,14 @@ const ParksSanctuaries = () => {
             <td>Garo Hills Elephant Reserve</td>
             <td>3500</td>
           </tr>
-          <tr className="fw-bold">
+          <tr className='fw-bold'>
             <td colSpan={2}>TOTAL</td>
             <td>4320</td>
           </tr>
         </tbody>
       </Table>
       <h4>Nokrek National Park</h4>
-      <a href="https://www.youtube.com/watch?v=kdusVmt70qo">
+      <a href='https://www.youtube.com/watch?v=kdusVmt70qo'>
         Short video on Nokrek Biosphere
       </a>
       <p>
@@ -91,7 +91,7 @@ const ParksSanctuaries = () => {
         <em> Mande Burung</em> (jungle man or ape man) and reported cases of
         sightings found in and around the villages of Nokrek.
       </p>
-      <Stack direction="horizontal" gap={2}>
+      <Stack direction='horizontal' gap={2}>
         <div>
           <Image src={parks1} thumbnail />
         </div>
@@ -165,7 +165,7 @@ const ParksSanctuaries = () => {
         <li>Hatisia IB - 1 No with 7 beds</li>
         <li>Hatisia Student Dormitory - 5 Rooms</li>
       </ol>
-      <Stack direction="horizontal" gap={2}>
+      <Stack direction='horizontal' gap={2}>
         <div>
           <Image src={parks4} thumbnail />
         </div>
@@ -203,7 +203,7 @@ const ParksSanctuaries = () => {
         (Protection) Act,1972, about 30 species are found in this Sanctuary.
       </p>
       <h4>Narpuh Wildlife Sanctuary</h4>
-      <a href="https://www.youtube.com/watch?v=j-HRs64W41o">
+      <a href='https://www.youtube.com/watch?v=j-HRs64W41o'>
         Short video on Narpuh WL Sanctuary
       </a>
       <p>
@@ -227,27 +227,23 @@ const ParksSanctuaries = () => {
         with a rich diversity and abundance of wildlife. Till recently only few
         studies has been conducted to explore the Fauna diversity in the
         Sanctuary, the studies conducted so far are as follows:-
-        <ul>
-          <li>
-            In the year 1996-98, a study was conducted by the Zoological Survey
-            of India, the first at such survey for the District, as per the
-            report there are 25 species of birds, 61 species of mammals, 16
-            species of Reptiles, 74 species of fishes and 15 species of
-            Amphibians.
-          </li>
-          <li>
-            Dr.Anwarruddin Choudhury in the year 1999 has submitted the interim
-            report of wildlife survey in Jaintia Hills, according to which there
-            are more than 120 species of mammals.
-          </li>
-          <li>
-            In 2016-2017, the Department with Dr.RajkamalGoswami from Ashoka
-            Trust for Research in Ecology & the Environment had carried out
-            fauna survey in the Sanctuary using camera trap, as per the study 92
-            species of birds, 35 species of mammals & 199 species of butterfly
-            were recorded.
-          </li>
-        </ul>
+        <li>
+          In the year 1996-98, a study was conducted by the Zoological Survey of
+          India, the first at such survey for the District, as per the report
+          there are 25 species of birds, 61 species of mammals, 16 species of
+          Reptiles, 74 species of fishes and 15 species of Amphibians.
+        </li>
+        <li>
+          Dr.Anwarruddin Choudhury in the year 1999 has submitted the interim
+          report of wildlife survey in Jaintia Hills, according to which there
+          are more than 120 species of mammals.
+        </li>
+        <li>
+          In 2016-2017, the Department with Dr.RajkamalGoswami from Ashoka Trust
+          for Research in Ecology & the Environment had carried out fauna survey
+          in the Sanctuary using camera trap, as per the study 92 species of
+          birds, 35 species of mammals & 199 species of butterfly were recorded.
+        </li>
         <strong>Birds:- </strong>About 92 species have been recorded so far.
         Among the noteworthy species recorded so far includes, Oriental Pied
         Hornbill, Giant or Great Pied Hornbill, Spangled Drongo, Rufous-throated

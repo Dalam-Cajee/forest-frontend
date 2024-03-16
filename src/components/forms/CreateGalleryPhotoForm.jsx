@@ -1,6 +1,6 @@
-import React from "react"
-import { Formik, Form } from "formik"
-import * as yup from "yup"
+import React from 'react'
+import { Formik, Form } from 'formik'
+import * as yup from 'yup'
 import {
   Button,
   Card,
@@ -8,15 +8,15 @@ import {
   CloseButton,
   Container,
   Stack,
-} from "react-bootstrap"
-import FieldInput from "../core/FieldInput"
-import FieldSelect from "../core/FieldSelect"
-import FieldFile from "../core/FieldFile"
-import { useNavigate } from "react-router-dom"
+} from 'react-bootstrap'
+import FieldInput from '../core/FieldInput'
+import FieldSelect from '../core/FieldSelect'
+import FieldFile from '../core/FieldFile'
+import { useNavigate } from 'react-router-dom'
 import {
   useAddGalleryPhotos,
   useFetchGalleryCategory,
-} from "../../hooks/queries/GalleryQueries"
+} from '../../hooks/queries/GalleryQueries'
 
 const CreateGalleryPhotoForm = () => {
   // States
@@ -38,7 +38,7 @@ const CreateGalleryPhotoForm = () => {
   const addGalleryPhotos = useAddGalleryPhotos(onSuccess, onError)
 
   // Constants
-  const FILE_TYPES = ["image/png", "image/jpg", "image/jpeg"]
+  const FILE_TYPES = ['image/png', 'image/jpg', 'image/jpeg']
 
   const FILE_SIZE = 5 * 1024 * 1024 // 5MB
 
@@ -46,8 +46,8 @@ const CreateGalleryPhotoForm = () => {
   // Initial Values
   const initialValues = {
     galleryDetails: {
-      title: "",
-      galleryTypeId: "",
+      title: '',
+      galleryTypeId: '',
     },
     file: null,
   }
@@ -55,16 +55,16 @@ const CreateGalleryPhotoForm = () => {
   // Schema
   const validationSchema = yup.object({
     galleryDetails: yup.object({
-      title: yup.string().required("Title is required"),
-      galleryTypeId: yup.string().required("Gallery Category is required"),
+      title: yup.string().required('Title is required'),
+      galleryTypeId: yup.string().required('Gallery Category is required'),
     }),
     file: yup
       .mixed()
-      .required("File is required")
-      .test("fileFormat", "File format not supported", (value) => {
+      .required('File is required')
+      .test('fileFormat', 'File format not supported', (value) => {
         return value && FILE_TYPES.includes(value.type)
       })
-      .test("fileSize", "File size too large", (value) => {
+      .test('fileSize', 'File size too large', (value) => {
         return value && value.size <= FILE_SIZE
       }),
   })
@@ -74,10 +74,9 @@ const CreateGalleryPhotoForm = () => {
     // Form Data object
     const formData = new FormData()
     // Update the object
-    formData.append("file", values.file)
-    formData.append("galleryDetails", JSON.stringify(values.galleryDetails))
-    // addGalleryPhotos.mutate(formData)
-    console.log("file", values.file)
+    formData.append('file', values.file)
+    formData.append('galleryDetails', JSON.stringify(values.galleryDetails))
+    addGalleryPhotos.mutate(formData)
     navigate(-1)
   }
 
@@ -92,20 +91,20 @@ const CreateGalleryPhotoForm = () => {
         return (
           <Container>
             <Card>
-              <CardBody className="shadow rounded p-3">
+              <CardBody className='shadow rounded p-3'>
                 <Form>
                   <Stack gap={2}>
                     <div>
                       <CloseButton
-                        className="float-end"
+                        className='float-end'
                         onClick={() => navigate(-1)}
                       />
                     </div>
                     {/* Title */}
                     <div>
                       <FieldInput
-                        name="galleryDetails.title"
-                        label="Title"
+                        name='galleryDetails.title'
+                        label='Title'
                         formik={formik}
                         isRequired={true}
                       />
@@ -113,8 +112,8 @@ const CreateGalleryPhotoForm = () => {
                     {/* Gallery Category */}
                     <div>
                       <FieldSelect
-                        name="galleryDetails.galleryTypeId"
-                        label="Gallery Category"
+                        name='galleryDetails.galleryTypeId'
+                        label='Gallery Category'
                         formik={formik}
                         isRequired={true}
                       >
@@ -128,15 +127,15 @@ const CreateGalleryPhotoForm = () => {
                     {/* File Upload */}
                     <div>
                       <FieldFile
-                        name="file"
-                        label="Upload Image(jpg/jpeg/png)"
+                        name='file'
+                        label='Upload Image(jpg/jpeg/png)'
                         formik={formik}
                         isRequired={true}
                       />
                     </div>
                     {/* Add Button */}
-                    <div className="mt-2">
-                      <Button type="submit">Add</Button>
+                    <div className='mt-2'>
+                      <Button type='submit'>Add</Button>
                     </div>
                   </Stack>
                 </Form>

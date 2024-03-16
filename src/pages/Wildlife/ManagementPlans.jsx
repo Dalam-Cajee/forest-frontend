@@ -8,24 +8,22 @@ const ManagementPlans = () => {
       <p>
         Management Plans for the Protected Areas of the State has been prepared
         with the following management objectives:
-        <ul>
-          <li>To protect and conserve the rich flora and fauna</li>
-          <li>
-            To maintain and wherever necessary, to restore and improve the
-            demography of the endangered, endemic, vulnerable, rare and
-            threatened species with special focus on Hoolock gibbon, Great
-            Indian Hornbill and Clouded Leopard
-          </li>
-          <li>
-            To provide quality educational, recreational and wilderness
-            experience through regulated eco-tourism.
-          </li>
-          <li>
-            To reduce people's dependency on the forest-based resources by
-            uplifting their socio-economic conditions through eco-development
-            activities.
-          </li>
-        </ul>
+        <li>To protect and conserve the rich flora and fauna</li>
+        <li>
+          To maintain and wherever necessary, to restore and improve the
+          demography of the endangered, endemic, vulnerable, rare and threatened
+          species with special focus on Hoolock gibbon, Great Indian Hornbill
+          and Clouded Leopard
+        </li>
+        <li>
+          To provide quality educational, recreational and wilderness experience
+          through regulated eco-tourism.
+        </li>
+        <li>
+          To reduce people's dependency on the forest-based resources by
+          uplifting their socio-economic conditions through eco-development
+          activities.
+        </li>
       </p>
       <p>
         The current Management plan for Nongkhyllem Wildlife Sanctuary (FOURTH
