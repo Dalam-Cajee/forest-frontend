@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const client = axios.create({ baseURL: 'http://10.179.2.82:8082' })
-// const client = axios.create({ baseURL: 'http://localhost:8080' })
+// const client = axios.create({ baseURL: 'http://10.179.2.82:8082' })
+const client = axios.create({ baseURL: 'http://localhost:8080' })
 
 export const request = ({ ...options }) => {
   if (localStorage.getItem('token'))

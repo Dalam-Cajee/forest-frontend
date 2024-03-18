@@ -16,6 +16,21 @@ export const useFetchGallery = (onSuccess, onError) => {
   })
 }
 
+// GET Photos based on category ID
+const fetchPhotosByID = (id) => {
+  return request({
+    url: `/gallery/getGallery/${id}`,
+    method: 'get',
+  })
+}
+
+export const useFetchPhotosByID = (id, onSuccess, onError) => {
+  return useQuery(['get-photos', id], () => fetchPhotosByID(id), {
+    onSuccess,
+    onError,
+  })
+}
+
 // POST Add Gallery Photos
 const addGalleryPhotos = (data) => {
   return request({
