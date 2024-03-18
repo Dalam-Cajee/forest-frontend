@@ -1,16 +1,16 @@
-import React from "react"
-import { Col, Container, Row } from "react-bootstrap"
+import React from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
 import {
   useFetchDistrictWiseApplicationCount,
   useFetchDivisionWiseApplicationCount,
   useFetchRangeWiseApplicationCount,
   useFetchServicePlusStatus,
-} from "../../hooks/queries/DashboardQueries"
-import MyCardSP from "../../components/core/MyCardSP"
+} from '../../hooks/queries/DashboardQueries'
+import MyCardSP from '../../components/core/MyCardSP'
 // Import Chart to be able to use React-ChartJs-2
-import { Chart as ChartJS } from "chart.js/auto"
-import { Bar } from "react-chartjs-2"
-import { Pie } from "react-chartjs-2"
+import { Chart as ChartJS } from 'chart.js/auto'
+import { Bar } from 'react-chartjs-2'
+import { Pie } from 'react-chartjs-2'
 
 const PublicDashboard = () => {
   // Functions
@@ -40,25 +40,25 @@ const PublicDashboard = () => {
     ),
     datasets: [
       {
-        label: "Number of Applications Division Wise",
+        label: 'Number of Applications Division Wise',
         data: fetchDivisionWiseApplicationCount?.data?.data?.map(
           (division) => division.application_count
         ),
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
         ],
         borderColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
         ],
         borderWidth: 1,
       },
@@ -72,25 +72,25 @@ const PublicDashboard = () => {
     ),
     datasets: [
       {
-        label: "Number of Applications Range Wise",
+        label: 'Number of Applications Range Wise',
         data: fetchRangeWiseApplicationCount?.data?.data?.map(
           (range) => range.application_count
         ),
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
         ],
         borderColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
         ],
         borderWidth: 1,
       },
@@ -104,21 +104,21 @@ const PublicDashboard = () => {
     ),
     datasets: [
       {
-        label: "Number of Applications District Wise",
+        label: 'Number of Applications District Wise',
         data: fetchDistrictWiseApplicationCount?.data?.data?.map(
           (district) => district.application_count
         ),
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
         ],
         borderColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
         ],
         borderWidth: 1,
       },
@@ -132,76 +132,115 @@ const PublicDashboard = () => {
 
   return (
     <Container>
-      <h2 className="text-center fw-bold">Application Status</h2>
+      <h2 className='text-center fw-bold'>Application Status</h2>
       {/* Applications Status */}
-
-      <Row className="text-center">
+      <Row className='text-center '>
         {/* Submitted */}
-        <MyCardSP
-          icons="Person"
-          description="Total Application Submitted"
-          count={fetchServicePlusStatus?.data?.data[0]?.Submitted}
-        />
+        <div className='col-lg-3 p-4'>
+          <MyCardSP
+            icons='Person'
+            description='Total Application Submitted'
+            count={fetchServicePlusStatus?.data?.data[0]?.Submitted}
+          />
+        </div>
         {/* Verified */}
-        <MyCardSP
-          icons="Verified"
-          description="Total Application Verified"
-          count={fetchServicePlusStatus?.data?.data[0]?.Delievered}
-        />
+        <div className='col-lg-3 p-4'>
+          <MyCardSP
+            icons='Verified'
+            description='Total Application Verified'
+            count={fetchServicePlusStatus?.data?.data[0]?.Delievered}
+          />
+        </div>
         {/* Pending */}
-        <MyCardSP
-          icons="Pending"
-          description="Application Pending"
-          count={fetchServicePlusStatus?.data?.data[0]?.Pending}
-        />
+        <div className='col-lg-3 p-4'>
+          <MyCardSP
+            icons='Pending'
+            description='Application Pending'
+            count={fetchServicePlusStatus?.data?.data[0]?.Pending}
+          />
+        </div>
         {/* Rejected */}
-        <MyCardSP
-          icons="Reject"
-          description="Application Rejected"
-          count={fetchServicePlusStatus?.data?.data[0]?.Rejected}
-        />
+        <div className='col-lg-3 p-4'>
+          <MyCardSP
+            icons='Reject'
+            description='Application Rejected'
+            count={fetchServicePlusStatus?.data?.data[0]?.Rejected}
+          />
+        </div>
       </Row>
       <hr />
-      <Row className="my-5 text-center">
-        <h3 className="text-center ">Division-wise Application Count</h3>
-        <Col sm={10} md={6}>
-          <Row className="mb-3">
-            <Col sm={10} md={6}>
-              1
+      <Row className='my-5 text-center'>
+        <h3 className='text-center '>Division-wise Application Count</h3>
+        <Col md={6}>
+          <Row>
+            <Col md={6} className='p-3'>
+              <MyCardSP
+                description={
+                  fetchDivisionWiseApplicationCount?.data?.data[0]?.name
+                }
+                count={
+                  fetchDivisionWiseApplicationCount?.data?.data[0]
+                    ?.application_count
+                }
+              />
             </Col>
-            <Col sm={10} md={6}>
-              2
+            <Col md={6} className='p-3'>
+              <MyCardSP
+                description={
+                  fetchDivisionWiseApplicationCount?.data?.data[1]?.name
+                }
+                count={
+                  fetchDivisionWiseApplicationCount?.data?.data[1]
+                    ?.application_count
+                }
+              />
             </Col>
           </Row>
           <Row>
-            <Col sm={10} md={6}>
-              3
+            <Col md={6} className='p-3'>
+              <MyCardSP
+                description={
+                  fetchDivisionWiseApplicationCount?.data?.data[2]?.name
+                }
+                count={
+                  fetchDivisionWiseApplicationCount?.data?.data[2]
+                    ?.application_count
+                }
+              />
             </Col>
-            <Col sm={10} md={6}>
-              4
+            <Col md={6} className='p-3'>
+              <MyCardSP
+                description={
+                  fetchDivisionWiseApplicationCount?.data?.data[3]?.name
+                }
+                count={
+                  fetchDivisionWiseApplicationCount?.data?.data[3]
+                    ?.application_count
+                }
+              />
             </Col>
           </Row>
         </Col>
         <Col sm={10} md={6}>
-          <div className="pie-height">
+          <div className='pie-height'>
             <Pie data={DivisionData} options={options} />
           </div>
         </Col>
       </Row>
 
       {/* Application Count Graphical Representation*/}
-      <div className="row my-5 text-center">
+      <div className='row my-5 text-center'>
         {/* Range-wise Application Count - Bar Graph */}
-        <div className="col-md-6 col-sm-10">
-          <h3 className="my-4">Range-wise Application Count</h3>
-          <div className="bar-height">
+        <div className='col-md-6 col-sm-10 h-100'>
+          <h3 className='my-4'>Range-wise Application Count</h3>
+          <div className='bar-height'>
             <Bar data={RangeData} options={options} />
           </div>
         </div>
         {/* District-wise Application Count - Bar Graph */}
-        <div className="col-md-6 col-sm-10">
-          <h3 className="my-4">District-wise Application Count</h3>
-          <div className="bar-height">
+        <div className='col-md-6 col-sm-10 h-100'>
+          <h3 className='my-4'>District-wise Application Count</h3>
+          <div className='bar-height'>
             <Bar data={DistrictData} options={options} />
           </div>
         </div>
