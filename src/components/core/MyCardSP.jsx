@@ -6,7 +6,7 @@ import { BsX } from 'react-icons/bs'
 
 const MyCardSP = ({ icons, description, count }) => {
   return (
-    <div className='bg-light p-3 shadow-lg h-100'>
+    <div className='bg-light p-3 shadow-sm h-100'>
       {icons === 'Person' ? (
         <BsPersonFill fontSize='large' />
       ) : icons === 'Reject' ? (

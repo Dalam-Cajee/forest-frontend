@@ -169,7 +169,7 @@ const PublicDashboard = () => {
         </div>
       </Row>
       <hr />
-      <Row className='my-5 text-center'>
+      <Row className='my-4 text-center'>
         <h3 className='text-center '>Division-wise Application Count</h3>
         <Col md={6}>
           <Row>
@@ -221,8 +221,8 @@ const PublicDashboard = () => {
             </Col>
           </Row>
         </Col>
-        <Col sm={10} md={6}>
-          <div className='pie-height'>
+        <Col md={6}>
+          <div className='pie-height mt-3'>
             <Pie data={DivisionData} options={options} />
           </div>
         </Col>
