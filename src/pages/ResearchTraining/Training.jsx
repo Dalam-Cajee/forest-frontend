@@ -67,15 +67,15 @@ const Training = () => {
         </li>
       </ol>
       <Container>
-        <Row>
-          <Col className='text-center'>
+        <Row className='mb-5'>
+          <Col className='text-center '>
             <Image src={training1} thumbnail className='img-fluid h-100 ' />
             <FigureCaption>
               Passing Out Parade 23rd Batch of Forester and Forest Guard
               Trainees
             </FigureCaption>
           </Col>
-          <Col className='text-center'>
+          <Col className='text-center '>
             <Image src={training2} thumbnail className='img-fluid h-100 ' />
             <FigureCaption>
               Meghalaya Forest Training School, Baiza

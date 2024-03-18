@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Col,
   Container,
@@ -6,10 +6,10 @@ import {
   Image,
   Row,
   Table,
-} from "react-bootstrap"
-import seedling1 from "../../assets/PublicInterface/pi_seedlings01.jpg"
-import seedling2 from "../../assets/PublicInterface/pi_seedlings02.jpg"
-import seedling3 from "../../assets/PublicInterface/pi_seedlings03.jpg"
+} from 'react-bootstrap'
+import seedling1 from '../../assets/PublicInterface/pi_seedlings01.jpg'
+import seedling2 from '../../assets/PublicInterface/pi_seedlings02.jpg'
+import seedling3 from '../../assets/PublicInterface/pi_seedlings03.jpg'
 
 const Seedlings = () => {
   return (
@@ -24,13 +24,13 @@ const Seedlings = () => {
         below:-
       </p>
       <Table striped bordered>
-        <thead className="table-dark text-center">
+        <thead className='table-dark text-center'>
           <tr>
             <th>Sl.No. </th>
             <th>Name of Division</th>
             <th>Location of Nursery</th>
           </tr>
-          <tr className="text-center">
+          <tr className='text-center'>
             <th>1</th>
             <th>2</th>
             <th>3</th>
@@ -50,7 +50,7 @@ const Seedlings = () => {
             <td>Jaintia Hills Territorial Division. Jowai</td>
             <td>
               Forest Colony Jowai, Thadlaskein, Saitsama, Saphai, Saipung,
-              Saiha, Wahkoh, Apha, Kynjlat &amp; Jaliakhola{" "}
+              Saiha, Wahkoh, Apha, Kynjlat &amp; Jaliakhola{' '}
             </td>
           </tr>
           <tr>
@@ -130,7 +130,7 @@ const Seedlings = () => {
       <h5>List of Species available at Umdiker Hi-Tech Nursery</h5>
       <Container>
         <Table striped bordered responsive>
-          <thead className="table-dark">
+          <thead className='table-dark'>
             <tr>
               <th rowSpan={2}>Sl.No.</th>
               <th rowSpan={2}>Botanical Name</th>
@@ -152,7 +152,7 @@ const Seedlings = () => {
               <td>3,00</td>
               <td>2/-</td>
               <td>10/-</td>
-              <td rowSpan={14} className="align-middle">
+              <td rowSpan={14} className='align-middle'>
                 All available in stock
               </td>
             </tr>
@@ -264,17 +264,17 @@ const Seedlings = () => {
         </Table>
       </Container>
       <Container>
-        <Row>
-          <Col className="text-center">
-            <Image src={seedling1} thumbnail className="img-fluid h-100 " />
+        <Row className='mb-5'>
+          <Col className='text-center'>
+            <Image src={seedling1} thumbnail className='img-fluid h-100 ' />
             <FigureCaption>Mist Chambers in Hi-Tech Nursery</FigureCaption>
           </Col>
-          <Col className="text-center">
-            <Image src={seedling2} thumbnail className="img-fluid h-100 " />
+          <Col className='text-center'>
+            <Image src={seedling2} thumbnail className='img-fluid h-100 ' />
             <FigureCaption>Nursery at Sohra</FigureCaption>
           </Col>
-          <Col className="text-center">
-            <Image src={seedling3} thumbnail className="img-fluid h-100 " />
+          <Col className='text-center'>
+            <Image src={seedling3} thumbnail className='img-fluid h-100 ' />
             <FigureCaption>Umdiker Net House</FigureCaption>
           </Col>
         </Row>

@@ -1,17 +1,17 @@
-import React from "react"
-import { Container, ListGroup, ListGroupItem } from "react-bootstrap"
+import React from 'react'
+import { Container } from 'react-bootstrap'
 
 const Mandate = () => {
   return (
     <Container>
       <h2>Mandate</h2>
-      <h5 className="fw-bold">Vision</h5>
+      <h5 className='fw-bold'>Vision</h5>
       <p>
         To ensure environmental stability and maintenance of ecological balance
         including atmospheric equilibrium which are vital for sustenance of all
         lifeforms, human, animal and plant.
       </p>
-      <h5 className="fw-bold">Mission</h5>
+      <h5 className='fw-bold'>Mission</h5>
       <ul>
         <li>
           Maintaining a minimum of one-third of the total land area in plains

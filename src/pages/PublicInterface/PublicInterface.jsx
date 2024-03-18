@@ -1,12 +1,156 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
-import { Outlet } from 'react-router-dom'
+import React, { useState } from 'react'
+import {
+  Col,
+  Container,
+  Nav,
+  NavItem,
+  NavLink,
+  Row,
+  TabContainer,
+  TabContent,
+  TabPane,
+} from 'react-bootstrap'
+import MTPA from './MTPA'
+import TreeFelling from './TreeFelling'
+import NOC from './NOC'
+import Quarry from './Quarry'
+import Seedlings from './Seedlings'
+import StoneCrushers from './StoneCrushers'
+import SawMills from './SawMills'
+import TimberDept from './TimberDept'
+import ConflictCompensation from './ConflictCompensation'
 
 const PublicInterface = () => {
+  // States
+  const [activeKey, setActiveKey] = useState('overview')
+
+  // Function
+  const isActive = (key) => {
+    return key === activeKey ? 'active' : ''
+  }
+
+  // Handlers
+  const handleSelect = (key) => {
+    setActiveKey(key)
+  }
+
   return (
-    <Container>
-      <h1 className='text-center'>Public Interface</h1>
-      <Outlet />
+    <Container className='my-5'>
+      <TabContainer defaultActiveKey='pi_mipa'>
+        <Row>
+          <Col sm={3}>
+            <Nav
+              variant='pills'
+              className='custom-nav flex-column'
+              onSelect={handleSelect}
+            >
+              <NavItem>
+                <NavLink
+                  eventKey='pi_mipa'
+                  className={`nav-link ${isActive('pi_mipa')}`}
+                >
+                  Permission to fell Trees in Shillong under MTPA 1976
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  eventKey='pi_permission'
+                  className={`nav-link ${isActive('pi_permission')}`}
+                >
+                  Tree Felling Permission outside Shillong
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  eventKey='pi_noc'
+                  className={`nav-link ${isActive('pi_noc')}`}
+                >
+                  Non-Forest Land Certificate / NOC
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  eventKey='pi_quarry'
+                  className={`nav-link ${isActive('pi_quarry')}`}
+                >
+                  Mining Lease / Quarry permits for extracting Minor Minerals
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  eventKey='pi_seedlings'
+                  className={`nav-link ${isActive('pi_seedlings')}`}
+                >
+                  Seedlings for Public Distribution
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  eventKey='pi_stone'
+                  className={`nav-link ${isActive('pi_stone')}`}
+                >
+                  NOC for Stone Crushers
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  eventKey='pi_saw'
+                  className={`nav-link ${isActive('pi_saw')}`}
+                >
+                  Licenced Saw Mills
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  eventKey='pi_furniture'
+                  className={`nav-link ${isActive('pi_furniture')}`}
+                >
+                  Furniture Unit / Timber Department
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  eventKey='pi_human'
+                  className={`nav-link ${isActive('pi_human')}`}
+                >
+                  Human Animal Conflict & Compensation
+                </NavLink>
+              </NavItem>
+            </Nav>
+          </Col>
+          <Col sm={9}>
+            <TabContent className='bg-light p-3'>
+              <TabPane eventKey='pi_mipa'>
+                <MTPA />
+              </TabPane>
+              <TabPane eventKey='pi_permission'>
+                <TreeFelling />
+              </TabPane>
+              <TabPane eventKey='pi_noc'>
+                <NOC />
+              </TabPane>
+              <TabPane eventKey='pi_quarry'>
+                <Quarry />
+              </TabPane>
+              <TabPane eventKey='pi_seedlings'>
+                <Seedlings />
+              </TabPane>
+              <TabPane eventKey='pi_stone'>
+                <StoneCrushers />
+              </TabPane>
+              <TabPane eventKey='pi_saw'>
+                <SawMills />
+              </TabPane>
+              <TabPane eventKey='pi_furniture'>
+                <TimberDept />
+              </TabPane>
+              <TabPane eventKey='pi_human'>
+                <ConflictCompensation />
+              </TabPane>
+            </TabContent>
+          </Col>
+        </Row>
+      </TabContainer>
     </Container>
   )
 }

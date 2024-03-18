@@ -10,7 +10,6 @@ import {
   TabContent,
   TabPane,
 } from 'react-bootstrap'
-import { Outlet } from 'react-router-dom'
 import WildlifeMeg from './WildlifeMeg'
 import Activities from './Activities'
 import Reserves from './Reserves'

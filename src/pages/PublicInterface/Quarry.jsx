@@ -63,23 +63,19 @@ const Quarry = () => {
       <ul>
         <li>
           Mining plan duly approved by the 'authorized officer' as below:-
-          <ul>
-            <li>
-              <strong>
-                {' '}
-                Mining engineer, Directorate of Mineral Resources
-              </strong>{' '}
-              - For Khasi Hills region
-            </li>
-            <li>
-              <strong> Divisional Mining Officer, Jowai</strong> - For Jaintia
-              hills region
-            </li>
-            <li>
-              <strong> Divisional Mining Officer, Williamnagar</strong> - For
-              Garo Hills region
-            </li>
-          </ul>
+          <p>
+            <strong>
+              (i) Mining engineer, Directorate of Mineral Resources
+            </strong>{' '}
+            - For Khasi Hills region
+            <br />
+            <strong>(ii) Divisional Mining Officer, Jowai</strong> - For Jaintia
+            hills region
+            <br />
+            <strong>(iii) Divisional Mining Officer, Williamnagar</strong> - For
+            Garo Hills region
+            <br />
+          </p>
         </li>
         <li>
           The Forest Clearance under Forest Conservation Act, 1980 in case the
@@ -151,18 +147,18 @@ const Quarry = () => {
         <li>
           Application shall be submitted in Form F duly affixed with court fee
           stamp Rs. 100 to competent Authority along with:-
-          <ul>
-            <li>
-              Certificate as to the status of land whether it is Forest or
-              Non-forest from the PCCF & HoFF or any other officer authorized in
-              this behalf.
-            </li>
-            <li>Treasury Challan of Rs 500 as application Fee</li>
-          </ul>
-          <li>
-            The competent authority shall dispose of the application within 15
-            days
-          </li>
+          <p>
+            (i) Certificate as to the status of land whether it is Forest or
+            Non-forest from the PCCF & HoFF or any other officer authorized in
+            this behalf.
+            <br />
+            (ii) Treasury Challan of Rs 500 as application Fee
+            <br />
+          </p>
+        </li>
+        <li>
+          The competent authority shall dispose of the application within 15
+          days
         </li>
       </ul>
       <h4>Conditions for quarry permit</h4>
@@ -184,23 +180,19 @@ const Quarry = () => {
       <ul>
         <li>
           Mining plan duly approved by the 'authorized officer' as below:-
-          <ul>
-            <li>
-              <strong>
-                {' '}
-                Mining engineer, Directorate of Mineral Resources
-              </strong>{' '}
-              - For Khasi Hills region
-            </li>
-            <li>
-              <strong> Divisional Mining Officer, Jowai</strong> - For Jaintia
-              hills region
-            </li>
-            <li>
-              <strong> Divisional Mining Officer, Williamnagar</strong> - For
-              Garo Hills region
-            </li>
-          </ul>
+          <p>
+            <strong>
+              (i) Mining engineer, Directorate of Mineral Resources
+            </strong>{' '}
+            - For Khasi Hills region
+            <br />
+            <strong>(ii) Divisional Mining Officer, Jowai</strong> - For Jaintia
+            hills region
+            <br />
+            <strong>(iii) Divisional Mining Officer, Williamnagar</strong> - For
+            Garo Hills region
+            <br />
+          </p>
         </li>
         <li>
           The Forest Clearance under Forest Conservation Act, 1980 in case the
