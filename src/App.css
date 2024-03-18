@@ -7,3 +7,11 @@
   background-color: #000000 !important; /* Set background color for active NavLink */
   color: #fff !important; /* Set text color for active NavLink */
 }
+
+.bar-height {
+  height: 500px;
+}
+
+.pie-height {
+  height: 300px;
+}

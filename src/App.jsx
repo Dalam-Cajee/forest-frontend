@@ -67,6 +67,7 @@ import Gallery from "./pages/Gallery/Gallery"
 import GalleryAdmin from "./pages/Gallery/GalleryAdmin"
 import AddGalleryPhotos from "./pages/Gallery/AddGalleryPhotos"
 import Archive from "./pages/Notification/Archive"
+import WhoIsWho from "./pages/AboutUs/WhoIsWho"
 
 function App() {
   return (
@@ -101,6 +102,7 @@ function App() {
         <Route path="about-us" element={<AboutUs />}>
           <Route path="forest-dept" element={<ForestDepartment />} />
           <Route path="mandate" element={<Mandate />} />
+          <Route path="who'swho" element={<WhoIsWho />} />
           <Route path="rti" element={<Rti />} />
         </Route>
 

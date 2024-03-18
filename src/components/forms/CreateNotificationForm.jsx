@@ -48,6 +48,7 @@ const CreateNotificationForm = () => {
     notificationDetails: {
       title: "",
       notificationTypeId: "",
+      publishDate: "",
     },
     file: null,
   }
