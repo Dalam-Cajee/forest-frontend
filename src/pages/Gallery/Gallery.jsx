@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import {
   Col,
   Container,
@@ -9,18 +9,14 @@ import {
   TabContainer,
   TabContent,
   TabPane,
-  Image,
-} from 'react-bootstrap'
-import {
-  useFetchGallery,
-  useFetchGalleryCategory,
-} from '../../hooks/queries/GalleryQueries'
-import GalleryPhotos from './GalleryPhotos'
+} from "react-bootstrap"
+import { useFetchGalleryCategory } from "../../hooks/queries/GalleryQueries"
+import GalleryPhotos from "./GalleryPhotos"
 
 const Gallery = () => {
   // States
-  const [activeKey, setActiveKey] = useState('Birds')
-  const [photoID, setPhotoID] = useState(null)
+  const [activeKey, setActiveKey] = useState("Birds")
+  const [photoID, setPhotoID] = useState(1)
 
   // Functions
   const onSuccess = (response) => {
@@ -30,12 +26,11 @@ const Gallery = () => {
     return error
   }
   const isActive = (key) => {
-    return key === activeKey ? 'active' : ''
+    return key === activeKey ? "active" : ""
   }
 
   // Hooks
   // Gallery Queries
-  const gallery = useFetchGallery(onSuccess, onError)
   const galleryCategory = useFetchGalleryCategory(onSuccess, onError)
 
   // Handlers
@@ -44,65 +39,43 @@ const Gallery = () => {
   }
 
   return (
-    <Container>
-      <Container className='my-5'>
-        <TabContainer defaultActiveKey={activeKey}>
-          <Row>
-            <Col sm={3}>
-              <Nav
-                variant='pills'
-                className='custom-nav flex-column'
-                onSelect={handleSelect}
-              >
-                {galleryCategory?.data?.data?.data?.map((category) => {
-                  return (
-                    <NavItem key={category.id}>
-                      <NavLink
-                        eventKey={category.name}
-                        className={`nav-link ${isActive(category.name)}`}
-                      >
-                        {category.name}
-                      </NavLink>
-                    </NavItem>
-                  )
-                })}
-              </Nav>
-            </Col>
-            <Col sm={9}>
-              <TabContent className='bg-light p-3'>
-                {galleryCategory?.data?.data?.data?.map((category) => {
-                  return (
-                    <TabPane
-                      key={category.id}
+    <Container className="my-5">
+      <TabContainer defaultActiveKey={activeKey}>
+        <Row>
+          <Col sm={3}>
+            <Nav
+              variant="pills"
+              className="custom-nav flex-column"
+              onSelect={handleSelect}
+            >
+              {galleryCategory?.data?.data?.data?.map((category) => {
+                return (
+                  <NavItem key={category.id}>
+                    <NavLink
                       eventKey={category.name}
+                      className={`nav-link ${isActive(category.name)}`}
                       onClick={() => setPhotoID(category.id)}
                     >
-                      <GalleryPhotos photoID={photoID} />
-                      {/* <div>
-                        {gallery?.data?.data?.data?.map((gallery) => {
-                          const mimeType = gallery.image.startsWith(
-                            'data:image/png'
-                          )
-                            ? 'image/png'
-                            : 'image/jpeg'
-                          const imageUrl = `data:${mimeType};base64,${gallery.image}`
-                          return (
-                            <Image
-                              key={gallery.id}
-                              src={imageUrl}
-                              className='w-100'
-                            />
-                          )
-                        })}
-                      </div> */}
-                    </TabPane>
-                  )
-                })}
-              </TabContent>
-            </Col>
-          </Row>
-        </TabContainer>
-      </Container>
+                      {category.name}
+                    </NavLink>
+                  </NavItem>
+                )
+              })}
+            </Nav>
+          </Col>
+          <Col sm={9}>
+            <TabContent className="bg-light p-3">
+              {galleryCategory?.data?.data?.data?.map((category) => {
+                return (
+                  <TabPane key={category.id} eventKey={category.name}>
+                    <GalleryPhotos photoID={photoID} />
+                  </TabPane>
+                )
+              })}
+            </TabContent>
+          </Col>
+        </Row>
+      </TabContainer>
     </Container>
   )
 }
