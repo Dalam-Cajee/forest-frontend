@@ -1,5 +1,6 @@
 import React from "react"
 import { Container, Table } from "react-bootstrap"
+import { BsFilePdfFill } from "react-icons/bs"
 import report1 from "../../assets/NGT/Eighth_Report_of_NGT_Committee.pdf"
 import report2 from "../../assets/NGT/Seventh_Report_of_NGT_Committee.pdf"
 import report3 from "../../assets/NGT/Sixth_Report_of_NGT_Committee.pdf"
@@ -11,12 +12,11 @@ import report8 from "../../assets/NGT/cities_villages_compliant_environmental_la
 import report9 from "../../assets/NGT/Second_Interim_Report_of_NGT_Committee.pdf"
 import report10 from "../../assets/NGT/ActionPlan_for_RestorationofEnvironment_in_Areasaffected_by_CoalMining_in_Meghalaya.pdf"
 import report11 from "../../assets/NGT/First_Interim_Report_of_Justice_Katakey_Committee_dated_31122018.pdf"
-import { BsFilePdfFill } from "react-icons/bs"
 
 const InterimReports = () => {
   return (
     <Container>
-      <h2>NGT Judicial Committee Orders</h2>
+      <h2>NGT Judicial Committee Reports</h2>
       <Table striped bordered>
         <thead className="table-dark">
           <tr>
