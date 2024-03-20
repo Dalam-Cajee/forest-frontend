@@ -3,7 +3,6 @@ import {
   Col,
   Container,
   Nav,
-  NavItem,
   NavLink,
   Row,
   TabContainer,
@@ -34,42 +33,35 @@ const NGT = () => {
         <Row>
           <Col sm={3}>
             <Nav
+              fill
               variant="pills"
               className="custom-nav flex-column"
               onSelect={handleSelect}
             >
-              <NavItem>
-                <NavLink
-                  eventKey="ngt_about"
-                  className={`nav-link ${isActive("ngt_about")}`}
-                >
-                  About NGT Committee
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  eventKey="ngt_orders"
-                  className={`nav-link ${isActive("ngt_orders")}`}
-                >
-                  Orders
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  eventKey="ngt_minutes"
-                  className={`nav-link ${isActive("ngt_minutes")}`}
-                >
-                  Minutes of Proceedings
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  eventKey="ngt_reports"
-                  className={`nav-link ${isActive("ngt_reports")}`}
-                >
-                  Interim Reports
-                </NavLink>
-              </NavItem>
+              <NavLink
+                eventKey="ngt_about"
+                className={`nav-link ${isActive("ngt_about")}`}
+              >
+                About NGT Committee
+              </NavLink>
+              <NavLink
+                eventKey="ngt_orders"
+                className={`nav-link ${isActive("ngt_orders")}`}
+              >
+                Orders
+              </NavLink>
+              <NavLink
+                eventKey="ngt_minutes"
+                className={`nav-link ${isActive("ngt_minutes")}`}
+              >
+                Minutes of Proceedings
+              </NavLink>
+              <NavLink
+                eventKey="ngt_reports"
+                className={`nav-link ${isActive("ngt_reports")}`}
+              >
+                Interim Reports
+              </NavLink>
             </Nav>
           </Col>
           <Col sm={9}>

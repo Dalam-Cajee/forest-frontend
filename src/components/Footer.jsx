@@ -1,4 +1,5 @@
 import React from "react"
+import { NavLink } from "react-bootstrap"
 
 const Footer = () => {
   return (
@@ -13,8 +14,10 @@ const Footer = () => {
           Meghalaya
         </div>
         <div className="fs-small">
-          Developed and hosted by <span>National Informatics Center</span>,
-          Meghalaya
+          Developed and hosted by National Informatics Center, Meghalaya
+        </div>
+        <div className="fs-small">
+          <NavLink href="/terms">Terms of Use</NavLink>
         </div>
       </div>
     </footer>

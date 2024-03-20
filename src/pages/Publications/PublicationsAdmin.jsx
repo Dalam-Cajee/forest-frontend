@@ -54,7 +54,7 @@ const PublicationsAdmin = () => {
         Publications Admin Panel
       </h3>
       {/* Tabs */}
-      <Tabs defaultActiveKey="documents" justify>
+      <Tabs defaultActiveKey="documents" fill className="custom-nav">
         {/* Add Documents */}
         <Tab eventKey="documents" title="Documents">
           <Button

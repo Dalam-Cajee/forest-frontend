@@ -57,7 +57,7 @@ const NotificationsAdmin = () => {
         Notification Admin Panel
       </h3>
       {/* Tabs */}
-      <Tabs defaultActiveKey="notifications" justify>
+      <Tabs defaultActiveKey="notifications" fill className="custom-nav">
         {/* Create Notification */}
         <Tab eventKey="notifications" title="Notifications">
           <Button

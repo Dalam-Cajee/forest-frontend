@@ -16,6 +16,41 @@ export const useFetchDocuments = (onSuccess, onError) => {
   })
 }
 
+// GET Documents based on document Type ID
+const fetchDocumentByID = (id) => {
+  return request({
+    url: `/document/getDocument/${id}`,
+    method: "get",
+  })
+}
+
+export const useFetchDocumentByID = (id) => {
+  return useQuery(["get-document", id], () => fetchDocumentByID(id), {
+    onSuccess: (response) => {
+      return response
+    },
+    onError: (error) => {
+      return error
+    },
+  })
+}
+
+// GET Published Document (Download)
+const fetchPublishPDF = (id) => {
+  return request({
+    url: `/document/download/${id}`,
+    method: "get",
+    responseType: "blob",
+  })
+}
+
+export const useFetchPublishPDF = (onSuccess, onError) => {
+  return useMutation(fetchPublishPDF, {
+    onSuccess,
+    onError,
+  })
+}
+
 // POST Add Documents
 const addDocument = (data) => {
   return request({

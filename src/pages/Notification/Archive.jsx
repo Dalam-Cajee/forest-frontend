@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Button, Container, Table } from "react-bootstrap"
 import {
   useFetchNotificationArchive,
@@ -11,7 +11,7 @@ const Archive = () => {
   const onSuccess = (response) => {
     const fileUrl = window.URL.createObjectURL(response.data)
     window.open(fileUrl, "_blank")
-    // return response
+    return response
   }
   const onError = (error) => {
     return error

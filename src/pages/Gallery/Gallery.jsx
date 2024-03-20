@@ -50,15 +50,14 @@ const Gallery = () => {
             >
               {galleryCategory?.data?.data?.data?.map((category) => {
                 return (
-                  <NavItem key={category.id}>
-                    <NavLink
-                      eventKey={category.name}
-                      className={`nav-link ${isActive(category.name)}`}
-                      onClick={() => setPhotoID(category.id)}
-                    >
-                      {category.name}
-                    </NavLink>
-                  </NavItem>
+                  <NavLink
+                    key={category.id}
+                    eventKey={category.name}
+                    className={`nav-link ${isActive(category.name)}`}
+                    onClick={() => setPhotoID(category.id)}
+                  >
+                    {category.name}
+                  </NavLink>
                 )
               })}
             </Nav>

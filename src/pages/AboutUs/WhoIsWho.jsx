@@ -1,13 +1,14 @@
 import React from "react"
-import { Container, Table } from "react-bootstrap"
+import { Container, Tab, Table, Tabs } from "react-bootstrap"
 
 const WhoIsWho = () => {
   return (
     <Container>
       <h2>Who's Who</h2>
-      <ul>
-        <li>
-          <strong>HEAD QUARTER LEVEL</strong>
+      {/* Tabs */}
+      <Tabs fill defaultActiveKey="head-quarter" className="custom-nav mb-2">
+        {/* Head Quarter Level */}
+        <Tab eventKey="head-quarter" title="Head Quarter Level">
           <Table striped bordered>
             <thead className="table-dark">
               <tr>
@@ -163,9 +164,10 @@ const WhoIsWho = () => {
               </tr>
             </tbody>
           </Table>
-        </li>
-        <li>
-          <strong>DIVISION LEVEL</strong>
+        </Tab>
+
+        {/* Division Level */}
+        <Tab eventKey="division-level" title="Division Level">
           <Table striped bordered>
             <thead className="table-dark">
               <tr>
@@ -350,8 +352,8 @@ const WhoIsWho = () => {
               </tr>
             </tbody>
           </Table>
-        </li>
-      </ul>
+        </Tab>
+      </Tabs>
     </Container>
   )
 }

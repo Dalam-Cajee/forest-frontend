@@ -16,6 +16,25 @@ export const useFetchNotifications = (onSuccess, onError) => {
   })
 }
 
+// GET Notifications based on notification Type ID
+const fetchNotificationByID = (id) => {
+  return request({
+    url: `/notification/getActiveNotification/${id}`,
+    method: "get",
+  })
+}
+
+export const useFetchNotificationByID = (id) => {
+  return useQuery(["get-notification", id], () => fetchNotificationByID(id), {
+    onSuccess: (response) => {
+      return response
+    },
+    onError: (error) => {
+      return error
+    },
+  })
+}
+
 // POST Add Notification
 const addNotification = (data) => {
   return request({
@@ -97,7 +116,26 @@ export const useFetchNotificationArchive = () => {
   })
 }
 
-// GET Archived Notification
+// GET Archive based on notification Type ID
+const fetchArchiveByID = (id) => {
+  return request({
+    url: `/notification/getArchiveNotification/${id}`,
+    method: "get",
+  })
+}
+
+export const useFetchArchiveByID = (id) => {
+  return useQuery(["get-archive", id], () => fetchArchiveByID(id), {
+    onSuccess: (response) => {
+      return response
+    },
+    onError: (error) => {
+      return error
+    },
+  })
+}
+
+// GET Archived Notification Document (Download)
 const fetchPDF = (id) => {
   return request({
     url: `/notification/download/${id}`,
