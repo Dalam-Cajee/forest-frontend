@@ -1,16 +1,16 @@
-import React from "react"
-import { Container, Tab, Table, Tabs } from "react-bootstrap"
+import React from 'react'
+import { Container, Tab, Table, Tabs } from 'react-bootstrap'
 
 const WhoIsWho = () => {
   return (
-    <Container>
-      <h2>Who's Who</h2>
+    <Container className='my-3'>
+      <h2 className='mb-3'>Who's Who</h2>
       {/* Tabs */}
-      <Tabs fill defaultActiveKey="head-quarter" className="custom-nav mb-2">
+      <Tabs fill defaultActiveKey='head-quarter' className='custom-nav mb-2'>
         {/* Head Quarter Level */}
-        <Tab eventKey="head-quarter" title="Head Quarter Level">
+        <Tab eventKey='head-quarter' title='Head Quarter Level'>
           <Table striped bordered>
-            <thead className="table-dark">
+            <thead className='table-dark'>
               <tr>
                 <th>Names</th>
                 <th>Designation</th>
@@ -34,7 +34,7 @@ const WhoIsWho = () => {
                   PCCF PCCF (Wildlife &amp; Biodiversity), Meghalaya, Shillong
                 </td>
                 <td>2227271</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shr. H. C. Choudhary, IFS</td>
@@ -44,7 +44,7 @@ const WhoIsWho = () => {
                   Shillong
                 </td>
                 <td>2227311</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. M. B. K. Reddy, IFS</td>
@@ -55,25 +55,25 @@ const WhoIsWho = () => {
                   Shillong.
                 </td>
                 <td>2227762</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. R. L. Thiek, IFS</td>
                 <td>Planning Officer (Forest)</td>
                 <td>2225631</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. W. S. Manner, IFS</td>
                 <td>CCF (Social Forestry & Environment)</td>
                 <td>2502217</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. B. Shangdiar, IFS</td>
                 <td>CCF(Administration) : additional charge CF(HQ)&nbsp; </td>
                 <td>2501014</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. N. Luikham, IFS</td>
@@ -83,13 +83,13 @@ const WhoIsWho = () => {
                   State Biodiversity Board. Addl. Charge as CEO, MMMRF.&nbsp;
                 </td>
                 <td>2225580</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. B. Wahlang, IFS</td>
                 <td>CCF (FC Act & CAMPA) & Nodal Officer (Forest Fire)</td>
                 <td>2227332</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. P. Agrahari, IFS</td>
@@ -97,7 +97,7 @@ const WhoIsWho = () => {
                   CCF (Wildlife), Shillong Addl. Charge as CF (M&E), Shillong.
                 </td>
                 <td>2505365</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. T. Wanniang, IFS</td>
@@ -106,7 +106,7 @@ const WhoIsWho = () => {
                   Jaintia Hills Region
                 </td>
                 <td>2505362</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. R Nainamalai, IFS</td>
@@ -115,19 +115,19 @@ const WhoIsWho = () => {
                   as Member Secretary, Meghalaya State Pollution Control Board.
                 </td>
                 <td>2228334</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Smti. M.J. Sangma, IFS</td>
                 <td>IFS DCF(FC Act)</td>
-                <td className="text-center">-</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. K. L. Nonglait,&nbsp; MFS</td>
                 <td>DCF(R&amp;T)</td>
                 <td>2505344</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. J. Dkhar, MFS</td>
@@ -136,7 +136,7 @@ const WhoIsWho = () => {
                   Society of Meghalaya
                 </td>
                 <td>2505352</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. E. Shullai, MFS</td>
@@ -144,7 +144,7 @@ const WhoIsWho = () => {
                   DCF (M&E) additional Charge as DCF(SF) and Dy, CEO MMMRF
                 </td>
                 <td>2505350</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. F.S. Wann</td>
@@ -154,22 +154,22 @@ const WhoIsWho = () => {
                   Warden, Shillong.
                 </td>
                 <td>2505332</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Smti. M. Marbaniang</td>
                 <td>Registrar</td>
                 <td>2502184</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
             </tbody>
           </Table>
         </Tab>
 
         {/* Division Level */}
-        <Tab eventKey="division-level" title="Division Level">
+        <Tab eventKey='division-level' title='Division Level'>
           <Table striped bordered>
-            <thead className="table-dark">
+            <thead className='table-dark'>
               <tr>
                 <th>Names</th>
                 <th>Designation</th>
@@ -186,7 +186,7 @@ const WhoIsWho = () => {
                   Planning, FDCM Ltd., Meghalaya, Shillong
                 </td>
                 <td>2226375</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. N. Alemo Michael, IFS</td>
@@ -203,19 +203,19 @@ const WhoIsWho = () => {
                   Additional Charge as Divisional Forest Officer, KHADC.
                 </td>
                 <td>2500039</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. Simeon Kharbudnah, IFS</td>
                 <td>Divisional Forest Officer, Training Division</td>
-                <td className="text-center">-</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Smti. T. K. Marak IFS</td>
                 <td> Working Plan Officer, Meghalaya, Shillong</td>
                 <td>2591758</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. Sachin Gavade, IFS</td>
@@ -223,7 +223,7 @@ const WhoIsWho = () => {
                   Divisional Forest Officer, Khasi Hills (WL) Division, Shillong
                 </td>
                 <td>2226181</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Smti. Anu P. James, IFS</td>
@@ -237,8 +237,8 @@ const WhoIsWho = () => {
                   Divisional Forest Officer, East &amp; North Garo Hills (T)
                   Division, Williamnagar
                 </td>
-                <td className="text-center">-</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. Sanwar M. Swami, IFS</td>
@@ -247,7 +247,7 @@ const WhoIsWho = () => {
                   Shillong
                 </td>
                 <td>2502789</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. Ganesan P, IFS</td>
@@ -289,14 +289,14 @@ const WhoIsWho = () => {
                   Divisional Forest Officer, (South Garo Hills SF &amp; T)
                   Division, Baghmara
                 </td>
-                <td className="text-center">-</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Smti. Nazia R.D. Marak, MFS</td>
                 <td>Divisional Forest Officer, GHADC, Tura</td>
-                <td className="text-center">-</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Dr. George H. Chyrmang, MFS</td>
@@ -305,7 +305,7 @@ const WhoIsWho = () => {
                   T Division, Nongstoin
                 </td>
                 <td>280279</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. H. G. Momin, MFS</td>
@@ -314,7 +314,7 @@ const WhoIsWho = () => {
                   Division, Williamnagar
                 </td>
                 <td>220397</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. Bijoy Lyngdoh, MFS</td>
@@ -322,8 +322,8 @@ const WhoIsWho = () => {
                   Divisional Forest Officer, North Khasi Hills (SF) Division,
                   Nongpoh
                 </td>
-                <td className="text-center">-</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. F. S. Wann, MFS</td>
@@ -332,7 +332,7 @@ const WhoIsWho = () => {
                   Shillong
                 </td>
                 <td>232317</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
               </tr>
               <tr>
                 <td>Shri. M. B. K. Reddy, IFS</td>
@@ -347,8 +347,8 @@ const WhoIsWho = () => {
                 <td>
                   Managing Director, Eco-Tourism Development Society, Tura
                 </td>
-                <td className="text-center">-</td>
-                <td className="text-center">-</td>
+                <td className='text-center'>-</td>
+                <td className='text-center'>-</td>
               </tr>
             </tbody>
           </Table>

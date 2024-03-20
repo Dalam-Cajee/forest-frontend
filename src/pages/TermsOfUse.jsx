@@ -1,9 +1,9 @@
-import React from "react"
-import { Container } from "react-bootstrap"
+import React from 'react'
+import { Container } from 'react-bootstrap'
 
 const TermsOfUse = () => {
   return (
-    <Container className="my-3">
+    <Container className='my-3'>
       <h2>Terms of Use</h2>
       <h4>Disclaimer</h4>
       <p>

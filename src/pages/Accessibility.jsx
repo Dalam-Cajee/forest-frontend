@@ -1,9 +1,9 @@
-import React from "react"
-import { Container } from "react-bootstrap"
+import React from 'react'
+import { Container } from 'react-bootstrap'
 
 const Accessibility = () => {
   return (
-    <Container>
+    <Container className='my-3'>
       <h2>Accessibility</h2>
       <p>
         This website is accessible to all users irrespective of technology or
