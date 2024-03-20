@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 import {
   Container,
   Table,
@@ -9,16 +9,16 @@ import {
   ModalHeader,
   ModalBody,
   ModalTitle,
-} from "react-bootstrap"
+} from 'react-bootstrap'
 import {
   useDeleteNotification,
   useFetchNotificationTypes,
   useFetchNotifications,
   usePutNotificationArchive,
-} from "../../hooks/queries/NotificationQueries"
-import { useNavigate } from "react-router-dom"
-import { BsArchive, BsPlus, BsTrashFill } from "react-icons/bs"
-import AddNotificationTypeForm from "../../components/forms/AddNotificationTypeForm"
+} from '../../hooks/queries/NotificationQueries'
+import { useNavigate } from 'react-router-dom'
+import { BsArchive, BsPlus, BsTrashFill } from 'react-icons/bs'
+import AddNotificationTypeForm from '../../components/forms/AddNotificationTypeForm'
 
 const NotificationsAdmin = () => {
   // States
@@ -53,24 +53,24 @@ const NotificationsAdmin = () => {
 
   return (
     <Container>
-      <h3 className="text-center mt-4 mb-5 bg-light">
+      <h3 className='text-center mt-4 mb-5 bg-light'>
         Notification Admin Panel
       </h3>
       {/* Tabs */}
-      <Tabs defaultActiveKey="notifications" fill className="custom-nav">
+      <Tabs defaultActiveKey='notifications' fill className='custom-nav'>
         {/* Create Notification */}
-        <Tab eventKey="notifications" title="Notifications">
+        <Tab eventKey='notifications' title='Notifications'>
           <Button
-            className="float-end my-3"
-            size="sm"
-            onClick={() => navigate("create")}
+            className='float-end my-3'
+            size='sm'
+            onClick={() => navigate('create')}
           >
-            <BsPlus className="fs-4" />
+            <BsPlus className='fs-4' />
             Create Notification
           </Button>
           {/* Notifications Table */}
-          <Table striped bordered hover className="my-2">
-            <thead className="table-dark">
+          <Table striped bordered hover className='my-2'>
+            <thead className='table-dark'>
               <tr>
                 <th>Title</th>
                 <th>Notification Type</th>
@@ -95,19 +95,19 @@ const NotificationsAdmin = () => {
                       <td>
                         {/* Archive Button */}
                         <Button
-                          variant="outline"
-                          size="sm"
+                          variant='outline'
+                          size='sm'
                           onClick={() => handleArchive(notification.id)}
                         >
-                          <BsArchive title="Archive" />
+                          <BsArchive title='Archive' />
                         </Button>
                         {/* Delete Button */}
                         <Button
-                          variant="outline"
-                          size="sm"
+                          variant='outline'
+                          size='sm'
                           onClick={() => handleDelete(notification.id)}
                         >
-                          <BsTrashFill title="Delete" />
+                          <BsTrashFill title='Delete' />
                         </Button>
                       </td>
                     </tr>
@@ -115,7 +115,7 @@ const NotificationsAdmin = () => {
                 })
               ) : (
                 <tr>
-                  <td colSpan="6" className="text-center">
+                  <td colSpan='6' className='text-center'>
                     --- No Data Available ---
                   </td>
                 </tr>
@@ -124,25 +124,25 @@ const NotificationsAdmin = () => {
           </Table>
         </Tab>
         {/* Add Notification Type */}
-        <Tab eventKey="notificationTypes" title="Notification Types">
+        <Tab eventKey='notificationTypes' title='Notification Types'>
           <Button
-            className="float-end my-3"
-            size="sm"
+            className='float-end my-3'
+            size='sm'
             onClick={() => handleShow()}
           >
-            <BsPlus className="fs-4" />
+            <BsPlus className='fs-4' />
             Add Notification Type
           </Button>
           {/* Modal for Adding Notification Types */}
           <Modal
             show={show}
             onHide={handleClose}
-            backdrop="static"
+            backdrop='static'
             keyboard={false}
             centered
           >
             <ModalHeader closeButton>
-              <ModalTitle className="d-flex justify-content-center w-100">
+              <ModalTitle className='d-flex justify-content-center w-100'>
                 Add New Notification Type
               </ModalTitle>
             </ModalHeader>
@@ -151,8 +151,8 @@ const NotificationsAdmin = () => {
             </ModalBody>
           </Modal>
           {/* Notification Types Table */}
-          <Table striped bordered hover className="my-2">
-            <thead className="table-dark">
+          <Table striped bordered hover className='my-2'>
+            <thead className='table-dark'>
               <tr>
                 <th>ID</th>
                 <th>Notification Type</th>
@@ -167,8 +167,8 @@ const NotificationsAdmin = () => {
                       <td>{type.id}</td>
                       <td>{type.name}</td>
                       <td>
-                        <Button variant="outline" size="sm">
-                          <BsTrashFill title="Delete" />
+                        <Button variant='outline' size='sm'>
+                          <BsTrashFill title='Delete' />
                         </Button>
                       </td>
                     </tr>
@@ -176,7 +176,7 @@ const NotificationsAdmin = () => {
                 })
               ) : (
                 <tr>
-                  <td colSpan="3" className="text-center">
+                  <td colSpan='3' className='text-center'>
                     --- No Data Available ---
                   </td>
                 </tr>

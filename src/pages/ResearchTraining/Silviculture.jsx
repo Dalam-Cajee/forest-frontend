@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Col,
   Container,
@@ -8,29 +8,29 @@ import {
   Image,
   Row,
   Table,
-} from "react-bootstrap"
-import silviculture1 from "../../assets/ResearchTraining/rt_silviculture01.jpg"
-import silviculture2 from "../../assets/ResearchTraining/rt_silviculture02.jpg"
-import silviculture3b from "../../assets/ResearchTraining/rt_silviculture03b.jpg"
-import silviculture4a from "../../assets/ResearchTraining/rt_silviculture04a.jpg"
-import silviculture4b from "../../assets/ResearchTraining/rt_silviculture04b.jpg"
-import silviculture4d from "../../assets/ResearchTraining/rt_silviculture04d.jpg"
-import silviculture4e from "../../assets/ResearchTraining/rt_silviculture04e.jpg"
-import silviculture10 from "../../assets/ResearchTraining/rt_silviculture10.jpg"
-import silviculture11 from "../../assets/ResearchTraining/rt_silviculture11.jpg"
-import silviculture5b from "../../assets/ResearchTraining/rt_silviculture05b.jpg"
-import silviculture5c from "../../assets/ResearchTraining/rt_silviculture05c.jpg"
-import silviculture6b from "../../assets/ResearchTraining/rt_silviculture06b.jpg"
-import silviculture6c from "../../assets/ResearchTraining/rt_silviculture06c.jpg"
-import silviculture6d from "../../assets/ResearchTraining/rt_silviculture06d.jpg"
-import silviculture8a from "../../assets/ResearchTraining/rt_silviculture08a.jpg"
-import silviculture8b from "../../assets/ResearchTraining/rt_silviculture08b.jpg"
-import silviculture8c from "../../assets/ResearchTraining/rt_silviculture08c.jpg"
-import silviculture8d from "../../assets/ResearchTraining/rt_silviculture08d.jpg"
-import silviculture9a from "../../assets/ResearchTraining/rt_silviculture09a.jpg"
-import silviculture9b from "../../assets/ResearchTraining/rt_silviculture09b.jpg"
-import silviculture9c from "../../assets/ResearchTraining/rt_silviculture09c.jpg"
-import silviculture9d from "../../assets/ResearchTraining/rt_silviculture09d.jpg"
+} from 'react-bootstrap'
+import silviculture1 from '../../assets/ResearchTraining/rt_silviculture01.jpg'
+import silviculture2 from '../../assets/ResearchTraining/rt_silviculture02.jpg'
+import silviculture3b from '../../assets/ResearchTraining/rt_silviculture03b.jpg'
+import silviculture4a from '../../assets/ResearchTraining/rt_silviculture04a.jpg'
+import silviculture4b from '../../assets/ResearchTraining/rt_silviculture04b.jpg'
+import silviculture4d from '../../assets/ResearchTraining/rt_silviculture04d.jpg'
+import silviculture4e from '../../assets/ResearchTraining/rt_silviculture04e.jpg'
+import silviculture10 from '../../assets/ResearchTraining/rt_silviculture10.jpg'
+import silviculture11 from '../../assets/ResearchTraining/rt_silviculture11.jpg'
+import silviculture5b from '../../assets/ResearchTraining/rt_silviculture05b.jpg'
+import silviculture5c from '../../assets/ResearchTraining/rt_silviculture05c.jpg'
+import silviculture6b from '../../assets/ResearchTraining/rt_silviculture06b.jpg'
+import silviculture6c from '../../assets/ResearchTraining/rt_silviculture06c.jpg'
+import silviculture6d from '../../assets/ResearchTraining/rt_silviculture06d.jpg'
+import silviculture8a from '../../assets/ResearchTraining/rt_silviculture08a.jpg'
+import silviculture8b from '../../assets/ResearchTraining/rt_silviculture08b.jpg'
+import silviculture8c from '../../assets/ResearchTraining/rt_silviculture08c.jpg'
+import silviculture8d from '../../assets/ResearchTraining/rt_silviculture08d.jpg'
+import silviculture9a from '../../assets/ResearchTraining/rt_silviculture09a.jpg'
+import silviculture9b from '../../assets/ResearchTraining/rt_silviculture09b.jpg'
+import silviculture9c from '../../assets/ResearchTraining/rt_silviculture09c.jpg'
+import silviculture9d from '../../assets/ResearchTraining/rt_silviculture09d.jpg'
 
 const Silviculture = () => {
   return (
@@ -78,7 +78,7 @@ const Silviculture = () => {
           champaca Toona ciliata Chukrassia tabularis
         </li>
         <li>
-          <strong>Activities of the Plant tissue culture laboratory:</strong>{" "}
+          <strong>Activities of the Plant tissue culture laboratory:</strong>{' '}
           The Department has established sate of art Plant tissue culture
           laboratory at upper Shillong with following objectives:-
           <br />
@@ -97,7 +97,7 @@ const Silviculture = () => {
           Species for which tissue culture protocol have been standardized in
           the laboratory:-
           <br />
-          (i)<strong>Rare, Endangered and Endemic plants (6 Nos):</strong>{" "}
+          (i)<strong>Rare, Endangered and Endemic plants (6 Nos):</strong>{' '}
           Nepenthes khasiana, Ilex Khasiana, Citrus indica, Nymphea tetragona,
           Gymnocladus assamicus, and Citrus grandis
           <br />
@@ -118,29 +118,29 @@ const Silviculture = () => {
           Dendrocalamus hamiltonii and Dendrocalamus strictus.
           <br />
           <br />
-          <Container className="mb-5">
-            <Row className="mb-4">
-              <Col className="text-center">
+          <Container className='mb-5'>
+            <Row className='mb-4'>
+              <Col className='text-center'>
                 <Image
                   src={silviculture3b}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
                 <FigureCaption>Culture room</FigureCaption>
               </Col>
-              <Col className="text-center">
+              <Col className='text-center'>
                 <Image
                   src={silviculture1}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
                 <FigureCaption>Inoculation chamber</FigureCaption>
               </Col>
-              <Col className="text-center">
+              <Col className='text-center'>
                 <Image
                   src={silviculture2}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
                 <FigureCaption>Mist chamber</FigureCaption>
               </Col>
@@ -169,13 +169,13 @@ const Silviculture = () => {
               feasible which is otherwise very difficult
             </li>
           </ul>
-          <Container className="text-center mt-3">
+          <Container className='text-center mt-3'>
             <Figure>
-              <FigureImage src={silviculture4a} thumbnail className="mx-2" />
-              <FigureImage src={silviculture4b} thumbnail className="mx-2" />
-              <FigureImage src={silviculture4d} thumbnail className="mx-2" />
-              <FigureImage src={silviculture4e} thumbnail className="mx-2" />
-              <FigureCaption className="text-center">
+              <FigureImage src={silviculture4a} thumbnail className='mx-2' />
+              <FigureImage src={silviculture4b} thumbnail className='mx-2' />
+              <FigureImage src={silviculture4d} thumbnail className='mx-2' />
+              <FigureImage src={silviculture4e} thumbnail className='mx-2' />
+              <FigureCaption className='text-center'>
                 In vitro propogation of Nepenthes khasiana (pitcher plant)
               </FigureCaption>
             </Figure>
@@ -184,7 +184,7 @@ const Silviculture = () => {
         <li>
           <strong>
             Protection of Area with Rare and Endangered Plant Species:
-          </strong>{" "}
+          </strong>{' '}
           Is aimed at protection of rare and endangered plants of the State
           through creation of nurseries and plantations in order to ensure their
           protection and conservation ex-situ through artificial means. The
@@ -198,11 +198,11 @@ const Silviculture = () => {
         <li>
           <strong>
             Ex-situ & In-situ conservation of rare and endemic plants:
-          </strong>{" "}
-          <div className="text-center mt-2">
+          </strong>{' '}
+          <div className='text-center mt-2'>
             <Figure>
               <FigureImage src={silviculture10} thumbnail />
-              <FigureCaption className="text-center">
+              <FigureCaption className='text-center'>
                 Pitcher Plant (Nepenthes Khasiana)- Insectivorous plant
               </FigureCaption>
             </Figure>
@@ -228,7 +228,7 @@ const Silviculture = () => {
           measures. Fire protection measures have been initiated in fire prone
           areas during dry months. A survey was carried out to map the natural
           habitat of pitcher plant in the state.
-          <div className="text-center my-3">
+          <div className='text-center my-3'>
             <Image src={silviculture11} thumbnail />
           </div>
           <p>
@@ -238,23 +238,23 @@ const Silviculture = () => {
             habitat. Ex-situ conservation areas are established in Laitkynsew,
             Mawsmai and Umkhuti using tissue culture grown pitcher plants.
           </p>
-          <Container className="text-center mt-3">
+          <Container className='text-center mt-3'>
             <Figure>
-              <FigureImage className="mx-2" />
-              <FigureImage src={silviculture5b} thumbnail className="mx-2" />
-              <FigureImage src={silviculture5c} thumbnail className="mx-2" />
-              <FigureCaption className="text-center">
+              <FigureImage className='mx-2' />
+              <FigureImage src={silviculture5b} thumbnail className='mx-2' />
+              <FigureImage src={silviculture5c} thumbnail className='mx-2' />
+              <FigureCaption className='text-center'>
                 Planting of In-vitro seedlings Pitcher plants at Laitkynsew and
                 Umkhuti (Ex-situ Conservation)
               </FigureCaption>
             </Figure>
           </Container>
-          <Container className="text-center mt-2">
+          <Container className='text-center mt-2'>
             <Figure>
-              <FigureImage src={silviculture6b} thumbnail className="mx-2" />
-              <FigureImage src={silviculture6d} thumbnail className="mx-2" />
-              <FigureImage src={silviculture6c} thumbnail className="mx-2" />
-              <FigureCaption className="text-center">
+              <FigureImage src={silviculture6b} thumbnail className='mx-2' />
+              <FigureImage src={silviculture6d} thumbnail className='mx-2' />
+              <FigureImage src={silviculture6c} thumbnail className='mx-2' />
+              <FigureCaption className='text-center'>
                 Ex situ conservation of Nepenthes khasiana, Umkhuti using
                 invitro raised seedling
               </FigureCaption>
@@ -285,7 +285,7 @@ const Silviculture = () => {
             species)
           </strong>
           <Table striped bordered>
-            <thead className="table-dark">
+            <thead className='table-dark'>
               <tr>
                 <th>Sl.No</th>
                 <th>Species</th>
@@ -570,7 +570,7 @@ const Silviculture = () => {
           </p>
           <strong>Bamboo species maintained at Bambusetum:</strong>
           <Table striped bordered>
-            <thead className="table-dark">
+            <thead className='table-dark'>
               <tr>
                 <th>Sl.no</th>
                 <th>Species</th>
@@ -656,36 +656,36 @@ const Silviculture = () => {
           </p>
           <h5>Training in Advance Nursery Practices</h5>
           <Container>
-            <Row className="mb-4">
-              <Col className="text-center">
+            <Row className='mb-4'>
+              <Col className='text-center'>
                 <Image
                   src={silviculture9a}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
               </Col>
-              <Col className="text-center">
+              <Col className='text-center'>
                 <Image
                   src={silviculture9b}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
               </Col>
-              <Col className="text-center">
+              <Col className='text-center'>
                 <Image
                   src={silviculture9c}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
               </Col>
-              <Col className="text-center">
+              <Col className='text-center'>
                 <Image
                   src={silviculture9d}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
               </Col>
-              <FigureCaption className="text-center">
+              <FigureCaption className='text-center'>
                 Hands on training at Tissue Culture lab for Research associates,
                 Students and Frontline staff
               </FigureCaption>
@@ -693,39 +693,39 @@ const Silviculture = () => {
           </Container>
           <Container>
             <Row>
-              <Col className="text-center">
+              <Col className='text-center'>
                 <Image
                   src={silviculture8a}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
                 <FigureCaption>
                   Nursery at Sangmein, Upper Shillong
                 </FigureCaption>
               </Col>
-              <Col className="text-center">
+              <Col className='text-center'>
                 <Image
                   src={silviculture8b}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
                 <FigureCaption>Nursery at Umsaw, Ri-Bhoi</FigureCaption>
               </Col>
-              <Col className="text-center">
+              <Col className='text-center'>
                 <Image
                   src={silviculture8c}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
                 <FigureCaption>
                   Nursery at Umkhuti Ri-Bhoi district
                 </FigureCaption>
               </Col>
-              <Col className="text-center">
+              <Col className='text-center'>
                 <Image
                   src={silviculture8d}
                   thumbnail
-                  className="img-fluid h-100 "
+                  className='img-fluid h-100 '
                 />
                 <FigureCaption>
                   Mist Chamber at Umkhuti Ri-Bhoi district

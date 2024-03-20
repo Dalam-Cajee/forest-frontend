@@ -1,5 +1,5 @@
-import React from "react"
-import { Container, Table } from "react-bootstrap"
+import React from 'react'
+import { Container, Table } from 'react-bootstrap'
 
 const Activities = () => {
   return (
@@ -23,15 +23,15 @@ const Activities = () => {
         Officers, namely:-
       </p>
       <Table bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
-            <th width="29%">
+            <th width='29%'>
               <strong>Division</strong>
             </th>
-            <th width="35%">
+            <th width='35%'>
               <strong>Jurisdiction</strong>
             </th>
-            <th width="36%">
+            <th width='36%'>
               <strong>Contact</strong>
             </th>
           </tr>

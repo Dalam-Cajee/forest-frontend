@@ -10,7 +10,7 @@ const WhoIsWho = () => {
         {/* Head Quarter Level */}
         <Tab eventKey='head-quarter' title='Head Quarter Level'>
           <Table striped bordered>
-            <thead className='table-dark'>
+            <thead className='custom-header'>
               <tr>
                 <th>Names</th>
                 <th>Designation</th>
@@ -169,7 +169,7 @@ const WhoIsWho = () => {
         {/* Division Level */}
         <Tab eventKey='division-level' title='Division Level'>
           <Table striped bordered>
-            <thead className='table-dark'>
+            <thead className='custom-header'>
               <tr>
                 <th>Names</th>
                 <th>Designation</th>

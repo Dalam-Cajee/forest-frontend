@@ -1,5 +1,5 @@
-import React from "react"
-import { Container, Table } from "react-bootstrap"
+import React from 'react'
+import { Container, Table } from 'react-bootstrap'
 
 const Reserves = () => {
   return (
@@ -16,7 +16,7 @@ const Reserves = () => {
         Community Forests are given below.
       </p>
       <Table bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
             <th>Sl.No</th>
             <th>Name of Community Reserve</th>
@@ -119,7 +119,7 @@ const Reserves = () => {
           <tr>
             <td>15</td>
             <td>
-              Ka Khloo Thangbru Sula Lynter Sein Raij Mynso Community Reserve{" "}
+              Ka Khloo Thangbru Sula Lynter Sein Raij Mynso Community Reserve{' '}
             </td>
             <td>3.293</td>
             <td>No.FOR.17/2013/Pt/206, Dt.18-11-2019</td>
@@ -133,7 +133,7 @@ const Reserves = () => {
           <tr>
             <td>17</td>
             <td>
-              Ka Khloo BlaiLangdoh Ka Kur LyngdohRaijRaliang Community Reserve{" "}
+              Ka Khloo BlaiLangdoh Ka Kur LyngdohRaijRaliang Community Reserve{' '}
             </td>
             <td>3.51</td>
             <td>NO.FOR.17/2013/490, Dt.19-01-2021</td>
@@ -488,7 +488,7 @@ const Reserves = () => {
             <td>87</td>
             <td>No.FOR.17/2013/Pt/118, Dt.04.12.2014</td>
           </tr>
-          <tr className="fw-bold">
+          <tr className='fw-bold'>
             <td colSpan={2}>Grand Total</td>
             <td>6293.382</td>
             <td colSpan={2}></td>

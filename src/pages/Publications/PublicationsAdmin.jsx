@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 import {
   Button,
   Container,
@@ -9,15 +9,15 @@ import {
   Tab,
   Table,
   Tabs,
-} from "react-bootstrap"
+} from 'react-bootstrap'
 import {
   useDeleteDocument,
   useFetchDocuments,
   useFetchDocumnentTypes,
-} from "../../hooks/queries/PublicationQueries"
-import { BsPlus, BsTrashFill } from "react-icons/bs"
-import AddDocumentTypeForm from "../../components/forms/AddDocumentTypeForm"
-import { useNavigate } from "react-router-dom"
+} from '../../hooks/queries/PublicationQueries'
+import { BsPlus, BsTrashFill } from 'react-icons/bs'
+import AddDocumentTypeForm from '../../components/forms/AddDocumentTypeForm'
+import { useNavigate } from 'react-router-dom'
 
 const PublicationsAdmin = () => {
   //States
@@ -50,24 +50,24 @@ const PublicationsAdmin = () => {
 
   return (
     <Container>
-      <h3 className="text-center mt-4 mb-5 bg-light">
+      <h3 className='text-center mt-4 mb-5 bg-light'>
         Publications Admin Panel
       </h3>
       {/* Tabs */}
-      <Tabs defaultActiveKey="documents" fill className="custom-nav">
+      <Tabs defaultActiveKey='documents' fill className='custom-nav'>
         {/* Add Documents */}
-        <Tab eventKey="documents" title="Documents">
+        <Tab eventKey='documents' title='Documents'>
           <Button
-            className="float-end my-3"
-            size="sm"
-            onClick={() => navigate("create")}
+            className='float-end my-3'
+            size='sm'
+            onClick={() => navigate('create')}
           >
-            <BsPlus className="fs-4" />
+            <BsPlus className='fs-4' />
             Add Document
           </Button>
           {/* Documents Table */}
-          <Table striped bordered hover className="my-2">
-            <thead className="table-dark">
+          <Table striped bordered hover className='my-2'>
+            <thead className='table-dark'>
               <tr>
                 <th>Title</th>
                 <th>Document Type</th>
@@ -87,9 +87,9 @@ const PublicationsAdmin = () => {
                       <td>{active}</td>
                       <td>{document.createdDate}</td>
                       <td>
-                        <Button variant="outline" size="sm">
+                        <Button variant='outline' size='sm'>
                           <BsTrashFill
-                            title="Delete"
+                            title='Delete'
                             onClick={() => handleDelete(document.id)}
                           />
                         </Button>
@@ -99,7 +99,7 @@ const PublicationsAdmin = () => {
                 })
               ) : (
                 <tr>
-                  <td colSpan="6" className="text-center">
+                  <td colSpan='6' className='text-center'>
                     --- No Data Available ---
                   </td>
                 </tr>
@@ -108,25 +108,25 @@ const PublicationsAdmin = () => {
           </Table>
         </Tab>
         {/* Add Document Types */}
-        <Tab eventKey="documentTypes" title="Document Types">
+        <Tab eventKey='documentTypes' title='Document Types'>
           <Button
-            className="float-end my-3"
-            size="sm"
+            className='float-end my-3'
+            size='sm'
             onClick={() => handleShow()}
           >
-            <BsPlus className="fs-4" />
+            <BsPlus className='fs-4' />
             Add Document Type
           </Button>
           {/* Modal for Adding Document Types */}
           <Modal
             show={show}
             onHide={handleClose}
-            backdrop="static"
+            backdrop='static'
             keyboard={false}
             centered
           >
             <ModalHeader closeButton>
-              <ModalTitle className="d-flex justify-content-center w-100">
+              <ModalTitle className='d-flex justify-content-center w-100'>
                 Add New Document Type
               </ModalTitle>
             </ModalHeader>
@@ -135,8 +135,8 @@ const PublicationsAdmin = () => {
             </ModalBody>
           </Modal>
           {/* Document Types Table */}
-          <Table striped bordered hover className="my-2">
-            <thead className="table-dark">
+          <Table striped bordered hover className='my-2'>
+            <thead className='table-dark'>
               <tr>
                 <th>ID</th>
                 <th>Notification Type</th>
@@ -151,8 +151,8 @@ const PublicationsAdmin = () => {
                       <td>{type.id}</td>
                       <td>{type.name}</td>
                       <td>
-                        <Button variant="outline" size="sm">
-                          <BsTrashFill title="Delete" />
+                        <Button variant='outline' size='sm'>
+                          <BsTrashFill title='Delete' />
                         </Button>
                       </td>
                     </tr>
@@ -160,7 +160,7 @@ const PublicationsAdmin = () => {
                 })
               ) : (
                 <tr>
-                  <td colSpan="3" className="text-center">
+                  <td colSpan='3' className='text-center'>
                     --- No Data Available ---
                   </td>
                 </tr>

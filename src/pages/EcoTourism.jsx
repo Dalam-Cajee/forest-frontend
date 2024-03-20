@@ -3,8 +3,8 @@ import { Container, Table } from 'react-bootstrap'
 
 const EcoTourism = () => {
   return (
-    <Container>
-      <h2 className='text-center'>Eco - Tourism</h2>
+    <Container className='my-3'>
+      <h2>Eco - Tourism</h2>
       <p>
         <strong>
           Eco-tourism is a responsible travel to natural destinations where

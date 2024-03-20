@@ -1,21 +1,21 @@
-import React from "react"
-import { Button, Table } from "react-bootstrap"
-import { BsFilePdfFill } from "react-icons/bs"
+import React from 'react'
+import { Button, Table } from 'react-bootstrap'
+import { BsFilePdfFill } from 'react-icons/bs'
 import {
   useFetchArchiveByID,
   useFetchNotificationByID,
   useFetchPDF,
-} from "../../hooks/queries/NotificationQueries"
+} from '../../hooks/queries/NotificationQueries'
 import {
   useFetchDocumentByID,
   useFetchPublishPDF,
-} from "../../hooks/queries/PublicationQueries"
+} from '../../hooks/queries/PublicationQueries'
 
 const TabPaneTable = ({ ID, type }) => {
   // Functions
   const onSuccess = (response) => {
     const fileUrl = window.URL.createObjectURL(response.data)
-    window.open(fileUrl, "_blank")
+    window.open(fileUrl, '_blank')
     return response
   }
   const onError = (error) => {
@@ -40,24 +40,24 @@ const TabPaneTable = ({ ID, type }) => {
 
   return (
     <Table striped bordered>
-      <thead className="table-dark">
+      <thead className='table-dark'>
         <tr>
           <td>Title</td>
-          <td className="text-center">Download</td>
+          <td className='text-center'>Download</td>
         </tr>
       </thead>
       <tbody>
-        {type === "notification" ? (
+        {type === 'notification' ? (
           fetchNotificationByID?.data?.data?.data ? (
             fetchNotificationByID?.data?.data?.data?.map((notification) => {
               return (
                 <tr key={notification.id}>
                   <td>{notification.title}</td>
-                  <td className="text-center">
+                  <td className='text-center'>
                     <Button
-                      variant="light"
-                      title="Download"
-                      size="sm"
+                      variant='light'
+                      title='Download'
+                      size='sm'
                       onClick={() => handleDownload(notification.id)}
                     >
                       <BsFilePdfFill />
@@ -68,22 +68,22 @@ const TabPaneTable = ({ ID, type }) => {
             })
           ) : (
             <tr>
-              <td colSpan="3" className="text-center">
+              <td colSpan='3' className='text-center'>
                 --- No Data Available ---
               </td>
             </tr>
           )
-        ) : type === "archive" ? (
+        ) : type === 'archive' ? (
           fetchArchiveByID?.data?.data?.data ? (
             fetchArchiveByID?.data?.data?.data?.map((archive) => {
               return (
                 <tr key={archive.id}>
                   <td>{archive.title}</td>
-                  <td className="text-center">
+                  <td className='text-center'>
                     <Button
-                      variant="light"
-                      title="Download"
-                      size="sm"
+                      variant='light'
+                      title='Download'
+                      size='sm'
                       onClick={() => handleDownload(archive.id)}
                     >
                       <BsFilePdfFill />
@@ -94,22 +94,22 @@ const TabPaneTable = ({ ID, type }) => {
             })
           ) : (
             <tr>
-              <td colSpan="3" className="text-center">
+              <td colSpan='3' className='text-center'>
                 --- No Data Available ---
               </td>
             </tr>
           )
-        ) : type === "publication" ? (
+        ) : type === 'publication' ? (
           fetchDocumentByID?.data?.data?.data ? (
             fetchDocumentByID?.data?.data?.data?.map((document) => {
               return (
                 <tr key={document.id}>
                   <td>{document.title}</td>
-                  <td className="text-center">
+                  <td className='text-center'>
                     <Button
-                      variant="light"
-                      title="Download"
-                      size="sm"
+                      variant='light'
+                      title='Download'
+                      size='sm'
                       onClick={() => handleDownloadPublish(document.id)}
                     >
                       <BsFilePdfFill />
@@ -120,7 +120,7 @@ const TabPaneTable = ({ ID, type }) => {
             })
           ) : (
             <tr>
-              <td colSpan="3" className="text-center">
+              <td colSpan='3' className='text-center'>
                 --- No Data Available ---
               </td>
             </tr>

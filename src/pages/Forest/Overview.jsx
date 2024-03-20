@@ -1,5 +1,5 @@
-import React from "react"
-import { Container, Table } from "react-bootstrap"
+import React from 'react'
+import { Container, Table } from 'react-bootstrap'
 
 const Overview = () => {
   return (
@@ -49,7 +49,7 @@ const Overview = () => {
       </p>
       <h4>Important Tree Species of Meghalaya</h4>
       <Table striped bordered>
-        <thead className="table-dark">
+        <thead className='table-dark'>
           <tr>
             <th>Botanical Name</th>
             <th>Common / Local Name </th>
