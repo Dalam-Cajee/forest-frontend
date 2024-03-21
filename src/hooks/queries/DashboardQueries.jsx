@@ -16,6 +16,29 @@ export const useFetchServicePlusStatus = (onSuccess, onError) => {
   })
 }
 
+// GET Service Plus District-wise Status
+const fetchServicePlusDistrictWiseStatus = (id) => {
+  return request({
+    url: `/servicePlus/district/data/${id}`,
+    method: "get",
+  })
+}
+
+export const useFetchServicePlusDistrictWiseStatus = (
+  id,
+  onSuccess,
+  onError
+) => {
+  return useQuery(
+    ["get-servicePlusDistrictWise-status", id],
+    () => fetchServicePlusDistrictWiseStatus(id),
+    {
+      onSuccess,
+      onError,
+    }
+  )
+}
+
 // GET Application Count Division-wise
 const fetchDivisionWiseApplicationCount = () => {
   return request({
@@ -71,4 +94,49 @@ export const useFetchRangeWiseApplicationCount = (onSuccess, onError) => {
       onError,
     }
   )
+}
+
+// GET District Month-wise Application
+const fetchDistrictMonthWise = () => {
+  return request({
+    url: "/public/getApplicationsCountForAllMonthForAllTheDistricts",
+    method: "get",
+  })
+}
+
+export const useFetchDistrictMonthWise = (onSuccess, onError) => {
+  return useQuery("get-district-monthWise", () => fetchDistrictMonthWise(), {
+    onSuccess,
+    onError,
+  })
+}
+
+// GET Division Month-wise Application
+const fetchDivisionMonthWise = () => {
+  return request({
+    url: "/public/getApplicationsCountForAllMonthForAllTheDivisions",
+    method: "get",
+  })
+}
+
+export const useFetchDivisionMonthWise = (onSuccess, onError) => {
+  return useQuery("get-division-monthWise", () => fetchDivisionMonthWise(), {
+    onSuccess,
+    onError,
+  })
+}
+
+// GET Range Month-wise Application
+const fetchRangeMonthWise = () => {
+  return request({
+    url: "/public/getApplicationsCountForAllMonthForAllTheRanges",
+    method: "get",
+  })
+}
+
+export const useFetchRangeMonthWise = (onSuccess, onError) => {
+  return useQuery("get-range-monthWise", () => fetchRangeMonthWise(), {
+    onSuccess,
+    onError,
+  })
 }
