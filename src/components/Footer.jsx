@@ -8,8 +8,8 @@ const Footer = () => {
   return (
     <footer className='text-bg-dark p-2'>
       <Row className='container-fluid justify-content-center'>
-        <Col md={4} className='d-none d-md-block text-center'>
-          <img src={logo} alt='Logo' height={250} />
+        <Col md={4} className='d-none d-md-block text-center mt-5'>
+          <img src={logo} alt='Logo' height={200} />
         </Col>
         <Col md={4}>
           <div className='mb-3'>
@@ -65,6 +65,9 @@ const Footer = () => {
           </p>
           <p>
             <strong>Fax: </strong> 0364 2504068
+          </p>
+          <p>
+            <strong>Meghalaya Forest Toll free Number: </strong> 18008896783
           </p>
           <p>
             <strong>Email: </strong>

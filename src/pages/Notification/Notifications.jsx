@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 import {
   Col,
   Container,
@@ -8,13 +8,13 @@ import {
   Tab,
   TabContent,
   Tabs,
-} from "react-bootstrap"
-import { useFetchNotificationTypes } from "../../hooks/queries/NotificationQueries"
-import TabPaneTable from "../../components/core/TabPaneTable"
+} from 'react-bootstrap'
+import { useFetchNotificationTypes } from '../../hooks/queries/NotificationQueries'
+import TabPaneTable from '../../components/core/TabPaneTable'
 
 const Notifications = () => {
   // States
-  const [activeKey, setActiveKey] = useState("Tenders & Notices")
+  const [activeKey, setActiveKey] = useState('Tenders & Notices')
   const [ID, setID] = useState(1)
 
   // Function
@@ -25,7 +25,7 @@ const Notifications = () => {
     return error
   }
   const isActive = (key) => {
-    return key === activeKey ? "active" : ""
+    return key === activeKey ? 'active' : ''
   }
 
   // Hooks
@@ -39,13 +39,13 @@ const Notifications = () => {
 
   return (
     <Container>
-      <h3 className="text-center mt-4 mb-5 bg-light">Notifications</h3>
+      <h3 className='text-center mt-4 mb-5 bg-light'>Notifications</h3>
       <Row>
         <Col sm={4}>
           <Nav
             fill
-            variant="pills"
-            className="custom-nav flex-column"
+            variant='pills'
+            className='custom-nav flex-column'
             onSelect={handleSelect}
           >
             {notificationTypes?.data?.data?.data?.map((type) => {
@@ -65,13 +65,13 @@ const Notifications = () => {
           </Nav>
         </Col>
         <Col sm={8}>
-          <TabContent className="bg-light p-3">
-            <Tabs fill className="custom-nav mb-3">
-              <Tab eventKey="notification" title="Notification">
-                <TabPaneTable ID={ID} type="notification" />
+          <TabContent className='bg-light p-3'>
+            <Tabs fill className='custom-nav mb-3'>
+              <Tab eventKey='notification' title='Notification'>
+                <TabPaneTable ID={ID} type='notification' />
               </Tab>
-              <Tab eventKey="archive" title="Archive">
-                <TabPaneTable ID={ID} type="archive" />
+              <Tab eventKey='archive' title='Archive'>
+                <TabPaneTable ID={ID} type='archive' />
               </Tab>
             </Tabs>
           </TabContent>
