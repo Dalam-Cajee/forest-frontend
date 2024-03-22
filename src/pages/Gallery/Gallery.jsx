@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import {
+  Button,
   Col,
   Container,
   Nav,
@@ -12,6 +13,7 @@ import {
 } from "react-bootstrap"
 import { useFetchGalleryCategory } from "../../hooks/queries/GalleryQueries"
 import GalleryPhotos from "./GalleryPhotos"
+import { useNavigate } from "react-router-dom"
 
 const Gallery = () => {
   // States
@@ -30,6 +32,7 @@ const Gallery = () => {
   }
 
   // Hooks
+  const navigate = useNavigate()
   // Gallery Queries
   const galleryCategory = useFetchGalleryCategory(onSuccess, onError)
 
@@ -40,7 +43,15 @@ const Gallery = () => {
 
   return (
     <Container className="my-5">
+      <h3 className="text-center mt-4 mb-5 bg-light">Gallery</h3>
       <TabContainer defaultActiveKey={activeKey}>
+        <Button
+          variant="outline-success"
+          className="mb-2"
+          onClick={() => navigate("/gallery/admin")}
+        >
+          Gallery Admin
+        </Button>
         <Row>
           <Col sm={3}>
             <Nav

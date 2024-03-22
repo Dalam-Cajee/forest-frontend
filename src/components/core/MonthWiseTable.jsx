@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Table } from "react-bootstrap"
+import { Table } from "react-bootstrap"
 import {
   useFetchDistrictMonthWise,
   useFetchDivisionMonthWise,
@@ -35,6 +35,7 @@ const MonthWiseTable = ({ type }) => {
     "October",
     "November",
     "December",
+    "Total",
   ]
 
   return (
@@ -66,6 +67,7 @@ const MonthWiseTable = ({ type }) => {
                   <td>{district.october}</td>
                   <td>{district.november}</td>
                   <td>{district.december}</td>
+                  <td>{district.total}</td>
                 </tr>
               )
             })
@@ -94,6 +96,7 @@ const MonthWiseTable = ({ type }) => {
                   <td>{division.october}</td>
                   <td>{division.november}</td>
                   <td>{division.december}</td>
+                  <td>{division.total}</td>
                 </tr>
               )
             })
@@ -121,6 +124,7 @@ const MonthWiseTable = ({ type }) => {
                 <td>{range.october}</td>
                 <td>{range.november}</td>
                 <td>{range.december}</td>
+                <td>{range.total}</td>
               </tr>
             )
           })

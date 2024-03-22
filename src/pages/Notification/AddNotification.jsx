@@ -4,7 +4,7 @@ import CreateNotificationForm from "../../components/forms/CreateNotificationFor
 
 const AddNotification = () => {
   return (
-    <Container>
+    <Container className="my-3">
       <h3 className="text-center my-4 bg-light">Add New Document</h3>
       <CreateNotificationForm />
     </Container>

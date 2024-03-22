@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "react-query"
+import { useMutation, useQuery, useQueryClient } from "react-query"
 import { request } from "../../components/utils/request"
 
 // GET Documents
@@ -61,8 +61,11 @@ const addDocument = (data) => {
 }
 
 export const useAddDocument = (onSuccess, onError) => {
+  const queryClient = useQueryClient()
   return useMutation(addDocument, {
-    onSuccess,
+    onSuccess: () => {
+      queryClient.invalidateQueries("get-documents")
+    },
     onError,
   })
 }

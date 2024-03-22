@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import {
+  Button,
   Col,
   Container,
   Nav,
@@ -11,6 +12,7 @@ import {
 } from "react-bootstrap"
 import { useFetchDocumnentTypes } from "../../hooks/queries/PublicationQueries"
 import TabPaneTable from "../../components/core/TabPaneTable"
+import { useNavigate } from "react-router-dom"
 
 const Publications = () => {
   // States
@@ -29,6 +31,7 @@ const Publications = () => {
   }
 
   // Hooks
+  const navigate = useNavigate()
   // Notification Queries
   const documentTypes = useFetchDocumnentTypes(onSuccess, onError)
 
@@ -40,6 +43,13 @@ const Publications = () => {
   return (
     <Container>
       <h3 className="text-center mt-4 mb-5 bg-light">Publications</h3>
+      <Button
+        variant="outline-success"
+        className="mb-2"
+        onClick={() => navigate("/publications/admin")}
+      >
+        Publications Admin
+      </Button>
       <Row>
         <Col sm={4}>
           <Nav

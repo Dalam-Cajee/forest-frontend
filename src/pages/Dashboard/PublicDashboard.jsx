@@ -1,5 +1,5 @@
 import React from "react"
-import { Col, Container, Row } from "react-bootstrap"
+import { Button, Col, Container, Row } from "react-bootstrap"
 import {
   useFetchDistrictWiseApplicationCount,
   useFetchDivisionWiseApplicationCount,
@@ -11,8 +11,12 @@ import MyCardSP from "../../components/core/MyCardSP"
 import { Chart as ChartJS } from "chart.js/auto"
 import { Bar } from "react-chartjs-2"
 import { Pie } from "react-chartjs-2"
+import { useNavigate } from "react-router-dom"
 
 const PublicDashboard = () => {
+  // Hooks
+  const navigate = useNavigate()
+
   // Functions
   const onSuccess = (response) => {
     return response
@@ -132,6 +136,13 @@ const PublicDashboard = () => {
 
   return (
     <Container fluid className="my-3">
+      <Button
+        variant="outline-success"
+        className="float-end"
+        onClick={() => navigate("/dashboard")}
+      >
+        PCCF Dashboard
+      </Button>
       <h2 className="text-center fw-bold">Application Status</h2>
       {/* Applications Status */}
       <Row className="text-center ">

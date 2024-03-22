@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "react-query"
+import { useMutation, useQuery, useQueryClient } from "react-query"
 import { request } from "../../components/utils/request"
 
 // GET Notifications
@@ -45,8 +45,11 @@ const addNotification = (data) => {
 }
 
 export const useAddNotification = (onSuccess, onError) => {
+  const queryClient = useQueryClient()
   return useMutation(addNotification, {
-    onSuccess,
+    onSuccess: () => {
+      queryClient.invalidateQueries("get-notifications")
+    },
     onError,
   })
 }
@@ -160,8 +163,11 @@ const putNotificationArchive = (id) => {
 }
 
 export const usePutNotificationArchive = (onSuccess, onError) => {
+  const queryClient = useQueryClient()
   return useMutation(putNotificationArchive, {
-    onSuccess,
+    onSuccess: () => {
+      queryClient.invalidateQueries("get-notifications")
+    },
     onError,
   })
 }

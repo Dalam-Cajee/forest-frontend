@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Pagination, Table } from 'react-bootstrap'
+import React, { useState } from "react"
+import { Pagination, Table } from "react-bootstrap"
 
 const MyDataTable = ({ data }) => {
   // States
@@ -7,10 +7,10 @@ const MyDataTable = ({ data }) => {
 
   // Constants
   const itemsPerPage = 10
-  const totalPages = Math.ceil(data.length / itemsPerPage)
+  const totalPages = Math.ceil(data?.length / itemsPerPage)
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem)
+  const currentItems = data?.slice(indexOfFirstItem, indexOfLastItem)
 
   // Handlers
   const handlePageChange = (page) => {
@@ -20,7 +20,7 @@ const MyDataTable = ({ data }) => {
   return (
     <>
       <Table striped bordered>
-        <thead className='table-dark'>
+        <thead className="table-dark">
           <tr>
             <td>ID</td>
             <td>Name</td>
@@ -31,7 +31,7 @@ const MyDataTable = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {currentItems.map((item, index) => (
+          {currentItems?.map((item, index) => (
             <tr key={index}>
               <td>{item.fish_farmer_id}</td>
               <td>{item.name}</td>
@@ -44,7 +44,7 @@ const MyDataTable = ({ data }) => {
         </tbody>
       </Table>
       {/* Pagination */}
-      <Pagination className='justify-content-center custom-pagination'>
+      <Pagination className="justify-content-center custom-pagination">
         <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} />
         {Array.from({ length: totalPages }).map((_, index) => (
           <Pagination.Item
