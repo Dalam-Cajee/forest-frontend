@@ -4,7 +4,7 @@ import CreateGalleryPhotoForm from "../../components/forms/CreateGalleryPhotoFor
 
 const AddGalleryPhotos = () => {
   return (
-    <Container>
+    <Container className="my-3">
       <h3 className="text-center my-4 bg-light">Add New Photo</h3>
       <CreateGalleryPhotoForm />
     </Container>

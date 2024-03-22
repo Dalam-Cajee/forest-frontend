@@ -41,7 +41,7 @@ const Publications = () => {
   }
 
   return (
-    <Container>
+    <Container className="my-3">
       <h3 className="text-center mt-4 mb-5 bg-light">Publications</h3>
       <Button
         variant="outline-success"

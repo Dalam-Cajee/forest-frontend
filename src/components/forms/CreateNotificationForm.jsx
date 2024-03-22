@@ -140,7 +140,9 @@ const CreateNotificationForm = () => {
                     </div>
                     {/* Add Button */}
                     <div className="mt-2">
-                      <Button type="submit">Create</Button>
+                      <Button variant="outline-success" type="submit">
+                        Create
+                      </Button>
                     </div>
                   </Stack>
                 </Form>

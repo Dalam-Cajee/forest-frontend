@@ -63,7 +63,11 @@ const AddNotificationTypeForm = ({ setShow }) => {
                   </div>
                   {/* Add Button */}
                   <div className="mt-2">
-                    <Button type="submit" className="float-end">
+                    <Button
+                      variant="outline-success"
+                      type="submit"
+                      className="float-end"
+                    >
                       Add
                     </Button>
                   </div>

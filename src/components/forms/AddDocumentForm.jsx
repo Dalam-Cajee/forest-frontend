@@ -135,7 +135,9 @@ const AddDocumentForm = () => {
                     </div>
                     {/* Add Button */}
                     <div className="mt-2">
-                      <Button type="submit">Add</Button>
+                      <Button variant="outline-success" type="submit">
+                        Add
+                      </Button>
                     </div>
                   </Stack>
                 </Form>
