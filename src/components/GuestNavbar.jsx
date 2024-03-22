@@ -24,7 +24,7 @@ const GuestNavbar = () => {
               to="/public/dashboard"
               className="nav-link text-white fw-bold"
             >
-              Dashboard
+              Services Dashboard
             </NavLink>
             <NavLink to="/forest" className="nav-link text-white fw-bold">
               Forest

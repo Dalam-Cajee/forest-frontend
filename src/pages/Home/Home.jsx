@@ -164,7 +164,7 @@ const Home = () => {
                   eventKey="eService"
                   className={`nav-link ${isActive("eService")}`}
                 >
-                  e-Services
+                  Online Services
                 </NavLink>
                 <NavLink
                   eventKey="advertisements"
@@ -238,7 +238,7 @@ const Home = () => {
             </TabContainer>
           </Col>
           <Col sm={4}>
-            <div className="bg-white mb-4 p-2">
+            {/* <div className="bg-white mb-4 p-2">
               <h5 className="bg-success text-white text-center">
                 Online Services
               </h5>
@@ -256,7 +256,7 @@ const Home = () => {
               >
                 GRAS e-Payment for Services
               </NavLink>
-            </div>
+            </div> */}
             <div className="bg-white mb-4 p-2">
               <h5 className="bg-success text-white text-center">
                 NGT Judicial Committee

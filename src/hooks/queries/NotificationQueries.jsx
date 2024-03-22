@@ -63,8 +63,11 @@ const deleteNotification = (id) => {
 }
 
 export const useDeleteNotification = (onSuccess, onError) => {
+  const queryClient = useQueryClient()
   return useMutation(deleteNotification, {
-    onSuccess,
+    onSuccess: () => {
+      queryClient.invalidateQueries("get-notifications")
+    },
     onError,
   })
 }
