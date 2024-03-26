@@ -74,11 +74,16 @@ import Dashboard from "../pages/Dashboard/Dashboard"
 import MonthWise from "../pages/Dashboard/MonthWise"
 import DetailedSummary from "../pages/Dashboard/DetailedSummary"
 import ApplicationStatus from "../pages/Dashboard/ApplicationStatus"
+import LoginPage from "../pages/LoginPage"
 
 const AppRoutes = () => {
   return (
     <Routes>
+      {/* Home */}
       <Route path="/" element={<Home />} />
+
+      {/* Login */}
+      <Route path="/login" element={<LoginPage />} />
 
       {/* Dashboard */}
       <Route path="dashboard" element={<Dashboard />} />

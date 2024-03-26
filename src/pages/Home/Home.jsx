@@ -26,7 +26,7 @@ import {
   useFetchNotificationByID,
   useFetchPDF,
 } from "../../hooks/queries/NotificationQueries"
-import { BsFilePdfFill } from "react-icons/bs"
+import { BsFilePdf, BsFilePdfFill } from "react-icons/bs"
 
 const Home = () => {
   // States
@@ -209,8 +209,8 @@ const Home = () => {
                     return (
                       <NavLink key={data.id} className="mb-2">
                         {data.title}
-                        <BsFilePdfFill
-                          className="ms-3"
+                        <BsFilePdf
+                          className="ms-3 text-danger"
                           onClick={() => handleDownload(data.id)}
                         />
                       </NavLink>
@@ -226,8 +226,8 @@ const Home = () => {
                     return (
                       <NavLink key={data.id} className="mb-2">
                         {data.title}
-                        <BsFilePdfFill
-                          className="ms-3"
+                        <BsFilePdf
+                          className="ms-3 text-danger"
                           onClick={() => handleDownload(data.id)}
                         />
                       </NavLink>
@@ -285,8 +285,8 @@ const Home = () => {
                 return (
                   <NavLink key={data.id} className="mb-2">
                     {data.title}
-                    <BsFilePdfFill
-                      className="ms-3"
+                    <BsFilePdf
+                      className="ms-3 text-danger"
                       onClick={() => handleDownload(data.id)}
                     />
                   </NavLink>

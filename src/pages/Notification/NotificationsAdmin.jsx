@@ -202,7 +202,11 @@ const NotificationsAdmin = () => {
                   keyboard={false}
                   centered
                 >
-                  <ModalHeader closeButton>
+                  <ModalHeader
+                    closeButton
+                    closeVariant="white"
+                    className="text-bg-success"
+                  >
                     <ModalTitle className="d-flex justify-content-center w-100">
                       Add New Notification Type
                     </ModalTitle>

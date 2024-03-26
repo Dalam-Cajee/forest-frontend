@@ -38,6 +38,7 @@
   font-weight: 700;
 }
 
+/* Table Headers */
 thead tr th {
   background-color: rgb(1, 77, 1) !important;
   color: white !important;
