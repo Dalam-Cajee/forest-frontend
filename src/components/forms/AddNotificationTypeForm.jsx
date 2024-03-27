@@ -10,16 +10,8 @@ const AddNotificationTypeForm = ({ setShow }) => {
 
   // Refs
 
-  // Functions
-  const onSuccess = (response) => {
-    return response
-  }
-  const onError = (error) => {
-    return error
-  }
-
   // Hooks
-  const createNotificationType = useAddNotificationType(onSuccess, onError)
+  const createNotificationType = useAddNotificationType()
   // Constants
 
   // Formik

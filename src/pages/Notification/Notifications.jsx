@@ -23,19 +23,13 @@ const Notifications = () => {
   const navigate = useNavigate()
 
   // Function
-  const onSuccess = (response) => {
-    return response
-  }
-  const onError = (error) => {
-    return error
-  }
   const isActive = (key) => {
     return key === activeKey ? "active" : ""
   }
 
   // Hooks
   // Notification Queries
-  const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
+  const notificationTypes = useFetchNotificationTypes()
 
   // Handlers
   const handleSelect = (key) => {

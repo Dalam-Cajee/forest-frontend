@@ -23,19 +23,11 @@ const CreateNotificationForm = () => {
 
   // Refs
 
-  // Functions
-  const onSuccess = (response) => {
-    return response
-  }
-  const onError = (error) => {
-    return error
-  }
-
   // Hooks
   const navigate = useNavigate()
   // Notification Queries
-  const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
-  const createNotification = useAddNotification(onSuccess, onError)
+  const notificationTypes = useFetchNotificationTypes()
+  const createNotification = useAddNotification()
 
   // Constants
   const FILE_TYPES = ["application/pdf", "application/x-pdf"]

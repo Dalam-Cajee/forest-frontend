@@ -34,21 +34,18 @@ const Home = () => {
   const [ID, setID] = useState(1)
 
   // Functions
-  const onSuccess = (response) => {
-    const fileUrl = window.URL.createObjectURL(response.data)
-    window.open(fileUrl, "_blank")
-    return response
-  }
-  const onError = (error) => {
-    return error
-  }
+  // const onSuccess = (response) => {
+  //   const fileUrl = window.URL.createObjectURL(response.data)
+  //   window.open(fileUrl, "_blank")
+  //   return response
+  // }
   const isActive = (key) => {
     return key === activeKey ? "active" : ""
   }
 
   // Hooks
   const navigate = useNavigate()
-  const fetchPdf = useFetchPDF(onSuccess, onError)
+  const fetchPdf = useFetchPDF()
   const advtResult = useFetchNotificationByID(ID)
   const tenders = useFetchNotificationByID(1)
 

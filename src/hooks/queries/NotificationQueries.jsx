@@ -9,10 +9,10 @@ const fetchNotifications = () => {
   })
 }
 
-export const useFetchNotifications = (onSuccess, onError) => {
+export const useFetchNotifications = () => {
   return useQuery("get-notifications", () => fetchNotifications(), {
-    onSuccess,
-    onError,
+    onSuccess: (response) => response,
+    onError: (error) => error,
   })
 }
 
@@ -26,12 +26,8 @@ const fetchNotificationByID = (id) => {
 
 export const useFetchNotificationByID = (id) => {
   return useQuery(["get-notification", id], () => fetchNotificationByID(id), {
-    onSuccess: (response) => {
-      return response
-    },
-    onError: (error) => {
-      return error
-    },
+    onSuccess: (response) => response,
+    onError: (error) => error,
   })
 }
 
@@ -44,13 +40,13 @@ const addNotification = (data) => {
   })
 }
 
-export const useAddNotification = (onSuccess, onError) => {
+export const useAddNotification = () => {
   const queryClient = useQueryClient()
   return useMutation(addNotification, {
     onSuccess: () => {
       queryClient.invalidateQueries("get-notifications")
     },
-    onError,
+    onError: (error) => error,
   })
 }
 
@@ -62,13 +58,13 @@ const deleteNotification = (id) => {
   })
 }
 
-export const useDeleteNotification = (onSuccess, onError) => {
+export const useDeleteNotification = () => {
   const queryClient = useQueryClient()
   return useMutation(deleteNotification, {
     onSuccess: () => {
       queryClient.invalidateQueries("get-notifications")
     },
-    onError,
+    onError: (error) => error,
   })
 }
 
@@ -80,10 +76,10 @@ const fetchNotificationTypes = () => {
   })
 }
 
-export const useFetchNotificationTypes = (onSuccess, onError) => {
+export const useFetchNotificationTypes = () => {
   return useQuery("get-notification-types", () => fetchNotificationTypes(), {
-    onSuccess,
-    onError,
+    onSuccess: (response) => response,
+    onError: (error) => error,
   })
 }
 
@@ -96,10 +92,10 @@ const addNotificationType = (data) => {
   })
 }
 
-export const useAddNotificationType = (onSuccess, onError) => {
+export const useAddNotificationType = () => {
   return useMutation(addNotificationType, {
-    onSuccess,
-    onError,
+    onSuccess: (response) => response,
+    onError: (error) => error,
   })
 }
 
@@ -113,12 +109,8 @@ const fetchNotificationArchive = () => {
 
 export const useFetchNotificationArchive = () => {
   return useQuery("get-archive", () => fetchNotificationArchive(), {
-    onSuccess: (response) => {
-      return response
-    },
-    onError: (error) => {
-      return error
-    },
+    onSuccess: (response) => response,
+    onError: (error) => error,
   })
 }
 
@@ -132,12 +124,8 @@ const fetchArchiveByID = (id) => {
 
 export const useFetchArchiveByID = (id) => {
   return useQuery(["get-archive", id], () => fetchArchiveByID(id), {
-    onSuccess: (response) => {
-      return response
-    },
-    onError: (error) => {
-      return error
-    },
+    onSuccess: (response) => response,
+    onError: (error) => error,
   })
 }
 
@@ -150,10 +138,14 @@ const fetchPDF = (id) => {
   })
 }
 
-export const useFetchPDF = (onSuccess, onError) => {
+export const useFetchPDF = () => {
   return useMutation(fetchPDF, {
-    onSuccess,
-    onError,
+    onSuccess: (response) => {
+      const fileUrl = window.URL.createObjectURL(response.data)
+      window.open(fileUrl, "_blank")
+      return response
+    },
+    onError: (error) => error,
   })
 }
 
@@ -165,12 +157,12 @@ const putNotificationArchive = (id) => {
   })
 }
 
-export const usePutNotificationArchive = (onSuccess, onError) => {
+export const usePutNotificationArchive = () => {
   const queryClient = useQueryClient()
   return useMutation(putNotificationArchive, {
     onSuccess: () => {
       queryClient.invalidateQueries("get-notifications")
     },
-    onError,
+    onError: (error) => error,
   })
 }

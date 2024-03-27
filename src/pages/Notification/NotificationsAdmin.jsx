@@ -35,12 +35,6 @@ const NotificationsAdmin = () => {
   // Refs
 
   // Functions
-  const onSuccess = (response) => {
-    return response
-  }
-  const onError = (error) => {
-    return error
-  }
   const isActive = (key) => {
     return key === activeKey ? "active" : ""
   }
@@ -48,10 +42,10 @@ const NotificationsAdmin = () => {
   // Hooks
   const navigate = useNavigate()
   // Notification Queries
-  const notificationTypes = useFetchNotificationTypes(onSuccess, onError)
+  const notificationTypes = useFetchNotificationTypes()
   const fetchNotificationByID = useFetchNotificationByID(ID)
-  const putArchive = usePutNotificationArchive(onSuccess, onError)
-  const deleteNotification = useDeleteNotification(onSuccess, onError)
+  const putArchive = usePutNotificationArchive()
+  const deleteNotification = useDeleteNotification()
 
   // Constants
 
